@@ -5,27 +5,44 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    private DepthCounter depth;
+    
     public float speed;
-    private Rigidbody2D rb2d;
+    private Rigidbody2D rb;
 
     void Start()
     {
-        rb2d = GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody2D>();
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        // check tag of object colliding
+        if (collision.gameObject.CompareTag("Barrier"))
+        {
+            // Prevent the player from moving through the barrier
+            StopPlayerMovement();
+
+            Debug.Log("Player collided with an obstacle!");
+
+        }
+    }
+
 
     void Update()
     {
         float moveHorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");
 
-        rb2d.velocity = new Vector2(moveHorizontal * speed, moveVertical * speed);
+        rb.velocity = new Vector2(moveHorizontal * speed, moveVertical * speed);
 
-        if(moveVertical > 4)
-        {
-            depth.increaseDepth(20);
-        }
     }
+
+    void StopPlayerMovement()
+    {
+        // stop the player's Rigidbody velocity
+        rb.velocity = new Vector2(0, 0);
+    }
+    
 
 
 }
