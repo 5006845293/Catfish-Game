@@ -3,19 +3,22 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-
-
 public class Hook : MonoBehaviour
 {
     private Rigidbody2D rb;
-
     private float horizontalMovement;
     public float movementSpeed = 5f;
     public Transform fishHolder;
     public int maxFishCount = 5;
-
     private bool isHooking = false;
     private List<GameObject> fishesOnHook = new List<GameObject>();
+    private const float TopPositionY = 12.3f;
+
+    public Transform green_grass_left; // Reference to the left grass wall transform
+    public Transform green_grass_right; // Reference to the right grass wall transform
+
+    private const string FishPositionKey = "FishPosition";
+    private const string TrashPositionKey = "TrashPosition";
 
     void Start()
     {
@@ -30,21 +33,17 @@ public class Hook : MonoBehaviour
 
         if (Mathf.Abs(movementVector.y) > Mathf.Abs(movementVector.x))
         {
-            // Prioritize vertical movement over horizontal
             horizontalMovement = 0f;
-            // You can also adjust this to clamp vertical movement to either 1 or -1 if needed
             rb.velocity = new Vector2(rb.velocity.x, movementVector.y * movementSpeed);
         }
         else
         {
-            // Prioritize horizontal movement over vertical
             horizontalMovement = movementVector.x;
             rb.velocity = new Vector2(movementVector.x * movementSpeed, rb.velocity.y);
         }
     }
 
-
-    void FixedUpdate()
+    private void FixedUpdate()
     {
         HandleMovementInput();
 
@@ -67,22 +66,21 @@ public class Hook : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D collider)
-    {  
-
-        Debug.Log("Colliding, isHooking set to true");
-
-        if (collider.CompareTag("Fish"))
-        {   
+    {
+        if (collider.gameObject.CompareTag("Fish"))
+        {
             HandleFishCollision(collider.gameObject);
-            Debug.Log("Collided with Fish");
         }
-        else if (collider.CompareTag("Trash"))
+        else if (collider.gameObject.CompareTag("Trash"))
         {
             HandleTrashCollision(collider.gameObject);
-            Debug.Log("Collided with Trash");
+        }
+        else if (collider.gameObject.CompareTag("BottomGrass"))
+        {
+            SavePositions();
+            ResetHookPosition();
         }
     }
-
 
     void HandleFishCollision(GameObject fish)
     {
@@ -92,7 +90,7 @@ public class Hook : MonoBehaviour
         }
         else
         {
-            Destroy(fish);
+            fish.SetActive(true);
         }
     }
 
@@ -100,42 +98,109 @@ public class Hook : MonoBehaviour
     {
         Debug.Log("Hit trash, losing all fish!");
         LoseAllFish();
-
-        Destroy(trash); // Destroy the collided trash
+        Destroy(trash);
     }
 
     void AddFishToHook(GameObject fish)
     {
-        if (fishesOnHook.Count < maxFishCount)
-        {
-            fishesOnHook.Add(fish);
-
-            // Disable the fish by setting it inactive
-            fish.SetActive(false);
-
-            // Set the position of the fish relative to the fish holder
-            fish.transform.position = fishHolder.position;
-
-            // Set the fish as a child of the fish holder
-            fish.transform.SetParent(fishHolder);
-        }
-        else
-        {
-            Destroy(fish);
-        }
+        fishesOnHook.Add(fish);
+        fish.SetActive(false);
+        fish.transform.position = fishHolder.position;
+        fish.transform.SetParent(fishHolder);
     }
 
     void LoseAllFish()
     {
         foreach (GameObject fish in fishesOnHook)
         {
-            // Enable the fish by setting it active
-            fish.SetActive(true);
-
-            // Set the fish's parent back to null (no longer on the hook)
+            fish.SetActive(false);
             fish.transform.SetParent(null);
         }
 
         fishesOnHook.Clear();
+    }
+
+    void SavePositions()
+    {
+        SaveFishPositions();
+        SaveTrashPositions();
+    }
+
+    void SaveFishPositions()
+    {
+        for (int i = 0; i < fishesOnHook.Count; i++)
+        {
+            PlayerPrefs.SetFloat($"{FishPositionKey}_{i}_X", fishesOnHook[i].transform.position.x);
+            PlayerPrefs.SetFloat($"{FishPositionKey}_{i}_Y", fishesOnHook[i].transform.position.y);
+            PlayerPrefs.SetString($"{FishPositionKey}_{i}_Tag", fishesOnHook[i].tag);
+        }
+    }
+
+    void SaveTrashPositions()
+    {
+        GameObject[] trashObjects = GameObject.FindGameObjectsWithTag("Trash");
+        for (int i = 0; i < trashObjects.Length; i++)
+        {
+            PlayerPrefs.SetFloat($"{TrashPositionKey}_{i}_X", trashObjects[i].transform.position.x);
+            PlayerPrefs.SetFloat($"{TrashPositionKey}_{i}_Y", trashObjects[i].transform.position.y);
+        }
+    }
+
+    void ResetHookPosition()
+    {
+        rb.position = new Vector2(rb.position.x, TopPositionY);
+        rb.velocity = Vector2.zero;
+        LoadSavedPositions();
+        PositionFishesAndTrashBetweenGrassWalls(green_grass_left, green_grass_right);
+    }
+
+    void LoadSavedPositions()
+    {
+        LoadFishPositions();
+        LoadTrashPositions();
+    }
+
+    void LoadFishPositions()
+    {
+        for (int i = 0; i < fishesOnHook.Count; i++)
+        {
+            float xPos = PlayerPrefs.GetFloat($"{FishPositionKey}_{i}_X", 0f);
+            float yPos = PlayerPrefs.GetFloat($"{FishPositionKey}_{i}_Y", TopPositionY);
+            string fishTag = PlayerPrefs.GetString($"{FishPositionKey}_{i}_Tag", "Fish");
+            
+            fishesOnHook[i].transform.position = new Vector3(xPos, yPos, 0f);
+            fishesOnHook[i].tag = fishTag;
+        }
+    }
+
+    void LoadTrashPositions()
+    {
+        GameObject[] trashObjects = GameObject.FindGameObjectsWithTag("Trash");
+        for (int i = 0; i < trashObjects.Length; i++)
+        {
+            float xPos = PlayerPrefs.GetFloat($"{TrashPositionKey}_{i}_X", 0f);
+            float yPos = PlayerPrefs.GetFloat($"{TrashPositionKey}_{i}_Y", TopPositionY);
+            trashObjects[i].transform.position = new Vector3(xPos, yPos, 0f);
+        }
+    }
+
+    void PositionFishesAndTrashBetweenGrassWalls(Transform green_grass_left, Transform green_grass_right)
+    {
+        float xPos = (green_grass_left.position.x + green_grass_right.position.x) / 2f;
+
+        for (int i = 0; i < fishesOnHook.Count; i++)
+        {
+            float fishOffsetX = i * 1.0f;
+            Vector3 fishNewPosition = new Vector3(xPos + fishOffsetX, fishesOnHook[i].transform.position.y, 0f);
+            fishesOnHook[i].transform.position = fishNewPosition;
+        }
+
+        GameObject[] trashObjects = GameObject.FindGameObjectsWithTag("Trash");
+        for (int i = 0; i < trashObjects.Length; i++)
+        {
+            float trashOffsetX = i * 0.5f;
+            Vector3 trashNewPosition = new Vector3(xPos + trashOffsetX, trashObjects[i].transform.position.y, 0f);
+            trashObjects[i].transform.position = trashNewPosition;
+        }
     }
 }

@@ -30,7 +30,7 @@
                 {
                     "name": "down",
                     "id": "7819c851-2bfa-4890-a3b2-98f4c0ae7b36",
-                    "path": "<Keyboard>/downArrow",
+                    "path": "<Keyboard>/space",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
