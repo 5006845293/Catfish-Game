@@ -449,7 +449,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 371153708}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.1, y: -75.2, z: 0}
+  m_LocalPosition: {x: -1.93, y: -75.11, z: 0}
   m_LocalScale: {x: 21.967018, y: 1.1056, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -470,6 +470,7 @@ GameObject:
   - component: {fileID: 385320713}
   - component: {fileID: 385320717}
   - component: {fileID: 385320718}
+  - component: {fileID: 385320719}
   m_Layer: 0
   m_Name: Hook Placeholder
   m_TagString: Player
@@ -485,14 +486,14 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 385320712}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -574,7 +575,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 385320712}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.28, y: -4.08, z: 0}
+  m_LocalPosition: {x: -2.53, y: -3.97, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -610,6 +611,18 @@ MonoBehaviour:
   minDepth: 0
   depthIncrement: 35
   depthText: {fileID: 1167166673}
+--- !u!114 &385320719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 385320712}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f4308b26f82a3f4c9559811e211f340, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &871712603
 GameObject:
   m_ObjectHideFlags: 0
