@@ -2,29 +2,47 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using TMPro;
 
 public class Hook : MonoBehaviour
 {
     private Rigidbody2D rb;
     private float horizontalMovement;
     public float movementSpeed = 5f;
-    public Transform fishHolder;
+    public Transform fishHolder;  // Assuming fishHolder is set to fishParent in the inspector
     public int maxFishCount = 5;
     private bool isHooking = false;
     private List<GameObject> fishesOnHook = new List<GameObject>();
     private const float TopPositionY = 12.3f;
+    private Vector2 hookOriginalPosition;
 
-    public Transform green_grass_left; // Reference to the left grass wall transform
-    public Transform green_grass_right; // Reference to the right grass wall transform
+    // Store original positions for fishes and trash when the game starts
+    private Dictionary<GameObject, Vector2> originalFishPositions = new Dictionary<GameObject, Vector2>();
+    private Vector2 originalTrashPosition;
 
-    private const string FishPositionKey = "FishPosition";
-    private const string TrashPositionKey = "TrashPosition";
+    // Variable to keep track of collected fishes.
+    private int fishCount = 0;
+
+    // UI text component to display count of fishes collected.
+    public TextMeshProUGUI fishCountText;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         rb.constraints = RigidbodyConstraints2D.FreezeRotation;
         rb.interpolation = RigidbodyInterpolation2D.Interpolate;
+
+        // Store the original position of the hook
+        hookOriginalPosition = rb.position;
+
+        // Store the original positions of all fishes and trash
+        StoreOriginalPositions();
+
+        // Initialize fishCount to zero.
+        fishCount = 0;
+
+        // Update the fish count display.
+        SetFishCountText();
     }
 
     void OnMove(InputValue movementValue)
@@ -77,7 +95,6 @@ public class Hook : MonoBehaviour
         }
         else if (collider.gameObject.CompareTag("BottomGrass"))
         {
-            SavePositions();
             ResetHookPosition();
         }
     }
@@ -87,6 +104,10 @@ public class Hook : MonoBehaviour
         if (fishesOnHook.Count < maxFishCount)
         {
             AddFishToHook(fish);
+            // Increment the count of fishes collected.
+            fishCount += 1;
+            // Update the fish count display.
+            SetFishCountText();
         }
         else
         {
@@ -95,16 +116,28 @@ public class Hook : MonoBehaviour
     }
 
     void HandleTrashCollision(GameObject trash)
-    {
-        Debug.Log("Hit trash, losing all fish!");
-        LoseAllFish();
-        Destroy(trash);
-    }
+        {
+            Debug.Log("Hit trash, losing all fish!");
+            // Reset fish count to zero
+            fishCount = 0;
+            // Update the fish count display
+            SetFishCountText();
+
+            LoseAllFish();
+            Destroy(trash);
+        }
+
 
     void AddFishToHook(GameObject fish)
     {
         fishesOnHook.Add(fish);
         fish.SetActive(false);
+
+        if (!originalFishPositions.ContainsKey(fish))
+        {
+            originalFishPositions.Add(fish, fish.transform.position);
+        }
+
         fish.transform.position = fishHolder.position;
         fish.transform.SetParent(fishHolder);
     }
@@ -120,87 +153,61 @@ public class Hook : MonoBehaviour
         fishesOnHook.Clear();
     }
 
-    void SavePositions()
-    {
-        SaveFishPositions();
-        SaveTrashPositions();
-    }
-
-    void SaveFishPositions()
-    {
-        for (int i = 0; i < fishesOnHook.Count; i++)
-        {
-            PlayerPrefs.SetFloat($"{FishPositionKey}_{i}_X", fishesOnHook[i].transform.position.x);
-            PlayerPrefs.SetFloat($"{FishPositionKey}_{i}_Y", fishesOnHook[i].transform.position.y);
-            PlayerPrefs.SetString($"{FishPositionKey}_{i}_Tag", fishesOnHook[i].tag);
-        }
-    }
-
-    void SaveTrashPositions()
-    {
-        GameObject[] trashObjects = GameObject.FindGameObjectsWithTag("Trash");
-        for (int i = 0; i < trashObjects.Length; i++)
-        {
-            PlayerPrefs.SetFloat($"{TrashPositionKey}_{i}_X", trashObjects[i].transform.position.x);
-            PlayerPrefs.SetFloat($"{TrashPositionKey}_{i}_Y", trashObjects[i].transform.position.y);
-        }
-    }
-
     void ResetHookPosition()
     {
-        rb.position = new Vector2(rb.position.x, TopPositionY);
+        Invoke("PerformResetHookPosition", 0.5f);
+    }
+
+    void PerformResetHookPosition()
+    {
+        rb.position = hookOriginalPosition;
         rb.velocity = Vector2.zero;
-        LoadSavedPositions();
-        PositionFishesAndTrashBetweenGrassWalls(green_grass_left, green_grass_right);
+
+        // Reset fish count to zero
+        fishCount = 0;
+
+        // Update the fish count display
+        SetFishCountText();
+
+        ActivateAllFishes();
     }
 
-    void LoadSavedPositions()
+    void ActivateAllFishes()
     {
-        LoadFishPositions();
-        LoadTrashPositions();
-    }
-
-    void LoadFishPositions()
-    {
-        for (int i = 0; i < fishesOnHook.Count; i++)
+        foreach (GameObject fish in originalFishPositions.Keys)
         {
-            float xPos = PlayerPrefs.GetFloat($"{FishPositionKey}_{i}_X", 0f);
-            float yPos = PlayerPrefs.GetFloat($"{FishPositionKey}_{i}_Y", TopPositionY);
-            string fishTag = PlayerPrefs.GetString($"{FishPositionKey}_{i}_Tag", "Fish");
-            
-            fishesOnHook[i].transform.position = new Vector3(xPos, yPos, 0f);
-            fishesOnHook[i].tag = fishTag;
+            if (originalFishPositions.TryGetValue(fish, out Vector2 originalPosition))
+            {
+                fish.SetActive(true);
+                fish.transform.position = originalPosition;
+                fish.transform.SetParent(null);
+            }
+        }
+
+        fishesOnHook.Clear();
+    }
+
+    void StoreOriginalPositions()
+    {
+        GameObject[] allFishes = GameObject.FindGameObjectsWithTag("Fish");
+        foreach (GameObject fish in allFishes)
+        {
+            if (!originalFishPositions.ContainsKey(fish))
+            {
+                originalFishPositions.Add(fish, fish.transform.position);
+            }
+        }
+
+        GameObject trash = GameObject.FindGameObjectWithTag("Trash");
+        if (trash != null)
+        {
+            originalTrashPosition = trash.transform.position;
         }
     }
 
-    void LoadTrashPositions()
+    // Function to update the displayed count of fishes collected.
+    void SetFishCountText()
     {
-        GameObject[] trashObjects = GameObject.FindGameObjectsWithTag("Trash");
-        for (int i = 0; i < trashObjects.Length; i++)
-        {
-            float xPos = PlayerPrefs.GetFloat($"{TrashPositionKey}_{i}_X", 0f);
-            float yPos = PlayerPrefs.GetFloat($"{TrashPositionKey}_{i}_Y", TopPositionY);
-            trashObjects[i].transform.position = new Vector3(xPos, yPos, 0f);
-        }
-    }
-
-    void PositionFishesAndTrashBetweenGrassWalls(Transform green_grass_left, Transform green_grass_right)
-    {
-        float xPos = (green_grass_left.position.x + green_grass_right.position.x) / 2f;
-
-        for (int i = 0; i < fishesOnHook.Count; i++)
-        {
-            float fishOffsetX = i * 1.0f;
-            Vector3 fishNewPosition = new Vector3(xPos + fishOffsetX, fishesOnHook[i].transform.position.y, 0f);
-            fishesOnHook[i].transform.position = fishNewPosition;
-        }
-
-        GameObject[] trashObjects = GameObject.FindGameObjectsWithTag("Trash");
-        for (int i = 0; i < trashObjects.Length; i++)
-        {
-            float trashOffsetX = i * 0.5f;
-            Vector3 trashNewPosition = new Vector3(xPos + trashOffsetX, trashObjects[i].transform.position.y, 0f);
-            trashObjects[i].transform.position = trashNewPosition;
-        }
+        fishCountText.text = "Fish Count: " + fishCount.ToString();
     }
 }
