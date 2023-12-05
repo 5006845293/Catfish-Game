@@ -469,7 +469,6 @@ GameObject:
   - component: {fileID: 385320714}
   - component: {fileID: 385320713}
   - component: {fileID: 385320717}
-  - component: {fileID: 385320718}
   - component: {fileID: 385320719}
   m_Layer: 0
   m_Name: Hook Placeholder
@@ -596,22 +595,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   mainCamera: {fileID: 930872889}
---- !u!114 &385320718
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 385320712}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a36bc1cd930ac44ab895898754c25e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxDepth: 500
-  minDepth: 0
-  depthIncrement: 35
-  depthText: {fileID: 1167166673}
 --- !u!114 &385320719
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -837,6 +820,7 @@ GameObject:
   - component: {fileID: 930872888}
   - component: {fileID: 930872892}
   - component: {fileID: 930872893}
+  - component: {fileID: 930872894}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -924,8 +908,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 1
-  pauseDuration: 3
-  moveDistance: 72
+  pauseDuration: 2
+  moveDistance: 70
 --- !u!114 &930872893
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -959,6 +943,19 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
+--- !u!114 &930872894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 930872887}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a36bc1cd930ac44ab895898754c25e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  depthText: {fileID: 1167166673}
 --- !u!1 &1167166671
 GameObject:
   m_ObjectHideFlags: 0

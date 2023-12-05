@@ -3,37 +3,20 @@ using TMPro; // Make sure to add this if you are using TextMeshPro for your text
 
 public class DepthController : MonoBehaviour
 {
-    public float maxDepth = 500f;
-    public float minDepth = 0f;
-    public float depthIncrement = 1f;
-
     public TextMeshProUGUI depthText;
-
-    private float currentDepth = 0f;
+    private float currentDepth;
 
     
     void Update()
     {
-        float verticalInput = Input.GetAxis("Vertical"); // Get input for vertical movement
-
-        if (verticalInput < 0)
-        {
-            // Player is moving down
-            currentDepth += depthIncrement * Time.deltaTime;
-            currentDepth = Mathf.Clamp(currentDepth, minDepth, maxDepth);
-
-            // Update depth text
-            UpdateDepthText();
-        }
-        else if (verticalInput > 0)
-        {
-            // Player is moving up
-            currentDepth -= depthIncrement * Time.deltaTime;
-            currentDepth = Mathf.Clamp(currentDepth, minDepth, maxDepth);
-
-            // Update depth text
-            UpdateDepthText();
-        }
+		
+		currentDepth = transform.position.y * -6.85f;
+		if(currentDepth >= 500){
+				currentDepth = 500f;
+		}
+		// Update depth text
+		UpdateDepthText();
+	
     }
 
     void UpdateDepthText()
