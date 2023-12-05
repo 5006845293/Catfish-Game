@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<<< HEAD:Assets/Textures/Catfish_Earth.png.meta
-guid: f414486cfc8571149a3185fef40a9071
-========
-guid: 900ce43734e73d54ab54a8bedb7b4a72
->>>>>>>> Fish-Spawner-Jasmine_Wells:Assets/Jasmine/Textures/Fish/BaitFish/BaitFish_Black.png.meta
+guid: 9fe61ae7aad49cd4b8572acee90bffff
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
