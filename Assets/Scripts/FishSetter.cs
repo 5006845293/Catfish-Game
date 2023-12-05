@@ -1,14 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class FishSetter : MonoBehaviour
 {
+	
+	public Toggle toggle1;
+    public Toggle toggle2;
     // Start is called before the first frame update
     void Start()
     {
-        bool[] boolArray = new bool[] { true, false};
-		SaveBoolArrayToPlayerPrefs(boolArray);
+        
     }
 
     // Update is called once per frame
@@ -29,4 +33,14 @@ public class FishSetter : MonoBehaviour
         PlayerPrefs.SetString("SavedFish", boolArrayString);
         PlayerPrefs.Save();
     }
+	public void continueGame(){
+		bool[] boolArray = new bool[2];
+		boolArray[0] = toggle1.isOn;
+        boolArray[1] = toggle2.isOn;
+		SaveBoolArrayToPlayerPrefs(boolArray);
+	}
+	public void NewGame(){
+		bool[] boolArray = new bool[] { false, false};
+		SaveBoolArrayToPlayerPrefs(boolArray);
+	}
 }
