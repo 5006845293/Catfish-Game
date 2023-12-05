@@ -34,7 +34,7 @@ public class Fish : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
 
         string fileName = "BaitFish_" + Selected_Color.ToString() + ".png"; // Folder name corresponds to enum option
-        string filePath = "Assets/Textures/Fish/BaitFish/" + fileName;
+        string filePath = "Assets/Jasmine/Textures/Fish/BaitFish/" + fileName;
 		texture = LoadTextureFromFile(filePath);
 		if (texture != null){
             // Create a sprite from the loaded texture
