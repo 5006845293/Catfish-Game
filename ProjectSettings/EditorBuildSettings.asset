@@ -6,12 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Jasmine/Scenes/Main Menu.unity
+    path: Assets/1-MainMenu Scene/1-The Scene/Main Menu.unity
     guid: 50c2294d4c93fe948a53ea860028e184
   - enabled: 1
-    path: Assets/Jasmine/Scenes/Gallery.unity
+    path: Assets/2-CatfishGallery Scene/2-TheScene/Gallery.unity
     guid: 00558cd5ebc565b4ca5fa5d110b5f69b
   - enabled: 1
-    path: Assets/Justin/Justin Scenes/Fishing Location.unity
+    path: Assets/3-HookGame Scene/3-The Scene/Fishing Location.unity
     guid: 71c0f316ca661ec41a07f0f29708a11e
   m_configObjects: {}
