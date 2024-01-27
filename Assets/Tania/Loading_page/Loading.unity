@@ -405,6 +405,52 @@ MonoBehaviour:
   spawner: {fileID: 415777125}
   game_area: {fileID: 586208355}
   speed: 0.2
+--- !u!1 &365272867
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 365272869}
+  - component: {fileID: 365272868}
+  m_Layer: 0
+  m_Name: Loader
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &365272868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 365272867}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 617cb287f57944a64b26c6fd3a1b43dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nextSceneName: Fishing Location
+  delay: 7
+--- !u!4 &365272869
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 365272867}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.6134158, y: 0.3503021, z: 3.11044}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &369721228
 GameObject:
   m_ObjectHideFlags: 0
@@ -494,13 +540,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   game_area: {fileID: 586208355}
   parent_prefab: {fileID: 2727638244488350849, guid: b49b8ffbe42964deb82a2c6882bde02b, type: 3}
-  count: 2
+  count: 1
   limit: 1
   per_frame: 1
   spawn_circle_radius: 60
   death_circle_radius: 30
   fastest_speed: 1
-  slowest_speed: 0.75
+  slowest_speed: 0.55
 --- !u!4 &415777126
 Transform:
   m_ObjectHideFlags: 0

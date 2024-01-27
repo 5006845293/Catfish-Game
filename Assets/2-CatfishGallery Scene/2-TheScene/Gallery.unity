@@ -476,7 +476,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a338b0d65a69824191c8fea305f71a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextSceneName: Fishing Location
+  nextSceneName: Loading
 --- !u!68 &1595886745
 EdgeCollider2D:
   m_ObjectHideFlags: 0
