@@ -2,7 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Earth_Dialouge : MonoBehaviour
+public class FishDialogue : MonoBehaviour
 {
     public GameObject dialoguePanel;
     public Text dialogueText;
