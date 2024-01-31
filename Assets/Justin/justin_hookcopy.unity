@@ -903,6 +903,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   depthText: {fileID: 1167166673}
+  speed: -7.2
 --- !u!1 &1167166671
 GameObject:
   m_ObjectHideFlags: 0
@@ -1529,6 +1530,30 @@ PrefabInstance:
       propertyPath: movementSpeed
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 1117825577478988896, guid: 6e2b0d621e6f31b42a3222e8d40d89eb, type: 3}
+      propertyPath: m_fontSize
+      value: 36
+      objectReference: {fileID: 0}
+    - target: {fileID: 1117825577478988896, guid: 6e2b0d621e6f31b42a3222e8d40d89eb, type: 3}
+      propertyPath: m_margin.w
+      value: 488.62717
+      objectReference: {fileID: 0}
+    - target: {fileID: 1117825577478988896, guid: 6e2b0d621e6f31b42a3222e8d40d89eb, type: 3}
+      propertyPath: m_margin.x
+      value: 84.54889
+      objectReference: {fileID: 0}
+    - target: {fileID: 1117825577478988896, guid: 6e2b0d621e6f31b42a3222e8d40d89eb, type: 3}
+      propertyPath: m_margin.y
+      value: -855.4279
+      objectReference: {fileID: 0}
+    - target: {fileID: 1117825577478988896, guid: 6e2b0d621e6f31b42a3222e8d40d89eb, type: 3}
+      propertyPath: m_margin.z
+      value: -395.297
+      objectReference: {fileID: 0}
+    - target: {fileID: 1117825577478988896, guid: 6e2b0d621e6f31b42a3222e8d40d89eb, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 36
+      objectReference: {fileID: 0}
     - target: {fileID: 1562843559509529365, guid: 6e2b0d621e6f31b42a3222e8d40d89eb, type: 3}
       propertyPath: m_RootOrder
       value: 10
@@ -1572,6 +1597,14 @@ PrefabInstance:
     - target: {fileID: 1562843559509529365, guid: 6e2b0d621e6f31b42a3222e8d40d89eb, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2440250276817645776, guid: 6e2b0d621e6f31b42a3222e8d40d89eb, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -920
+      objectReference: {fileID: 0}
+    - target: {fileID: 2440250276817645776, guid: 6e2b0d621e6f31b42a3222e8d40d89eb, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -764
       objectReference: {fileID: 0}
     - target: {fileID: 3618337143532172117, guid: 6e2b0d621e6f31b42a3222e8d40d89eb, type: 3}
       propertyPath: m_Name

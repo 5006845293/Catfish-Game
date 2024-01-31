@@ -12,6 +12,6 @@ EditorBuildSettings:
     path: Assets/2-CatfishGallery Scene/2-TheScene/Gallery.unity
     guid: 00558cd5ebc565b4ca5fa5d110b5f69b
   - enabled: 1
-    path: Assets/3-HookGame Scene/3-The Scene/Fishing Location.unity
+    path: Assets/Justin/justin_hookcopy.unity
     guid: 71c0f316ca661ec41a07f0f29708a11e
   m_configObjects: {}

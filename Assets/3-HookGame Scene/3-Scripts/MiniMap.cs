@@ -6,13 +6,13 @@ using UnityEngine.UI;
 public class MiniMap : MonoBehaviour
 {
     public Transform hook;
-    public RawImage rawImage;
+    public Image image;
     public float mapScale = 0.1f;
 
     void LateUpdate()
     {
         Vector2 newPosition = hook.position * mapScale;
-        rawImage.uvRect = new Rect(newPosition.x, newPosition.y, rawImage.uvRect.width, rawImage.uvRect.height);
+        image.rectTransform.anchoredPosition = newPosition;
     }
 }
 
