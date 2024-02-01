@@ -1,6 +1,11 @@
 using UnityEngine;
 using TMPro; // Make sure to add this if you are using TextMeshPro for your text display
 
+//depth start = -3.22
+//depth 200 = -29.14856
+//depth 400 = -58.35699
+//depth 500 = -72.9567
+
 public class DepthController : MonoBehaviour
 {
     public TextMeshProUGUI depthText;

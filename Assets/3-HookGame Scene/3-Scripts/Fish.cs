@@ -4,13 +4,14 @@ using UnityEngine;
 
 public enum ColorOptions
 {
+	Black,
+	White,
 	Red,
 	Yellow,
 	Green,
 	Blue,
-	Purple,
-	White,
-	Black
+	Purple
+	
 }
 public enum DirectionOptions
 {

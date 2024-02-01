@@ -11,10 +11,12 @@ public class Hook : MonoBehaviour
     public float movementSpeed = 5f;
     public Transform fishHolder;  // Assuming fishHolder is set to fishParent in the inspector
     public int maxFishCount = 5;
+	public DepthController DepthScript;
     private bool isHooking = false;
-    private List<GameObject> fishesOnHook = new List<GameObject>();
+    public List<GameObject> fishesOnHook = new List<GameObject>();
     private const float TopPositionY = 12.3f;
     private Vector2 hookOriginalPosition;
+
 
     // Store original positions for fishes and trash when the game starts
     private Dictionary<GameObject, Vector2> originalFishPositions = new Dictionary<GameObject, Vector2>();
@@ -64,7 +66,13 @@ public class Hook : MonoBehaviour
     private void FixedUpdate()
     {
         HandleMovementInput();
-
+		if(DepthScript.GetCurrentDepth()>=500){
+			isHooking = true;
+		}
+		else{
+			isHooking = false;
+		}
+		
         if (isHooking)
         {
             LowerHook();
@@ -101,7 +109,7 @@ public class Hook : MonoBehaviour
 
     void HandleFishCollision(GameObject fish)
     {
-        if (fishesOnHook.Count < maxFishCount)
+        if (fishesOnHook.Count < maxFishCount && isHooking)
         {
             AddFishToHook(fish);
             // Increment the count of fishes collected.
@@ -210,4 +218,6 @@ public class Hook : MonoBehaviour
     {
         fishCountText.text = "Fish Count: " + fishCount.ToString();
     }
+	
+
 }
