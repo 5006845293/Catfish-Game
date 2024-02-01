@@ -35,8 +35,6 @@ public class CameraMovement : MonoBehaviour
         else
         {
             timer += Time.deltaTime;
-			Debug.Log("move up");
-			Debug.Log(timer);
             if (timer >= pauseDuration)
             {
 				

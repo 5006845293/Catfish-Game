@@ -12,7 +12,7 @@ public class Hook : MonoBehaviour
     public Transform fishHolder;  // Assuming fishHolder is set to fishParent in the inspector
     public int maxFishCount = 5;
 	public DepthController DepthScript;
-    private bool isHooking = false;
+    public bool isHooking = false;
     public List<GameObject> fishesOnHook = new List<GameObject>();
     private const float TopPositionY = 12.3f;
     private Vector2 hookOriginalPosition;
@@ -67,10 +67,10 @@ public class Hook : MonoBehaviour
     {
         HandleMovementInput();
 		if(DepthScript.GetCurrentDepth()>=500){
-			isHooking = true;
+			isHooking = false;
 		}
 		else{
-			isHooking = false;
+			isHooking = true;
 		}
 		
         if (isHooking)
