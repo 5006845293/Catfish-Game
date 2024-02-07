@@ -108,9 +108,11 @@ public class Hook : MonoBehaviour
             fishCount += 1;
             // Update the fish count display.
             SetFishCountText();
+            Debug.Log("Fish collected: " + fish.name);
         }
         else
         {
+            Debug.Log("Reached max fish count!");
             fish.SetActive(true);
         }
     }
@@ -172,15 +174,17 @@ public class Hook : MonoBehaviour
         ActivateAllFishes();
     }
 
-    void ActivateAllFishes()
+   void ActivateAllFishes()
     {
         foreach (GameObject fish in originalFishPositions.Keys)
         {
             if (originalFishPositions.TryGetValue(fish, out Vector2 originalPosition))
             {
+                fish.transform.SetParent(fishHolder);
                 fish.SetActive(true);
                 fish.transform.position = originalPosition;
-                fish.transform.SetParent(null);
+                fishCountText.text = "Fish Count: " + fishCount.ToString();
+                Debug.Log("Activated fish: " + fish.name);
             }
         }
 
@@ -206,8 +210,9 @@ public class Hook : MonoBehaviour
     }
 
     // Function to update the displayed count of fishes collected.
-    void SetFishCountText()
+      void SetFishCountText()
     {
         fishCountText.text = "Fish Count: " + fishCount.ToString();
+        Debug.Log("Fish count updated: " + fishCount);
     }
 }
