@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 
 public class CatfishPatterns : MonoBehaviour
@@ -10,7 +11,7 @@ public class CatfishPatterns : MonoBehaviour
 	public List<GameObject> fishCaught;
 	public List<string> fishColors;
 	private Dictionary<string, List<List<string>>> fishPatterns = new Dictionary<string, List<List<string>>>();
-	
+	private string catfish;
     // Start is called before the first frame update
     void Start()
     {
@@ -38,12 +39,16 @@ public class CatfishPatterns : MonoBehaviour
                 fishColors.Add("blank");
             }
             // Check the fishColors list against patterns.
-            Debug.Log(CheckPatterns());
+            catfish = CheckPatterns();
 			
 		}
+		
 		//send fish selection to next scene
-		if(DepthScript.GetCurrentDepth()>=500 && hookscript.isHooking){
-			
+		if(DepthScript.GetCurrentDepth()==0 && !hookscript.isHooking){
+			PlayerPrefs.SetString("Catfish", catfish);
+			Debug.Log(catfish);
+			Debug.Log("transition to next scene");
+			SceneManager.LoadScene(3);
 		}
     }
 
@@ -133,18 +138,18 @@ public class CatfishPatterns : MonoBehaviour
         };
 		
         // Add patterns to the dictionary.
-        fishPatterns.Add("ZebraFish", zebraPatterns);		//color fish	1
-        fishPatterns.Add("RainbowFish", rainbowPatterns);	//color fish	2
-		fishPatterns.Add("FireFish",firePatterns);			//element fish	3
-		fishPatterns.Add("EarthFish",earthPatterns);		//element fish	4
-		fishPatterns.Add("AirFish",airPatterns);			//element fish	5
-		fishPatterns.Add("WaterFish",waterPatterns);		//element fish	6
-		fishPatterns.Add("SprngFish",springPatterns);		//season fish	7
-		fishPatterns.Add("WinterFish",winterPatterns);		//season fish	8
-		fishPatterns.Add("FallFish",fallPatterns);			//season fish	9
-		fishPatterns.Add("SummerFish",summerPatterns);		//season fish	10
-		fishPatterns.Add("LoveFish",lovePatterns);			//season fish	11
-		fishPatterns.Add("HateFish",hatePatterns);			//season fish	12
+        fishPatterns.Add("Zebra Catfish", zebraPatterns);		//color fish	1
+        fishPatterns.Add("Rainbow Catfish", rainbowPatterns);	//color fish	2
+		fishPatterns.Add("Fire Catfish",firePatterns);			//element fish	3
+		fishPatterns.Add("Earth Catfish",earthPatterns);		//element fish	4
+		fishPatterns.Add("Air Catfish",airPatterns);			//element fish	5
+		fishPatterns.Add("Water Catfish",waterPatterns);		//element fish	6
+		fishPatterns.Add("Spring Catfish",springPatterns);		//season fish	7
+		fishPatterns.Add("Winter Catfish",winterPatterns);		//season fish	8
+		fishPatterns.Add("Fall Catfish",fallPatterns);			//season fish	9
+		fishPatterns.Add("Summer Catfish",summerPatterns);		//season fish	10
+		fishPatterns.Add("Love Catfish",lovePatterns);			//season fish	11
+		fishPatterns.Add("Hate Catfish",hatePatterns);			//season fish	12
 		
 		
     }

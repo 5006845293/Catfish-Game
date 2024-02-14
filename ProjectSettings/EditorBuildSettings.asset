@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/3-HookGame Scene/3-The Scene/Fishing Location.unity
     guid: 71c0f316ca661ec41a07f0f29708a11e
+  - enabled: 1
+    path: Assets/4-CatfishCatching scene/4-TheScene/Catfish.unity
+    guid: df7b7ee39fdf6df49b7f13d23f3ee392
   m_configObjects: {}

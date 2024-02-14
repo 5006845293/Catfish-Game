@@ -12,7 +12,7 @@ public class Hook : MonoBehaviour
     public Transform fishHolder;  // Assuming fishHolder is set to fishParent in the inspector
     public int maxFishCount = 5;
 	public DepthController DepthScript;
-    public bool isHooking = false;
+    public bool isHooking = true;
     public List<GameObject> fishesOnHook = new List<GameObject>();
     private const float TopPositionY = 12.3f;
     private Vector2 hookOriginalPosition;
@@ -33,7 +33,7 @@ public class Hook : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         rb.constraints = RigidbodyConstraints2D.FreezeRotation;
         rb.interpolation = RigidbodyInterpolation2D.Interpolate;
-
+		isHooking = true;
         // Store the original position of the hook
         hookOriginalPosition = rb.position;
 
@@ -69,26 +69,13 @@ public class Hook : MonoBehaviour
 		if(DepthScript.GetCurrentDepth()>=500){
 			isHooking = false;
 		}
-		else{
-			isHooking = true;
-		}
 		
-        if (isHooking)
-        {
-            LowerHook();
-        }
     }
 
     void HandleMovementInput()
     {
         Vector2 movement = new Vector2(horizontalMovement, 0.0f);
         rb.velocity = new Vector2(movement.x * movementSpeed, rb.velocity.y);
-    }
-
-    void LowerHook()
-    {
-        Vector2 hookMovement = new Vector2(0f, -1f) * movementSpeed * Time.deltaTime;
-        rb.MovePosition(rb.position + hookMovement);
     }
 
     private void OnTriggerEnter2D(Collider2D collider)
