@@ -12,8 +12,11 @@ EditorBuildSettings:
     path: Assets/2-CatfishGallery Scene/2-TheScene/Gallery.unity
     guid: 00558cd5ebc565b4ca5fa5d110b5f69b
   - enabled: 1
-    path: Assets/Justin/justin_hookcopy.unity
-    guid: 71c0f316ca661ec41a07f0f29708a11e
+    path: Assets/Tania/The Scene/Loading.unity
+    guid: e2a4e1659fd844b699471a58ad59332c
+  - enabled: 1
+    path: Assets/3-HookGame Scene/3-The Scene/Fishing Location.unity
+    guid: 63baf416fd2cc4340947b60ca55dd23d
   - enabled: 1
     path: Assets/4-CatfishCatching scene/4-TheScene/Catfish.unity
     guid: df7b7ee39fdf6df49b7f13d23f3ee392
