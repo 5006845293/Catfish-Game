@@ -79,7 +79,7 @@ public class FishSpawner : MonoBehaviour
                 {
                     fishScript.Selected_Color = (ColorOptions)Random.Range(System.Enum.GetValues(typeof(ColorOptions)).Length / 3, System.Enum.GetValues(typeof(ColorOptions)).Length / 3 * 2);
                 }
-                else if (currentDepth <= 500 && currentDepth >= 400)
+                else if (currentDepth <= 500 && currentDepth >= 300)
                 {
                     fishScript.Selected_Color = (ColorOptions)Random.Range(System.Enum.GetValues(typeof(ColorOptions)).Length / 3 * 2, System.Enum.GetValues(typeof(ColorOptions)).Length);
                 }

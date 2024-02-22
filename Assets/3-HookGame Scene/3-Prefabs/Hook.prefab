@@ -29,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2793216919080658144}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 5.79, y: 8.51, z: 0}
   m_LocalScale: {x: 0.28209588, y: 0.349774, z: 1.0265}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -126,7 +126,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 6.12, y: 6.12}
+    oldSize: {x: 8.58, y: 13.48}
     newSize: {x: 6.12, y: 6.12}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -178,7 +178,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 3
-  fishHolder: {fileID: 9054204413580417780, guid: 4e6532e913dbeda4493871c6ef825bb4, type: 3}
+  fishHolder: {fileID: 0}
   maxFishCount: 5
   fishCountText: {fileID: 1117825577478988896}
 --- !u!1 &3618337143532172117
@@ -206,7 +206,7 @@ Transform:
   m_GameObject: {fileID: 3618337143532172117}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 652650216502363927}
@@ -249,7 +249,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -286, y: 4}
+  m_AnchoredPosition: {x: -215.24, y: 8.28949}
   m_SizeDelta: {x: 172.53, y: 16.579}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8160767654727422592
@@ -343,7 +343,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 29.00116, y: -406.9428, z: 6.87146, w: 310.31848}
+  m_margin: {x: 35.878174, y: -401.78503, z: 6.87146, w: 310.31848}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -422,7 +422,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 1
+  m_UiScaleMode: 0
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}

@@ -515,7 +515,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextSceneName: Fishing Location
-  delay: 9.6
+  delay: 9
 --- !u!4 &365272869
 Transform:
   m_ObjectHideFlags: 0

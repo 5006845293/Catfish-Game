@@ -11,10 +11,12 @@ public class Hook : MonoBehaviour
     public float movementSpeed = 5f;
     public Transform fishHolder;  // Assuming fishHolder is set to fishParent in the inspector
     public int maxFishCount = 5;
-    private bool isHooking = false;
-    private List<GameObject> fishesOnHook = new List<GameObject>();
+	public DepthController DepthScript;
+    public bool isHooking = true;
+    public List<GameObject> fishesOnHook = new List<GameObject>();
     private const float TopPositionY = 12.3f;
     private Vector2 hookOriginalPosition;
+
 
     // Store original positions for fishes and trash when the game starts
     private Dictionary<GameObject, Vector2> originalFishPositions = new Dictionary<GameObject, Vector2>();
@@ -31,7 +33,7 @@ public class Hook : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         rb.constraints = RigidbodyConstraints2D.FreezeRotation;
         rb.interpolation = RigidbodyInterpolation2D.Interpolate;
-
+		isHooking = true;
         // Store the original position of the hook
         hookOriginalPosition = rb.position;
 
@@ -64,23 +66,16 @@ public class Hook : MonoBehaviour
     private void FixedUpdate()
     {
         HandleMovementInput();
-
-        if (isHooking)
-        {
-            LowerHook();
-        }
+		if(DepthScript.GetCurrentDepth()>=500){
+			isHooking = false;
+		}
+		
     }
 
     void HandleMovementInput()
     {
         Vector2 movement = new Vector2(horizontalMovement, 0.0f);
         rb.velocity = new Vector2(movement.x * movementSpeed, rb.velocity.y);
-    }
-
-    void LowerHook()
-    {
-        Vector2 hookMovement = new Vector2(0f, -1f) * movementSpeed * Time.deltaTime;
-        rb.MovePosition(rb.position + hookMovement);
     }
 
     private void OnTriggerEnter2D(Collider2D collider)
@@ -101,18 +96,16 @@ public class Hook : MonoBehaviour
 
     void HandleFishCollision(GameObject fish)
     {
-        if (fishesOnHook.Count < maxFishCount)
+        if (fishesOnHook.Count < maxFishCount && isHooking)
         {
             AddFishToHook(fish);
             // Increment the count of fishes collected.
             fishCount += 1;
             // Update the fish count display.
             SetFishCountText();
-            Debug.Log("Fish collected: " + fish.name);
         }
         else
         {
-            Debug.Log("Reached max fish count!");
             fish.SetActive(true);
         }
     }
@@ -174,17 +167,15 @@ public class Hook : MonoBehaviour
         ActivateAllFishes();
     }
 
-   void ActivateAllFishes()
+    void ActivateAllFishes()
     {
         foreach (GameObject fish in originalFishPositions.Keys)
         {
             if (originalFishPositions.TryGetValue(fish, out Vector2 originalPosition))
             {
-                fish.transform.SetParent(fishHolder);
                 fish.SetActive(true);
                 fish.transform.position = originalPosition;
-                fishCountText.text = "Fish Count: " + fishCount.ToString();
-                Debug.Log("Activated fish: " + fish.name);
+                fish.transform.SetParent(null);
             }
         }
 
@@ -210,9 +201,10 @@ public class Hook : MonoBehaviour
     }
 
     // Function to update the displayed count of fishes collected.
-      void SetFishCountText()
+    void SetFishCountText()
     {
         fishCountText.text = "Fish Count: " + fishCount.ToString();
-        Debug.Log("Fish count updated: " + fishCount);
     }
+	
+
 }
