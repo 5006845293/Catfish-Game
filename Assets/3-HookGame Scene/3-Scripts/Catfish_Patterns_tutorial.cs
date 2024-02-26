@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 
-public class CatfishPatterns : MonoBehaviour
+public class Catfish_Patterns_tutorial : MonoBehaviour
 {
 	public DepthController DepthScript;
 	public Hook hookscript;
@@ -48,7 +48,7 @@ public class CatfishPatterns : MonoBehaviour
 			PlayerPrefs.SetString("Catfish", catfish);
 			Debug.Log(catfish);
 			Debug.Log("transition to next scene");
-			SceneManager.LoadScene(6);
+			SceneManager.LoadScene(4);
 		}
     }
 

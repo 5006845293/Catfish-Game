@@ -9,7 +9,7 @@ public class Hook : MonoBehaviour
     private Rigidbody2D rb;
     private float horizontalMovement;
     public float movementSpeed = 5f;
-    public Transform fishHolder;  // Assuming fishHolder is set to fishParent in the inspector
+    public Transform fishHolder;  
     public int maxFishCount = 5;
 	public DepthController DepthScript;
     public bool isHooking = true;
@@ -22,7 +22,7 @@ public class Hook : MonoBehaviour
     private Dictionary<GameObject, Vector2> originalFishPositions = new Dictionary<GameObject, Vector2>();
     private Vector2 originalTrashPosition;
 
-    // Variable to keep track of collected fishes.
+    // Variable to keep track of collected fishesc.
     private int fishCount = 0;
 
     // UI text component to display count of fishes collected.
@@ -88,9 +88,9 @@ public class Hook : MonoBehaviour
         {
             HandleTrashCollision(collider.gameObject);
         }
-        else if (collider.gameObject.CompareTag("BottomGrass"))
+        else if (collider.gameObject.CompareTag("Barrier"))
         {
-            ResetHookPosition();
+      
         }
     }
 
