@@ -458,7 +458,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f54c96bd3a4d98c49ae435fe509c7fc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DepthScript: {fileID: 0}
+  DepthScript: {fileID: 930872894}
   hookscript: {fileID: 1537091058}
   fishCaught: []
   fishColors: []
@@ -2387,6 +2387,10 @@ PrefabInstance:
       propertyPath: isHooking
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4140978036557965558, guid: 6e2b0d621e6f31b42a3222e8d40d89eb, type: 3}
+      propertyPath: DepthScript
+      value: 
+      objectReference: {fileID: 930872894}
     - target: {fileID: 4140978036557965558, guid: 6e2b0d621e6f31b42a3222e8d40d89eb, type: 3}
       propertyPath: fishCountText
       value: 
