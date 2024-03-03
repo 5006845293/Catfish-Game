@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using System.Collections;
 
 public class TutorialManage : MonoBehaviour
 {
@@ -8,13 +7,9 @@ public class TutorialManage : MonoBehaviour
     public float moveSpeed = 5f;      // Speed of the camera movement
 
     private int currentTargetIndex = 0; // Index of the current target object
-    private bool isMoving = false;       // Flag to check if camera is currently moving
 
     void Start()
     {
-        // Pause the game at the start
-        Time.timeScale = 0f;
-
         // Check if any target objects are assigned
         if (targetObjects == null || targetObjects.Length == 0)
         {
@@ -30,12 +25,8 @@ public class TutorialManage : MonoBehaviour
 
     void Update()
     {
-        // Check if the camera is not moving and the game is paused
-        if (!isMoving && Time.timeScale == 0)
-        {
-            // Move the camera towards the current target object
-            MoveCamera();
-        }
+        // Move the camera towards the current target object
+        MoveCamera();
     }
 
     void MoveCamera()
@@ -43,26 +34,16 @@ public class TutorialManage : MonoBehaviour
         // Calculate the direction towards the current target object
         Vector3 direction = targetObjects[currentTargetIndex].position - transform.position;
 
-        // Calculate the distance to the current target object
-        float distance = direction.magnitude;
-
-        // Normalize the direction vector
-        direction.Normalize();
-
         // Move towards the current target object
-        transform.Translate(direction * moveSpeed * Time.unscaledDeltaTime);
+        transform.Translate(direction.normalized * moveSpeed * Time.deltaTime);
 
         // Check if the camera has reached the current target object
-        if (distance < 0.1f) // Adjust the threshold as needed
+        if (Vector3.Distance(transform.position, targetObjects[currentTargetIndex].position) < 0.1f) // Adjust the threshold as needed
         {
-            // Stop moving if the camera is close enough to the current target
-            isMoving = true;
-
             // Check if there are more targets
             if (currentTargetIndex < targetObjects.Length - 1)
             {
                 currentTargetIndex++; // Move to the next target
-                isMoving = false; // Reset the flag to allow moving towards the next target
             }
             else
             {
@@ -74,6 +55,7 @@ public class TutorialManage : MonoBehaviour
 
     void LoadNextScene()
     {
+        // Load the next scene
         SceneManager.LoadScene(4);
     }
 }
