@@ -985,7 +985,6 @@ GameObject:
   - component: {fileID: 930872892}
   - component: {fileID: 930872893}
   - component: {fileID: 930872894}
-  - component: {fileID: 930872895}
   - component: {fileID: 930872896}
   m_Layer: 0
   m_Name: Main Camera
@@ -1123,29 +1122,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   depthText: {fileID: 1167166673}
   speed: 0
---- !u!114 &930872895
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 930872887}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cce552020483ac5469641ad4d5c04df7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  musicSource: {fileID: 930872896}
-  sfxSource: {fileID: 0}
-  background: {fileID: 8300000, guid: e903bbc9b4edd434abebb8a28223dbfb, type: 3}
-  beginSplash: {fileID: 0}
-  bubbles: {fileID: 0}
-  buttonClick: {fileID: 0}
-  pulloutSplash: {fileID: 0}
-  whoosh1: {fileID: 0}
-  whoosh2: {fileID: 0}
-  whoosh3: {fileID: 0}
-  whoosh4: {fileID: 0}
 --- !u!82 &930872896
 AudioSource:
   m_ObjectHideFlags: 0

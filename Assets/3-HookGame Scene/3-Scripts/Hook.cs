@@ -16,6 +16,7 @@ public class Hook : MonoBehaviour
     public List<GameObject> fishesOnHook = new List<GameObject>();
     private const float TopPositionY = 12.3f;
     private Vector2 hookOriginalPosition;
+    [SerializeField] private AudioClip fishCatch;
 
 
     // Store original positions for fishes and trash when the game starts
@@ -103,6 +104,8 @@ public class Hook : MonoBehaviour
             fishCount += 1;
             // Update the fish count display.
             SetFishCountText();
+            // Audio for fish catch
+            AudioManager.instance.PlaySoundClip(fishCatch, 50);
         }
         else
         {

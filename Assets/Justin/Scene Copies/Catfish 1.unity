@@ -576,6 +576,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   catfish: 
   fishtext: {fileID: 1693940907}
+  catfishWah: {fileID: 8300000, guid: f2eadbb312865b54dbbd2ff31c4217d9, type: 3}
 --- !u!1 &1693940905
 GameObject:
   m_ObjectHideFlags: 0

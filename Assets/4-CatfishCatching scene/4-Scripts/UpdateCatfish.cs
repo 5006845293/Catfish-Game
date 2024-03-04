@@ -32,6 +32,7 @@ public class UpdateCatfish : MonoBehaviour
 
             // Set the sprite to the Sprite Renderer
             spriteRenderer.sprite = sprite;
+            
         }
 		
 		//save the fish to the gallery
