@@ -11,7 +11,7 @@ public class UpdateCatfish : MonoBehaviour
 	public TMP_Text fishtext;
 	private SpriteRenderer spriteRenderer;
 	private Texture2D texture;
-	private bool[] MaskBool;
+	public bool[] MaskBool = new bool[12];
 	
     // Start is called before the first frame update
     void Start()
@@ -39,58 +39,60 @@ public class UpdateCatfish : MonoBehaviour
         {
             case "Zebra Catfish":
                 Debug.Log("Zebra Catfish added to the gallery");
-				ConvertIntToBoolArray(100000000000,ref MaskBool);
+				ConvertIntToBoolArray("100000000000",ref MaskBool);
                 break;
             case "Rainbow Catfish":
                 Debug.Log("Rainbow Catfish added to the gallery");
-				ConvertIntToBoolArray(010000000000,ref MaskBool);
+				ConvertIntToBoolArray("010000000000",ref MaskBool);
                 break;
             case "Fire Catfish":
                 Debug.Log("Fire Catfish added to the gallery");
-				ConvertIntToBoolArray(001000000000,ref MaskBool);
+				ConvertIntToBoolArray("001000000000",ref MaskBool);
                 break;
 			case "Earth Catfish":
                 Debug.Log("Earth Catfish added to the gallery");
-				ConvertIntToBoolArray(000100000000,ref MaskBool);
+				ConvertIntToBoolArray("000100000000",ref MaskBool);
                 break;
             case "Air Catfish":
                 Debug.Log("Air Catfish added to the gallery");
-				ConvertIntToBoolArray(000010000000,ref MaskBool);
+				ConvertIntToBoolArray("000010000000",ref MaskBool);
                 break;
             case "Water Catfish":
                 Debug.Log("Water Catfish added to the gallery");
-				ConvertIntToBoolArray(000001000000,ref MaskBool);
+				ConvertIntToBoolArray("000001000000",ref MaskBool);
                 break;
             case "Spring Catfish":
                 Debug.Log("Spring Catfish added to the gallery");
-				ConvertIntToBoolArray(000000100000,ref MaskBool);
+				ConvertIntToBoolArray("000000100000",ref MaskBool);
                 break;
             case "Winter Catfish":
                 Debug.Log("Winter Catfish added to the gallery");
-				ConvertIntToBoolArray(000000010000,ref MaskBool);
+				ConvertIntToBoolArray("000000010000",ref MaskBool);
                 break;
             case "Fall Catfish":
                 Debug.Log("Fall Catfish added to the gallery");
-				ConvertIntToBoolArray(000000001000,ref MaskBool);
+				ConvertIntToBoolArray("000000001000",ref MaskBool);
                 break;
 			case "Summer Catfish":
                 Debug.Log("Summer Catfish added to the gallery");
-				ConvertIntToBoolArray(000000000100,ref MaskBool);
+				ConvertIntToBoolArray("000000000100",ref MaskBool);
                 break;
             case "Love Catfish":
                 Debug.Log("Love Catfish added to the gallery");
-				ConvertIntToBoolArray(000000000010,ref MaskBool);
+				ConvertIntToBoolArray("000000000010",ref MaskBool);
                 break;
             case "Hate Catfish":
                 Debug.Log("Hate Catfish added to the gallery");
-				ConvertIntToBoolArray(000000000001,ref MaskBool);
+				ConvertIntToBoolArray("000000000001",ref MaskBool);
                 break;
             default:
                 Debug.Log("Basic catfish nothing added to the gallery");
-				ConvertIntToBoolArray(000000000000,ref MaskBool);
+				ConvertIntToBoolArray("000000000000",ref MaskBool);
                 break;
         }
-		
+		Debug.Log("Maskbool: " + string.Join(", ",MaskBool));
+		Debug.Log("final new fish array: " + string.Join(", ", BitwiseOR(LoadBoolArrayFromPlayerPrefs(), MaskBool)));
+
 		SaveBoolArrayToPlayerPrefs(BitwiseOR(LoadBoolArrayFromPlayerPrefs(), MaskBool));
     }
 
@@ -98,7 +100,7 @@ public class UpdateCatfish : MonoBehaviour
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space)){
-            SceneManager.LoadScene("Scene1"); // Change "Scene1" to your actual scene name
+            SceneManager.LoadScene("Gallery");
         }
     }
 
@@ -130,6 +132,7 @@ public class UpdateCatfish : MonoBehaviour
 	
 	public bool[] BitwiseOR(bool[] arrayA, bool[] arrayB)
 	{
+		Debug.Log("bitmask: " + string.Join(", ",arrayB));
 		int maxLength = Mathf.Max(arrayA.Length, arrayB.Length); // Determine the longer array's length
 		
 		bool[] paddedArrayA = new bool[maxLength];
@@ -147,7 +150,7 @@ public class UpdateCatfish : MonoBehaviour
 		bool[] result = new bool[maxLength];
 		for (int i = 0; i < maxLength; i++)
 		{
-			result[i] = paddedArrayA[i] || paddedArrayB[i];
+			result[i] = paddedArrayA[i] || arrayB[i];
 		}
 		return result;
 	}
@@ -177,19 +180,17 @@ public class UpdateCatfish : MonoBehaviour
 		PlayerPrefs.Save();
     }
 	
-	void ConvertIntToBoolArray(long num, ref bool[] boolArray)
+	void ConvertIntToBoolArray(string num, ref bool[] boolArray)
 	{
-		string binary = Convert.ToString(num, 2); // Convert integer to binary string
-
-		// Ensure boolArray has enough length to hold the binary representation
-		if (boolArray.Length < binary.Length)
+		// Ensure boolArray has enough length to hold the binary string
+		if (boolArray.Length < num.Length)
 		{
-			Array.Resize(ref boolArray, binary.Length);
+			Array.Resize(ref boolArray, num.Length);
 		}
 
-		for (int i = 0; i < binary.Length; i++)
+		for (int i = 0; i < num.Length; i++)
 		{
-			boolArray[i] = binary[i] == '1'; // Set each element of the array based on binary representation
+			boolArray[i] = num[i] == '1'; // Set each element of the array based on binary representation
 		}
 	}
 
