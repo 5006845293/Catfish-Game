@@ -17,7 +17,9 @@ public class Tutorial : MonoBehaviour
     int i = 0;
 
     void Start()
-    {
+    {   
+        PlayerPrefs.SetInt("ReturningPlayer", 1);
+        PlayerPrefs.Save();
         EndCheck();
     }
 

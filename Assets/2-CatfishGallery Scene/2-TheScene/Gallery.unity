@@ -1704,6 +1704,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextSceneName: Tutorial_Loader
+  returningPlayerSceneName: Fishing Location
 --- !u!68 &1595886745
 EdgeCollider2D:
   m_ObjectHideFlags: 0

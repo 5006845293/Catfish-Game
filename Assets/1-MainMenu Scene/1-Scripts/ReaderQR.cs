@@ -64,6 +64,8 @@ public class ReaderQR : MonoBehaviour
             result = barcodeReader.Decode(cameraColorData, width, height); // -> performance heavy method
             if (result != null)
             {
+                PlayerPrefs.SetInt("ReturningPlayer", 1);
+                PlayerPrefs.Save();
                 //lastResult = result.Text + " " + result.BarcodeFormat;
                 lastResult = result.Text;
                 if(lastResult == "1")
