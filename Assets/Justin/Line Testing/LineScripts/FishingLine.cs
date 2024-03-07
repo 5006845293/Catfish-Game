@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FishingLine : MonoBehaviour
 {
-    private LineRenderer lineRenderer;
+    public LineRenderer lineRenderer;
     private Transform[] points;
 
     private void Awake()
@@ -18,7 +18,7 @@ public class FishingLine : MonoBehaviour
         this.points = points;
     }
 
-    private void Update()
+    public void Update()
     {
         for(int i = 0; i < points.Length; i++)
         {
