@@ -5,30 +5,50 @@ using UnityEngine;
 public class AudioManager : MonoBehaviour
 {
 
-    [Header("Audio Source")]
-    [SerializeField] AudioSource musicSource;
-    [SerializeField] AudioSource sfxSource;
+    //call AudioManager.instance.[FUNCTION] in desired part
+    public static AudioManager instance; //singleton bc there is only one at a time
+    [SerializeField] private AudioSource soundEffect;
+    [SerializeField] private AudioSource background;
 
-    [Header("Audio Clip")]
-    public AudioClip background;
-    public AudioClip beginSplash;
-    public AudioClip bubbles;
-    public AudioClip buttonClick;
-    public AudioClip pulloutSplash;
-    public AudioClip whoosh1;
-    public AudioClip whoosh2;
-    public AudioClip whoosh3;
-    public AudioClip whoosh4;
-    
-    // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
-        musicSource.PlayOneShot(background);
+        if (instance == null)
+        {
+            instance = this;
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    public void PlaySoundClip(AudioClip audioClip, float volume)
     {
+        //spawn game object
+        AudioSource audioSource = Instantiate(soundEffect);
+        //assign audioclip
+        audioSource.clip = audioClip;
+        //assign volume
+        audioSource.volume = volume;
+        //play sound
+        audioSource.Play();
+        //get length of clip
+        float soundLength = audioSource.clip.length;
+        //destroy after play
+        Destroy(audioSource.gameObject, soundLength);
+    }
+
+    public void PlayRandomSound(AudioClip[] randomClips, float volume)
+    {
+        int rand = Random.Range(0, randomClips.Length);
         
+        //spawn game object
+        AudioSource audioSource = Instantiate(soundEffect);
+        //assign audioclips to randomize
+        audioSource.clip = randomClips[rand];
+        //assign volume
+        audioSource.volume = volume;
+        //play sound
+        audioSource.Play();
+        //get length of clip
+        float soundLength = audioSource.clip.length;
+        //destroy after play
+        Destroy(audioSource.gameObject, soundLength);
     }
 }
