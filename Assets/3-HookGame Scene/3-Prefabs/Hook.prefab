@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5839779447391009150}
   - component: {fileID: 7033611367778952678}
   - component: {fileID: 8186446990485244078}
-  - component: {fileID: 769226740497084675}
+  - component: {fileID: 4140978036557965558}
   m_Layer: 0
   m_Name: hook
   m_TagString: Untagged
@@ -165,7 +165,7 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!114 &769226740497084675
+--- !u!114 &4140978036557965558
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -177,10 +177,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1cf55d1b53294317836c78b2f31b738, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 3
-  fishHolder: {fileID: 0}
+  movementSpeed: 5
+  fishHolder: {fileID: 9054204413580417780, guid: 4e6532e913dbeda4493871c6ef825bb4, type: 3}
   maxFishCount: 5
-  fishCountText: {fileID: 1117825577478988896}
+  DepthScript: {fileID: 0}
+  isHooking: 1
+  fishesOnHook: []
+  fishCountText: {fileID: 0}
+  OnMoveLeft:
+    m_PersistentCalls:
+      m_Calls: []
+  OnMoveRight:
+    m_PersistentCalls:
+      m_Calls: []
+  OnCatchFish:
+    m_PersistentCalls:
+      m_Calls: []
+  OnFishCountReached:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &3618337143532172117
 GameObject:
   m_ObjectHideFlags: 0

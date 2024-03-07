@@ -12,6 +12,12 @@ EditorBuildSettings:
     path: Assets/2-CatfishGallery Scene/2-TheScene/Gallery.unity
     guid: 00558cd5ebc565b4ca5fa5d110b5f69b
   - enabled: 1
+    path: Assets/3-HookGame Scene/3-The Scene/Tania-Tutorial_Scene/Scenes/Tutorial_Loader.unity
+    guid: f4b53c73d4db84afd86bfad8860dbfb6
+  - enabled: 1
+    path: Assets/3-HookGame Scene/3-The Scene/Tania-Tutorial_Scene/Scenes/Tutorial.unity
+    guid: 5f6028d87a93b4d9ab39d8dd4cca739d
+  - enabled: 1
     path: Assets/Tania/The Scene/Loading.unity
     guid: e2a4e1659fd844b699471a58ad59332c
   - enabled: 1
