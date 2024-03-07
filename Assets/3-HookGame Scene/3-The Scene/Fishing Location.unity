@@ -465,6 +465,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &215081921 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1117825577478988896, guid: 6e2b0d621e6f31b42a3222e8d40d89eb, type: 3}
+  m_PrefabInstance: {fileID: 1537091057}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &222037362
 GameObject:
   m_ObjectHideFlags: 0
@@ -495,7 +506,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DepthScript: {fileID: 930872894}
-  hookscript: {fileID: 0}
+  hookscript: {fileID: 619968671}
   fishCaught: []
   fishColors: []
 --- !u!4 &222037364
@@ -1218,6 +1229,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 652650216502363927, guid: 6e2b0d621e6f31b42a3222e8d40d89eb, type: 3}
   m_PrefabInstance: {fileID: 1537091057}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &619968671 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4140978036557965558, guid: 6e2b0d621e6f31b42a3222e8d40d89eb, type: 3}
+  m_PrefabInstance: {fileID: 1537091057}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 619968656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1cf55d1b53294317836c78b2f31b738, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &710862807
 GameObject:
   m_ObjectHideFlags: 0
@@ -2726,6 +2748,18 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4140978036557965558, guid: 6e2b0d621e6f31b42a3222e8d40d89eb, type: 3}
+      propertyPath: fishCatch
+      value: 
+      objectReference: {fileID: 8300000, guid: 70c17bfd28b270f4bbb16faf92f57ce7, type: 3}
+    - target: {fileID: 4140978036557965558, guid: 6e2b0d621e6f31b42a3222e8d40d89eb, type: 3}
+      propertyPath: DepthScript
+      value: 
+      objectReference: {fileID: 930872894}
+    - target: {fileID: 4140978036557965558, guid: 6e2b0d621e6f31b42a3222e8d40d89eb, type: 3}
+      propertyPath: fishCountText
+      value: 
+      objectReference: {fileID: 215081921}
     - target: {fileID: 4626661210787840473, guid: 6e2b0d621e6f31b42a3222e8d40d89eb, type: 3}
       propertyPath: m_Sprite
       value: 
