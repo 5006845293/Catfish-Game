@@ -34,13 +34,13 @@ public class FishSetter : MonoBehaviour
         PlayerPrefs.Save();
     }
 	public void continueGame(){
-		bool[] boolArray = new bool[2];
+		bool[] boolArray = new bool[12];
 		boolArray[0] = toggle1.isOn;
         boolArray[1] = toggle2.isOn;
 		SaveBoolArrayToPlayerPrefs(boolArray);
 	}
 	public void NewGame(){
-		bool[] boolArray = new bool[] { false, false};
+		bool[] boolArray = new bool[] { false, false, false, false, false, false, false, false, false, false, false, false};
 		SaveBoolArrayToPlayerPrefs(boolArray);
 	}
 }

@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class FishSpawner : MonoBehaviour
 {
@@ -10,9 +12,11 @@ public class FishSpawner : MonoBehaviour
     public float spawnInterval = 3.0f;
     public float maxSpawnDistance = 10.0f;
 
+
     private int[] activeSpawnIndices; // Array to store active spawn indices
     private int activeSpawnCount; // Number of active spawn points
-
+    [SerializeField] private AudioClip[] randomFishNoises;
+    
     private void Start()
     {
         // Initialize the array based on the maximum number of spawn points
@@ -50,7 +54,7 @@ public class FishSpawner : MonoBehaviour
             if (activeSpawnCount > 0)
             {
 				
-                int spawnIndex = Random.Range(0, activeSpawnCount);
+                int spawnIndex = UnityEngine.Random.Range(0, activeSpawnCount);
                 int spawnPointIndex = activeSpawnIndices[spawnIndex]; // Get the spawn index from the array
 
                 Transform spawnPoint = spawnPoints[spawnPointIndex]; // Use the spawn index to access the spawn point
@@ -73,18 +77,21 @@ public class FishSpawner : MonoBehaviour
 
                 if (currentDepth <= 200)
                 {
-                    fishScript.Selected_Color = (ColorOptions)Random.Range(0, System.Enum.GetValues(typeof(ColorOptions)).Length / 3);
+                    fishScript.Selected_Color = (ColorOptions)UnityEngine.Random.Range(0, System.Enum.GetValues(typeof(ColorOptions)).Length / 3);
                 }
                 else if (currentDepth <= 400 && currentDepth >= 200)
                 {
-                    fishScript.Selected_Color = (ColorOptions)Random.Range(System.Enum.GetValues(typeof(ColorOptions)).Length / 3, System.Enum.GetValues(typeof(ColorOptions)).Length / 3 * 2);
+                    fishScript.Selected_Color = (ColorOptions)UnityEngine.Random.Range(System.Enum.GetValues(typeof(ColorOptions)).Length / 3, System.Enum.GetValues(typeof(ColorOptions)).Length / 3 * 2);
                 }
-                else if (currentDepth <= 500 && currentDepth >= 400)
+                else if (currentDepth <= 500 && currentDepth >= 300)
                 {
-                    fishScript.Selected_Color = (ColorOptions)Random.Range(System.Enum.GetValues(typeof(ColorOptions)).Length / 3 * 2, System.Enum.GetValues(typeof(ColorOptions)).Length);
+                    fishScript.Selected_Color = (ColorOptions)UnityEngine.Random.Range(System.Enum.GetValues(typeof(ColorOptions)).Length / 3 * 2, System.Enum.GetValues(typeof(ColorOptions)).Length);
                 }
-            
-                
+
+                AudioManager.instance.PlayRandomSound(randomFishNoises, 25);
+                print("Fish Spawned!");
+
+
             }
         }
     }

@@ -9,18 +9,21 @@ public class Hook : MonoBehaviour
     private Rigidbody2D rb;
     private float horizontalMovement;
     public float movementSpeed = 5f;
-    public Transform fishHolder;  // Assuming fishHolder is set to fishParent in the inspector
+    public Transform fishHolder;  
     public int maxFishCount = 5;
-    private bool isHooking = false;
-    private List<GameObject> fishesOnHook = new List<GameObject>();
+	public DepthController DepthScript;
+    public bool isHooking = true;
+    public List<GameObject> fishesOnHook = new List<GameObject>();
     private const float TopPositionY = 12.3f;
     private Vector2 hookOriginalPosition;
+    [SerializeField] private AudioClip fishCatch;
+
 
     // Store original positions for fishes and trash when the game starts
     private Dictionary<GameObject, Vector2> originalFishPositions = new Dictionary<GameObject, Vector2>();
     private Vector2 originalTrashPosition;
 
-    // Variable to keep track of collected fishes.
+    // Variable to keep track of collected fishesc.
     private int fishCount = 0;
 
     // UI text component to display count of fishes collected.
@@ -31,7 +34,7 @@ public class Hook : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         rb.constraints = RigidbodyConstraints2D.FreezeRotation;
         rb.interpolation = RigidbodyInterpolation2D.Interpolate;
-
+		isHooking = true;
         // Store the original position of the hook
         hookOriginalPosition = rb.position;
 
@@ -64,23 +67,16 @@ public class Hook : MonoBehaviour
     private void FixedUpdate()
     {
         HandleMovementInput();
-
-        if (isHooking)
-        {
-            LowerHook();
-        }
+		if(DepthScript.GetCurrentDepth()>=500){
+			isHooking = false;
+		}
+		
     }
 
     void HandleMovementInput()
     {
         Vector2 movement = new Vector2(horizontalMovement, 0.0f);
         rb.velocity = new Vector2(movement.x * movementSpeed, rb.velocity.y);
-    }
-
-    void LowerHook()
-    {
-        Vector2 hookMovement = new Vector2(0f, -1f) * movementSpeed * Time.deltaTime;
-        rb.MovePosition(rb.position + hookMovement);
     }
 
     private void OnTriggerEnter2D(Collider2D collider)
@@ -93,21 +89,23 @@ public class Hook : MonoBehaviour
         {
             HandleTrashCollision(collider.gameObject);
         }
-        else if (collider.gameObject.CompareTag("BottomGrass"))
+        else if (collider.gameObject.CompareTag("Barrier"))
         {
-            ResetHookPosition();
+      
         }
     }
 
     void HandleFishCollision(GameObject fish)
     {
-        if (fishesOnHook.Count < maxFishCount)
+        if (fishesOnHook.Count < maxFishCount && isHooking)
         {
             AddFishToHook(fish);
             // Increment the count of fishes collected.
             fishCount += 1;
             // Update the fish count display.
             SetFishCountText();
+            // Audio for fish catch
+            AudioManager.instance.PlaySoundClip(fishCatch, 50);
         }
         else
         {
@@ -210,4 +208,6 @@ public class Hook : MonoBehaviour
     {
         fishCountText.text = "Fish Count: " + fishCount.ToString();
     }
+	
+
 }

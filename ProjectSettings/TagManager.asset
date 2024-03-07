@@ -10,6 +10,7 @@ TagManager:
   - Trash
   - Grass
   - BottomGrass
+  - DialogueText
   layers:
   - Default
   - TransparentFX
@@ -18,7 +19,7 @@ TagManager:
   - Water
   - UI
   - Grass
-  - 
+  - Fish
   - 
   - 
   - 

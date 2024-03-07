@@ -143,13 +143,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fishPrefab: {fileID: 0}
-  spawnInterval: 3
   spawnPoints:
   - {fileID: 4881351392554007320}
   - {fileID: 919689329236860137}
   - {fileID: 638936130400413408}
   - {fileID: 7915527941525793540}
   - {fileID: 2875660758350934795}
+  player: {fileID: 0}
+  spawnInterval: 3
+  maxSpawnDistance: 10
+  randomFishNoises:
+  - {fileID: 8300000, guid: 571b40c2c49ae3a469ff2a1de965bfb0, type: 3}
+  - {fileID: 8300000, guid: 8911c1e1347d05a4dace280f6eaf624e, type: 3}
+  - {fileID: 8300000, guid: 3f6640e940615e345830ad43b68fe1c3, type: 3}
+  - {fileID: 8300000, guid: fb5780d1f4d472849b9ad9c4450a4d05, type: 3}
+  playerPos: {fileID: 0}
 --- !u!1 &6126042464345471002
 GameObject:
   m_ObjectHideFlags: 0
