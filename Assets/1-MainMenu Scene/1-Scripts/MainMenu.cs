@@ -7,6 +7,8 @@ public class MainMenu : MonoBehaviour
 {
     public void StartGame()
     {
+        PlayerPrefs.SetInt("ReturningPlayer", 0);
+        PlayerPrefs.Save();
         SceneManager.LoadScene(1);
     }
 }
