@@ -16,7 +16,6 @@ public class FishSpawner : MonoBehaviour
     private int[] activeSpawnIndices; // Array to store active spawn indices
     private int activeSpawnCount; // Number of active spawn points
     [SerializeField] private AudioClip[] randomFishNoises;
-    [SerializeField] private Transform playerPos;
     private void Start()
     {
         // Initialize the array based on the maximum number of spawn points

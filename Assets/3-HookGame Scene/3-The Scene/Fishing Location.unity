@@ -1739,6 +1739,26 @@ PrefabInstance:
       propertyPath: spawnPoints.Array.data[11]
       value: 
       objectReference: {fileID: 1102916493}
+    - target: {fileID: 7703119953179043162, guid: f85867281b11d9544ba45f08f3dc5c10, type: 3}
+      propertyPath: randomFishNoises.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7703119953179043162, guid: f85867281b11d9544ba45f08f3dc5c10, type: 3}
+      propertyPath: randomFishNoises.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 571b40c2c49ae3a469ff2a1de965bfb0, type: 3}
+    - target: {fileID: 7703119953179043162, guid: f85867281b11d9544ba45f08f3dc5c10, type: 3}
+      propertyPath: randomFishNoises.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 8911c1e1347d05a4dace280f6eaf624e, type: 3}
+    - target: {fileID: 7703119953179043162, guid: f85867281b11d9544ba45f08f3dc5c10, type: 3}
+      propertyPath: randomFishNoises.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 3f6640e940615e345830ad43b68fe1c3, type: 3}
+    - target: {fileID: 7703119953179043162, guid: f85867281b11d9544ba45f08f3dc5c10, type: 3}
+      propertyPath: randomFishNoises.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: fb5780d1f4d472849b9ad9c4450a4d05, type: 3}
     - target: {fileID: 7915527941525793540, guid: f85867281b11d9544ba45f08f3dc5c10, type: 3}
       propertyPath: m_LocalPosition.x
       value: 15
