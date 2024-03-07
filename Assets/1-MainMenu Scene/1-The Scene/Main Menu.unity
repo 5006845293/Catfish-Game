@@ -2788,7 +2788,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lastResult: http://www.google.com
   logAvailableWebcams: 0
-  selectedWebcamIndex: 0
+  selectedWebcamIndex: 1
 --- !u!1 &1585624090
 GameObject:
   m_ObjectHideFlags: 0
