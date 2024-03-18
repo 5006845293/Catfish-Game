@@ -18,16 +18,11 @@ public class DepthController : MonoBehaviour
 
         currentDepth = transform.position.y * speed;
         
-        if(currentDepth <= 250)
-        {
-            speed = -5.85f;
-        }
+        speed = -6.85f;
         
-        else
-        {
-            speed = -6.85f;
-        }
-        
+		if(currentDepth >500){
+			currentDepth=500;
+		}
 		// Update depth text
 		UpdateDepthText();
 	

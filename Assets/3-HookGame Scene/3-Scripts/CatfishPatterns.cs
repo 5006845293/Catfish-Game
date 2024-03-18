@@ -59,7 +59,11 @@ public class CatfishPatterns : MonoBehaviour
         List<List<string>> zebraPatterns = new List<List<string>>()
         {
             new List<string> {"Black", "White", "Black", "White", "blank"},
-            new List<string> {"White", "Black", "White", "Black", "blank"}
+            new List<string> {"White", "Black", "White", "Black", "blank"},
+			new List<string> {"White", "Black", "White", "blank", "blank"},
+			new List<string> {"Black", "White", "Black", "blank", "blank"},
+			new List<string> {"Black", "White", "Black", "White", "Black"},
+            new List<string> {"White", "Black", "White", "Black", "White"}
         };
 
         List<List<string>> rainbowPatterns = new List<List<string>>()
@@ -70,15 +74,35 @@ public class CatfishPatterns : MonoBehaviour
 		
 		List<List<string>> firePatterns = new List<List<string>>()
         {
+			new List<string> {"Red", "Red", "Red", "Red", "Yellow"},
             new List<string> {"Red", "Yellow", "Red", "Yellow", "Red"},
             new List<string> {"Red", "Red", "Red", "Yellow", "Yellow"},
-			new List<string> {"Yellow", "Yellow", "Yellow", "Red", "Red"},
+			new List<string> {"Red", "Red", "Yellow", "Red", "Yellow"},
+			new List<string> {"Red", "Red", "Yellow", "Yellow", "Yellow"},
+			new List<string> {"Red", "Yellow", "Red", "Yellow", "Yellow"},
+			new List<string> {"Red", "Yellow", "Yellow", "Yellow", "Yellow"},
+			new List<string> {"Red", "Yellow", "Red", "Red", "Yellow"},
+			new List<string> {"Red", "Yellow", "Yellow", "Red", "blank"},
+			new List<string> {"Red", "Red", "Red", "Red", "blank"},
+            new List<string> {"Red", "Yellow", "Red", "Yellow", "blank"},
+            new List<string> {"Red", "Red", "Red", "Yellow", "blank"},
+			new List<string> {"Red", "Red", "Yellow", "Red", "blank"},
+			new List<string> {"Red", "Red", "Yellow", "Yellow", "blank"},
+			new List<string> {"Red", "Yellow", "Red", "Yellow", "blank"},
+			new List<string> {"Red", "Yellow", "Yellow", "Yellow", "blank"},
+			new List<string> {"Red", "Yellow", "Red", "Red", "blank"},
+			new List<string> {"Red", "Yellow", "Yellow", "Red", "blank"}
+			
         };
 		
 		List<List<string>> earthPatterns = new List<List<string>>()
         {
-            new List<string> {"Black", "Green", "Green", "Black", "Black"},
-            new List<string> {"Green", "Green", "Green", "Green", "Green"}
+            new List<string> {"Black", "Black", "Black", "Black", "Black"},
+            new List<string> {"Green", "Green", "Green", "Green", "Green"},
+			new List<string> {"Black", "Black", "Black", "Black", "Green"},
+			new List<string> {"Black", "Black", "Black", "Green", "Green"},
+			new List<string> {"Black", "Black", "Green", "Green", "Green"},
+			new List<string> {"Black", "Green", "Green", "Green", "Green"}
         };
 		
 		List<List<string>> airPatterns = new List<List<string>>()
@@ -97,8 +121,12 @@ public class CatfishPatterns : MonoBehaviour
 		
 		List<List<string>> springPatterns = new List<List<string>>()
         {
-            new List<string> {"Yellow", "Green", "Yellow", "Green", "White"},
+            new List<string> {"Yellow", "Green", "Yellow", "Green", "Yellow"},
+			new List<string> {"Green", "Green", "Green", "Green", "Yellow"},
+			new List<string> {"Green", "Green", "Green", "Yellow", "Yellow"},
+			new List<string> {"Yellow", "Green", "Green", "Green", "Yellow"},
             new List<string> {"Yellow", "Green", "Yellow", "Green", "blank"},
+			new List<string> {"Yellow", "Green", "Yellow", "blank", "blank"},
 			new List<string> {"Yellow", "Green", "Yellow", "Green", "Blue"}
         };
 
@@ -107,34 +135,82 @@ public class CatfishPatterns : MonoBehaviour
             new List<string> {"Blue", "White", "Blue", "White", "Blue"},
             new List<string> {"White", "White", "Blue", "Blue", "Blue"},
 			new List<string> {"White", "White", "White", "Blue", "Blue"},
-			new List<string> {"White", "White", "White", "Blue", "Blue"}
+			new List<string> {"White", "White", "White", "White", "Blue"}
         };
 		
 		List<List<string>> fallPatterns = new List<List<string>>()
         {
-            new List<string> {"Red", "Yellow", "White", "Red", "Yellow"},
-            new List<string> {"White", "White", "Red", "Yellow", "Red"},
-			new List<string> {"White", "Red", "Red", "Yellow", "Red"},
-			new List<string> {"Red", "Red", "Red", "Yellow", "Yellow"}
+            new List<string> {"Red", "Red", "Red", "Red", "Red"},
+			new List<string> {"Red", "Red", "Red", "Yellow", "Red"},
+			new List<string> {"Red", "Red", "Yellow", "Red", "Red"},
+			new List<string> {"Red", "Red", "Yellow", "Yellow", "Red"},
+			new List<string> {"Red", "Yellow", "Red", "Red", "Red"},
+			new List<string> {"Red", "Yellow", "Yellow", "Red", "Red"},
+			new List<string> {"Red", "Yellow", "Yellow", "Yellow", "Red"},
+            new List<string> {"Yellow", "Red", "Red", "Red", "Red"},
+			new List<string> {"Yellow", "Red", "Red", "Red", "Yellow"},
+			new List<string> {"Yellow", "Red", "Red", "Yellow", "Red"},
+			new List<string> {"Yellow", "Red", "Red", "Yellow", "Yellow"},
+			new List<string> {"Yellow", "Red", "Yellow", "Red", "Red"},
+			new List<string> {"Yellow", "Red", "Yellow", "Red", "Yellow"},
+			new List<string> {"Yellow", "Red", "Yellow", "Yellow", "Red"},
+			new List<string> {"Yellow", "Red", "Yellow", "Yellow", "Yellow"},
+			new List<string> {"Yellow", "Yellow", "Red", "Red", "Red"},
+			new List<string> {"Yellow", "Yellow", "Red", "Red", "Yellow"},
+			new List<string> {"Yellow", "Yellow", "Red", "Yellow", "Red"},
+			new List<string> {"Yellow", "Yellow", "Red", "Yellow", "Yellow"},
+			new List<string> {"Yellow", "Yellow", "Yellow", "Red", "Red"},
+			new List<string> {"Yellow", "Yellow", "Yellow", "Red", "Yellow"},
+			new List<string> {"Yellow", "Yellow", "Yellow", "Yellow", "Red"},
+			new List<string> {"Yellow", "Yellow", "Yellow", "Yellow", "blank"},
+			new List<string> {"Red", "Red", "Red", "Red", "blank"},
+			new List<string> {"Red", "Red", "Red", "Yellow", "blank"},
+			new List<string> {"Red", "Red", "Yellow", "Red", "blank"},
+			new List<string> {"Red", "Red", "Yellow", "Yellow", "blank"},
+			new List<string> {"Red", "Yellow", "Red", "Red", "blank"},
+			new List<string> {"Red", "Yellow", "Yellow", "Red", "blank"},
+			new List<string> {"Red", "Yellow", "Yellow", "Yellow", "blank"},
+            new List<string> {"Yellow", "Red", "Red", "Red", "blank"},
+			new List<string> {"Yellow", "Red", "Red", "Red", "blank"},
+			new List<string> {"Yellow", "Red", "Red", "Yellow", "blank"},
+			new List<string> {"Yellow", "Red", "Red", "Yellow", "blank"},
+			new List<string> {"Yellow", "Red", "Yellow", "Red", "blank"},
+			new List<string> {"Yellow", "Red", "Yellow", "Red", "blank"},
+			new List<string> {"Yellow", "Red", "Yellow", "Yellow", "blank"},
+			new List<string> {"Yellow", "Red", "Yellow", "Yellow", "blank"},
+			new List<string> {"Yellow", "Yellow", "Red", "Red", "blank"},
+			new List<string> {"Yellow", "Yellow", "Red", "Red", "blank"},
+			new List<string> {"Yellow", "Yellow", "Red", "Yellow", "blank"},
+			new List<string> {"Yellow", "Yellow", "Red", "Yellow", "blank"},
+			new List<string> {"Yellow", "Yellow", "Yellow", "Red", "blank"},
+			new List<string> {"Yellow", "Yellow", "Yellow", "Red", "blank"},
+			new List<string> {"Yellow", "Yellow", "Yellow", "Yellow", "blank"},
+			new List<string> {"Yellow", "Yellow", "Yellow", "Yellow", "blank"},
+			
         };
 		
 		List<List<string>> summerPatterns = new List<List<string>>()
         {
-            new List<string> {"Green", "Yellow", "Green", "Yellow", "White"},
+            new List<string> {"Green", "Yellow", "Green", "Yellow", "Green"},
             new List<string> {"Green", "Yellow", "Green", "Yellow", "blank"},
+			new List<string> {"Green", "Yellow", "Green", "blank", "blank"},
 			new List<string> {"Green", "Yellow", "Green", "Yellow", "Blue"}
         };
 		
 		List<List<string>> lovePatterns = new List<List<string>>()
         {
-            new List<string> {"Red", "Red", "White", "White", "White"},
-            new List<string> {"Red", "White", "Red", "White", "Red"}
+            new List<string> {"White", "White", "White", "White", "Red"},
+            new List<string> {"White", "White", "White", "Red", "Red"},
+			new List<string> {"White", "White", "Red", "Red", "Red"},
+			new List<string> {"White", "Red", "Red", "Red", "Red"}
         };
 		
 		List<List<string>> hatePatterns = new List<List<string>>()
         {
-            new List<string> {"Red", "Black", "Red", "Black", "Red"},
-            new List<string> {"Black", "Red", "Black", "Red", "Black"}
+            new List<string> {"Black", "Black", "Black", "Black", "Red"},
+            new List<string> {"Black", "Black", "Black", "Red", "Red"},
+			new List<string> {"Black", "Black", "Red", "Red", "Red"},
+			new List<string> {"Black", "Red", "Red", "Red", "Red"}
         };
 		
         // Add patterns to the dictionary.

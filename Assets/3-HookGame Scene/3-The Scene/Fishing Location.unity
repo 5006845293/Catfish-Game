@@ -1499,7 +1499,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   depthText: {fileID: 1167166673}
-  speed: 0
+  speed: 5.8
 --- !u!114 &930872895
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1860,7 +1860,7 @@ PrefabInstance:
       objectReference: {fileID: 7065829227148563979, guid: 4e6532e913dbeda4493871c6ef825bb4, type: 3}
     - target: {fileID: 7703119953179043162, guid: f85867281b11d9544ba45f08f3dc5c10, type: 3}
       propertyPath: spawnInterval
-      value: 1.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7703119953179043162, guid: f85867281b11d9544ba45f08f3dc5c10, type: 3}
       propertyPath: maxSpawnDistance
@@ -3323,7 +3323,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 130, y: 8.399994}
+  m_AnchoredPosition: {x: 130, y: 8.400024}
   m_SizeDelta: {x: -655.2456, y: -316.3113}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1878939246

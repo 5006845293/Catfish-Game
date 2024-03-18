@@ -114,16 +114,18 @@ public class Hook : MonoBehaviour
     }
 
     void HandleTrashCollision(GameObject trash)
-        {
-            Debug.Log("Hit trash, losing all fish!");
-            // Reset fish count to zero
-            fishCount = 0;
-            // Update the fish count display
-            SetFishCountText();
+	{
+		if(isHooking){
+			Debug.Log("Hit trash, losing 1 fish!");
+			// Reset fish count to zero
+			fishCount--;
+			// Update the fish count display
+			SetFishCountText();
 
-            LoseAllFish();
-            Destroy(trash);
-        }
+			LoseFish();
+			Destroy(trash);
+		}
+	}
 
 
     void AddFishToHook(GameObject fish)
@@ -140,16 +142,12 @@ public class Hook : MonoBehaviour
         fish.transform.SetParent(fishHolder);
     }
 
-    void LoseAllFish()
-    {
-        foreach (GameObject fish in fishesOnHook)
-        {
-            fish.SetActive(false);
-            fish.transform.SetParent(null);
-        }
+	void LoseFish()
+	{
+		
+		fishesOnHook.RemoveAt(fishCount);
+	}
 
-        fishesOnHook.Clear();
-    }
 
     void ResetHookPosition()
     {

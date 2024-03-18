@@ -81,11 +81,11 @@ public class FishSpawner : MonoBehaviour
                 }
                 else if (currentDepth <= 400 && currentDepth >= 200)
                 {
-                    fishScript.Selected_Color = (ColorOptions)UnityEngine.Random.Range(System.Enum.GetValues(typeof(ColorOptions)).Length / 3, System.Enum.GetValues(typeof(ColorOptions)).Length / 3 * 2);
+                    fishScript.Selected_Color = (ColorOptions)UnityEngine.Random.Range(System.Enum.GetValues(typeof(ColorOptions)).Length / 3, (System.Enum.GetValues(typeof(ColorOptions)).Length / 3 * 2)+1);
                 }
                 else if (currentDepth <= 500 && currentDepth >= 300)
                 {
-                    fishScript.Selected_Color = (ColorOptions)UnityEngine.Random.Range(System.Enum.GetValues(typeof(ColorOptions)).Length / 3 * 2, System.Enum.GetValues(typeof(ColorOptions)).Length);
+                    fishScript.Selected_Color = (ColorOptions)UnityEngine.Random.Range( (System.Enum.GetValues(typeof(ColorOptions)).Length / 3 * 2)+1, System.Enum.GetValues(typeof(ColorOptions)).Length);
                 }
 
                 AudioManager.instance.PlayRandomSound(randomFishNoises, 25);
