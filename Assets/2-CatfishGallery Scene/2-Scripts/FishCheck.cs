@@ -7,7 +7,7 @@ public class FishCheck : MonoBehaviour
 	public GameObject[] Fish; 
 	
     // Start is called before the first frame update
-    void Start()
+    public void Start()
     {
 		bool[] loadedBoolArray = LoadBoolArrayFromPlayerPrefs();
 		Debug.LogWarning("Bool array " + loadedBoolArray);

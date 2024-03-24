@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class ReaderQR : MonoBehaviour
 {
-
+    //camera stuff
     [SerializeField]
     private string lastResult;
     [SerializeField]
@@ -66,17 +66,21 @@ public class ReaderQR : MonoBehaviour
             {
                 PlayerPrefs.SetInt("ReturningPlayer", 1);
                 PlayerPrefs.Save();
-                //lastResult = result.Text + " " + result.BarcodeFormat;
                 lastResult = result.Text;
-                if(lastResult == "1")
+
+                string boolArrayString = lastResult;
+                bool[] array = new bool[12];
+                for (int i = 0; i < array.Length; i++)
                 {
-                    SceneManager.LoadScene(1);
+                    boolArrayString += array[i] ? "1" : "0";
                 }
-                else if(lastResult == "2")
-                {
-                    SceneManager.LoadScene(1);
-                }
-                print(lastResult);
+
+                // Save the string representation to PlayerPrefs
+                PlayerPrefs.SetString("SavedFish", boolArrayString);
+                PlayerPrefs.Save();
+
+                SceneManager.LoadScene(1);
+
             }
         }
     }

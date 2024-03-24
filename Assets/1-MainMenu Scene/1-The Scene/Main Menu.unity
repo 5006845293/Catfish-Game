@@ -1320,7 +1320,7 @@ GameObject:
   - component: {fileID: 769850368}
   m_Layer: 5
   m_Name: Main Menu
-  m_TagString: Untagged
+  m_TagString: Fish Setter
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
