@@ -6,6 +6,7 @@ public class PopUp : MonoBehaviour
 {
 	public GameObject popUpMenu;
 	public static bool popUpActive;
+	int count = 0;
 	
     // Start is called before the first frame update
     void Start()
@@ -18,12 +19,11 @@ public class PopUp : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Escape)){
+		//This makes sure the pop-up can not be opened over and over
+        if(Input.GetKeyDown(KeyCode.Escape) && count == 0){
 			if(popUpActive){
 				Resume();
-			}
-			else{
-				PopUpOpen();
+				count += 1;
 			}
 		}
     }
@@ -32,11 +32,5 @@ public class PopUp : MonoBehaviour
 		popUpActive = false;
 		popUpMenu.SetActive(false);
 		Time.timeScale = 1f;
-	}
-	
-	void PopUpOpen(){
-		popUpActive = true;
-		popUpMenu.SetActive(true);
-		Time.timeScale = 0f;
 	}
 }
