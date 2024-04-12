@@ -14,6 +14,9 @@ public class FishDialogue : MonoBehaviour
     public bool playerIsClose;
 
     private bool isTyping = false;
+    private bool dialogueCompleted = false;
+
+    private Coroutine typingCoroutine;
 
     void Start()
     {
@@ -22,18 +25,22 @@ public class FishDialogue : MonoBehaviour
 
     void Update()
     {
-        if (playerIsClose && !isTyping)
+        if (playerIsClose && !isTyping && !dialogueCompleted)
         {
             if (!dialoguePanel.activeInHierarchy)
             {
                 dialoguePanel.SetActive(true);
-                StartCoroutine(Typing());
+                typingCoroutine = StartCoroutine(Typing());
             }
             else if (dialogueText.text == dialogue[index])
             {
                 if (index < dialogue.Length - 1)
                 {
                     ContinueButton.SetActive(true);
+                }
+                else
+                {
+                    dialogueCompleted = true;
                 }
             }
         }
@@ -46,11 +53,13 @@ public class FishDialogue : MonoBehaviour
 
     public void RemoveText()
     {
-        dialogueText.text = "";
+        StopCoroutine(typingCoroutine); // Stop the typing coroutine
+        dialogueText.text = ""; // Clear dialogue text
         index = 0;
         dialoguePanel.SetActive(false);
         ContinueButton.SetActive(false);
         isTyping = false;
+        dialogueCompleted = false;
     }
 
     IEnumerator Typing()
@@ -68,7 +77,7 @@ public class FishDialogue : MonoBehaviour
         }
         else
         {
-            RemoveText();
+            dialogueCompleted = true;
         }
 
         isTyping = false;
@@ -82,7 +91,7 @@ public class FishDialogue : MonoBehaviour
         {
             index++;
             dialogueText.text = "";
-            StartCoroutine(Typing());
+            typingCoroutine = StartCoroutine(Typing());
         }
         else
         {

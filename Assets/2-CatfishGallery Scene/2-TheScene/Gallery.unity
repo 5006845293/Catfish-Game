@@ -191,7 +191,7 @@ MonoBehaviour:
   - Hey, I am Winter Catfish!
   - 
   ContinueButton: {fileID: 2237908467188846871}
-  wordSpeed: 0.06
+  wordSpeed: 0.07
   playerIsClose: 0
 --- !u!212 &67023425
 SpriteRenderer:
@@ -313,7 +313,7 @@ MonoBehaviour:
   - Hey, I am Summer Catfish!
   - 
   ContinueButton: {fileID: 2237908467188846871}
-  wordSpeed: 0.06
+  wordSpeed: 0.07
   playerIsClose: 0
 --- !u!212 &221681443
 SpriteRenderer:
@@ -435,7 +435,7 @@ MonoBehaviour:
   - Hey, I am Rainbow Catfish!
   - 
   ContinueButton: {fileID: 2237908467188846871}
-  wordSpeed: 0.06
+  wordSpeed: 0.07
   playerIsClose: 0
 --- !u!212 &482288815
 SpriteRenderer:
@@ -557,7 +557,7 @@ MonoBehaviour:
   - Hey, I am Fall Catfish!
   - 
   ContinueButton: {fileID: 2237908467188846871}
-  wordSpeed: 0.06
+  wordSpeed: 0.07
   playerIsClose: 0
 --- !u!212 &663367318
 SpriteRenderer:
@@ -679,7 +679,7 @@ MonoBehaviour:
   - Hey, I am Fire Catfish!
   - 
   ContinueButton: {fileID: 2237908467188846871}
-  wordSpeed: 0.06
+  wordSpeed: 0.07
   playerIsClose: 0
 --- !u!212 &672740297
 SpriteRenderer:
@@ -844,7 +844,7 @@ MonoBehaviour:
   - Hey, I am Love Catfish!
   - 
   ContinueButton: {fileID: 2237908467188846871}
-  wordSpeed: 0.06
+  wordSpeed: 0.07
   playerIsClose: 0
 --- !u!212 &771596290
 SpriteRenderer:
@@ -1002,7 +1002,7 @@ MonoBehaviour:
   - Hey, I am Zebra Catfish!
   - 
   ContinueButton: {fileID: 2237908467188846871}
-  wordSpeed: 0.06
+  wordSpeed: 0.07
   playerIsClose: 0
 --- !u!70 &1259529342
 CapsuleCollider2D:
@@ -1124,7 +1124,7 @@ MonoBehaviour:
   - Hey, I am Earth Catfish!
   - 
   ContinueButton: {fileID: 2237908467188846871}
-  wordSpeed: 0.06
+  wordSpeed: 0.07
   playerIsClose: 0
 --- !u!70 &1348685084
 CapsuleCollider2D:
@@ -1374,7 +1374,7 @@ MonoBehaviour:
   - Hey, I am Air Catfish!
   - 
   ContinueButton: {fileID: 2237908467188846871}
-  wordSpeed: 0.06
+  wordSpeed: 0.07
   playerIsClose: 0
 --- !u!212 &1533327153
 SpriteRenderer:
@@ -1496,7 +1496,7 @@ MonoBehaviour:
   - Hey, I am Hate Catfish!
   - 
   ContinueButton: {fileID: 2237908467188846871}
-  wordSpeed: 0.06
+  wordSpeed: 0.07
   playerIsClose: 0
 --- !u!212 &1534450857
 SpriteRenderer:
@@ -1618,7 +1618,7 @@ MonoBehaviour:
   - Hey, I am Water Catfish!
   - 
   ContinueButton: {fileID: 2237908467188846871}
-  wordSpeed: 0.06
+  wordSpeed: 0.07
   playerIsClose: 0
 --- !u!212 &1576815268
 SpriteRenderer:
@@ -1831,7 +1831,7 @@ MonoBehaviour:
   - Hey, I am Spring Catfish!
   - 
   ContinueButton: {fileID: 2237908467188846871}
-  wordSpeed: 0.06
+  wordSpeed: 0.07
   playerIsClose: 0
 --- !u!212 &1656891786
 SpriteRenderer:
