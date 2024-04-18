@@ -8,7 +8,6 @@ public class WaterBullet : MonoBehaviour
 {
     private GameObject hook;
     private Rigidbody2D rb;
-    public HealthComponent health;
 
 
     public float force = 2f;
@@ -39,21 +38,26 @@ public class WaterBullet : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(other.gameObject.CompareTag("Player"))
+        if(collision.gameObject.CompareTag("Player"))
         {
             Destroy(gameObject);
         }
+
+        if(collision.tag == "Player")
+        {
+            var health = collision.GetComponent<HealthComponent>();
+            if(health != null)
+            {
+                health.TakeDamage(20);
+            }
+
+        }
+
     }
 
-    private void OnCollisionEnter2D(Collision2D other)
-    {
-        if (other.gameObject.CompareTag("Player"))
-        {
-            health.TakeDamage(20);
-        }
-    }
+    
 
 
 

@@ -11,6 +11,7 @@ TagManager:
   - Grass
   - BottomGrass
   - DialogueText
+  - Boss
   layers:
   - Default
   - TransparentFX

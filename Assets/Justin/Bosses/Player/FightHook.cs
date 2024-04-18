@@ -48,13 +48,16 @@ public class FightHook : MonoBehaviour
         GameObject newProjectile = Instantiate(projPrefab, shootPoint.position, shootPoint.rotation);
     }
 
-    public void PlayerDeath()
+
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        Destroy(gameObject);
+        if(collision.tag == "Boss")
+        {
+            Debug.Log("Player hit boss, player should stop");
+
+        }
+
     }
-
-    
-
 
 
 }
