@@ -115,7 +115,7 @@ public class Hook : MonoBehaviour
 
     void HandleTrashCollision(GameObject trash)
 	{
-		if(isHooking){
+		if(isHooking&& fishCount>=1){
 			Debug.Log("Hit trash, losing 1 fish!");
 			// Reset fish count to zero
 			fishCount--;

@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
 	
-	    void Update()
+	void Update()
     {
         // Check if the space key is pressed
         if (Input.GetKeyDown(KeyCode.Escape))
