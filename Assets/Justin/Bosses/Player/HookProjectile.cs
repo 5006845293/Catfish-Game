@@ -27,7 +27,7 @@ public class HookProjectile : MonoBehaviour
             var health = collision.GetComponent<HealthComponent>();
             if (health != null)
             {
-                health.TakeDamage(25);
+                health.TakeDamage(damage);
             }
         }
     }
