@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/1-MainMenu Scene/1-The Scene/Main Menu.unity
     guid: 50c2294d4c93fe948a53ea860028e184
   - enabled: 1
+    path: Assets/0-Narrative/Narrative_Scene.unity
+    guid: 10424dea8a6bf0b45ab76d36af7d286e
+  - enabled: 1
     path: Assets/2-CatfishGallery Scene/2-TheScene/Gallery.unity
     guid: 00558cd5ebc565b4ca5fa5d110b5f69b
   - enabled: 1

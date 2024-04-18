@@ -23,7 +23,7 @@ public class CameraMovement : MonoBehaviour
 
         if (movingDown)
         {
-            Vector3 targetPositionDown = new Vector3(0.0f,-75.0f,0.0f);
+            Vector3 targetPositionDown = new Vector3(-1.75f,-245.0f,0.0f);
             float step = moveSpeedDown * Time.deltaTime;
             transform.position = Vector3.MoveTowards(transform.position, targetPositionDown, step);
             if (currentDepth >= 500f)

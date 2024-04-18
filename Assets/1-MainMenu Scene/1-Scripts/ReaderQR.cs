@@ -1,126 +1,116 @@
 using UnityEngine;
 using ZXing;
+using ZXing.QrCode;
 using UnityEngine.SceneManagement;
-
 
 public class ReaderQR : MonoBehaviour
 {
-
-    [SerializeField]
-    private string lastResult;
-    [SerializeField]
-    private bool logAvailableWebcams;
-    [SerializeField]
-    private int selectedWebcamIndex;
-
     private WebCamTexture camTexture;
-    private Color32[] cameraColorData;
-    private int width, height;
     private Rect screenRect;
 
-    // create a reader with a custom luminance source
-    private IBarcodeReader barcodeReader = new BarcodeReader
+    void Start()
     {
-        AutoRotate = false,
-        Options = new ZXing.Common.DecodingOptions
+        InitializeWebcam();
+    }
+
+    void InitializeWebcam()
+    {
+        if (WebCamTexture.devices.Length > 0)
         {
-            TryHarder = false
-        }
-    };
+            // Release any existing webcam texture before initializing a new one
+            ReleaseWebcam();
 
-    private Result result;
-
-    private void Start()
-    {
-        LogWebcamDevices();
-        SetupWebcamTexture();
-        PlayWebcamTexture();
-
-        lastResult = "http://www.google.com";
-
-        cameraColorData = new Color32[width * height];
-        screenRect = new Rect(0, 0, Screen.width, Screen.height);
-    }
-
-    private void OnEnable()
-    {
-        PlayWebcamTexture();
-    }
-
-    private void OnDisable()
-    {
-        if (camTexture != null)
-        {
-            camTexture.Pause();
-        }
-    }
-
-    private void Update()
-    {
-        if (camTexture.isPlaying)
-        {
-            // decoding from camera image
-            camTexture.GetPixels32(cameraColorData); // -> performance heavy method 
-            result = barcodeReader.Decode(cameraColorData, width, height); // -> performance heavy method
-            if (result != null)
-            {
-                PlayerPrefs.SetInt("ReturningPlayer", 1);
-                PlayerPrefs.Save();
-                //lastResult = result.Text + " " + result.BarcodeFormat;
-                lastResult = result.Text;
-                if(lastResult == "1")
-                {
-                    SceneManager.LoadScene(1);
-                }
-                else if(lastResult == "2")
-                {
-                    SceneManager.LoadScene(1);
-                }
-                print(lastResult);
-            }
-        }
-    }
-
-    private void OnGUI()
-    {
-        // show camera image on screen
-        GUI.DrawTexture(screenRect, camTexture, ScaleMode.ScaleToFit);
-        // show decoded text on screen
-        GUI.TextField(new Rect(10, 10, 256, 25), lastResult);
-    }
-
-    private void OnDestroy()
-    {
-        camTexture.Stop();
-    }
-
-    private void LogWebcamDevices()
-    {
-        if (logAvailableWebcams)
-        {
-            WebCamDevice[] devices = WebCamTexture.devices;
-            for (int i = 0; i < devices.Length; i++)
-            {
-                Debug.Log(devices[i].name);
-            }
-        }
-    }
-
-    private void SetupWebcamTexture()
-    {
-        string selectedWebcamDeviceName = WebCamTexture.devices[selectedWebcamIndex].name;
-        camTexture = new WebCamTexture(selectedWebcamDeviceName);
-        camTexture.requestedHeight = Screen.height;
-        camTexture.requestedWidth = Screen.width;
-    }
-
-    private void PlayWebcamTexture()
-    {
-        if (camTexture != null)
-        {
+            camTexture = new WebCamTexture();
+            camTexture.requestedHeight = Screen.height;
+            camTexture.requestedWidth = Screen.width;
             camTexture.Play();
-            width = camTexture.width;
-            height = camTexture.height;
+
+            screenRect = new Rect(0, 0, Screen.width, Screen.height);
+
+            Debug.Log("Webcam initialized successfully.");
         }
+        else
+        {
+            Debug.LogError("No webcam available or permission denied.");
+        }
+    }
+
+    void ReleaseWebcam()
+    {
+        if (camTexture != null)
+        {
+            camTexture.Stop();
+            Destroy(camTexture);
+            camTexture = null;
+
+            Debug.Log("Webcam released.");
+        }
+    }
+
+    void Update()
+    {
+        if (camTexture != null && camTexture.isPlaying)
+        {
+            Graphics.DrawTexture(screenRect, camTexture);
+            ScanQRCode();
+        }
+        else
+        {
+            Debug.LogWarning("Webcam not running or texture not playing.");
+        }
+    }
+
+    void ScanQRCode()
+	{
+		try
+		{
+			Color32[] pixels = camTexture.GetPixels32();
+			BarcodeReader reader = new BarcodeReader();
+			Result result = reader.Decode(pixels, camTexture.width, camTexture.height);
+
+			if (result != null)
+			{
+				// Check if the scanned QR code contains only 1s and 0s
+				if (IsBinaryString(result.Text)&& result.Text.Length>=12)
+				{
+					Debug.Log("Valid QR Code Scanned: " + result.Text);
+					// Trigger your desired action based on the scanned QR code data
+					PlayerPrefs.SetString("SavedFish", result.Text);
+					PlayerPrefs.Save();
+					SceneManager.LoadScene("Gallery");
+				}
+				else
+				{
+					Debug.LogWarning("Invalid QR Code. Only binary strings (1s and 0s) at length 12+ are accepted.");
+				}
+			}
+		}
+		catch (System.Exception ex)
+		{
+			Debug.LogError("Error scanning QR code: " + ex.Message);
+		}
+	}
+
+	bool IsBinaryString(string input)
+	{
+		foreach (char c in input)
+		{
+			if (c != '0' && c != '1')
+			{
+				return false;
+			}
+		}
+		return true;
+	}
+
+    void OnGUI()
+    {
+        // Optionally, add GUI elements or feedback for scanning
+    }
+
+    void OnDestroy()
+    {
+        // Make sure to release the webcam texture when the script or scene is destroyed
+        ReleaseWebcam();
     }
 }
