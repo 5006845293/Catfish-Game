@@ -56,6 +56,6 @@ public class TutorialManage : MonoBehaviour
     void LoadNextScene()
     {
         // Load the next scene
-        SceneManager.LoadScene(4);
+        SceneManager.LoadScene("Fishing Location");
     }
 }
