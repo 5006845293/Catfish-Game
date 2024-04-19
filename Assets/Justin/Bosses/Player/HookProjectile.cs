@@ -7,12 +7,16 @@ public class HookProjectile : MonoBehaviour
     public float projectileSpeed = 10f;
     public int damage;
     public Vector2 direction;
+    private float timer;
 
     // Start is called before the first frame update
     void Start()
     {
         Rigidbody2D rb = GetComponent<Rigidbody2D>();
         rb.velocity = direction.normalized * projectileSpeed;
+
+        timer = Time.deltaTime;
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -35,6 +39,7 @@ public class HookProjectile : MonoBehaviour
         // Update is called once per frame
         void Update()
         {
+            
 
         }
      
