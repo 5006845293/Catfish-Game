@@ -13,3 +13,15 @@ public class LineTesting : MonoBehaviour
     }
    
 }
+
+
+//basic catfish i can do better
+//minimap more visible
+//tell them how low hook goes
+//differebt types of baitfish
+//positive feedback/stats for catfish catch
+//endgame lore
+//animations + more features
+//catfish catch minigame?
+//add challenging things
+//power ups depending on catfish

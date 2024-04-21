@@ -11,6 +11,7 @@ TagManager:
   - Grass
   - BottomGrass
   - DialogueText
+  - Boss
   layers:
   - Default
   - TransparentFX
@@ -20,7 +21,7 @@ TagManager:
   - UI
   - Grass
   - Fish
-  - 
+  - Player
   - 
   - 
   - 
