@@ -1354,7 +1354,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeedUp: 10
-  moveSpeedDown: 5
+  moveSpeedDown: 3
   pauseDuration: 2
 --- !u!114 &930872893
 MonoBehaviour:
