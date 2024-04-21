@@ -14,7 +14,8 @@ public class HealthComponent : MonoBehaviour
     public Image healthBar;
     //public Image bossHealthBar;
 
-   // public bool isBoss;
+    [SerializeField] private bool isBoss;
+    [SerializeField] private AudioClip damageSound;
 
     // Start is called before the first frame update
     void Start()
@@ -27,8 +28,12 @@ public class HealthComponent : MonoBehaviour
     
     public void TakeDamage(int amount)
     {
-            currentHealth -= amount;
-            healthBar.fillAmount = currentHealth / 100f;
+        currentHealth -= amount;
+        healthBar.fillAmount = currentHealth / 100f;
+            
+        AudioManager.instance.PlaySoundClip(damageSound, 50);
+        
+
 
     }
     

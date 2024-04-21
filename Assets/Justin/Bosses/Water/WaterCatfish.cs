@@ -17,6 +17,7 @@ public class WaterCatfish : MonoBehaviour
 
     private Vector3 dir = Vector3.left;
     private float timer;
+    [SerializeField] private AudioClip waterProjSFX;
     void Start()
     {
         
@@ -43,6 +44,7 @@ public class WaterCatfish : MonoBehaviour
         {
             timer = 0;
             shoot();
+            
         }
         
 
@@ -51,5 +53,7 @@ public class WaterCatfish : MonoBehaviour
     void shoot()
     {
         Instantiate(waterProj, projPos.position, Quaternion.identity);
+        AudioManager.instance.PlaySoundClip(waterProjSFX, 30);
+
     }
 }

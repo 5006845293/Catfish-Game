@@ -12,6 +12,7 @@ public class FightHook : MonoBehaviour
 
     public float shootingCooldown = 0.5f;
     private float shootTimer = 0f;
+    [SerializeField] private AudioClip playerShoot;
 
     
 
@@ -46,6 +47,7 @@ public class FightHook : MonoBehaviour
     void ShootProjectile()
     {
         GameObject newProjectile = Instantiate(projPrefab, shootPoint.position, shootPoint.rotation);
+        AudioManager.instance.PlaySoundClip(playerShoot, 30);
     }
 
 
