@@ -6,7 +6,6 @@ public class AudioManager : MonoBehaviour
 {
 
     //call AudioManager.instance.[FUNCTION] in desired part
-    //add AudioManager script to main camera
     public static AudioManager instance; //singleton bc there is only one at a time
     [SerializeField] private AudioSource soundEffect;
     [SerializeField] private AudioSource background;
