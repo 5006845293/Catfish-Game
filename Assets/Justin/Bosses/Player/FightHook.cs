@@ -35,7 +35,7 @@ public class FightHook : MonoBehaviour
 
         transform.Translate(direction * speed * Time.deltaTime);
 
-        if(Input.GetButtonDown("Fire1") && Time.time >= shootTimer)
+        if(Input.GetKeyDown(KeyCode.Escape) && Time.time >= shootTimer)
         {
             ShootProjectile();
 

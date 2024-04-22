@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class HealthComponent : MonoBehaviour
 {
@@ -43,6 +44,12 @@ public class HealthComponent : MonoBehaviour
         if (currentHealth <= 0)
         {
             Destroy(gameObject);
+			if(isBoss){
+				SceneManager.LoadScene("Catfish");
+			}
+			else{
+				SceneManager.LoadScene("Gallery");
+			}
         }
     }
 

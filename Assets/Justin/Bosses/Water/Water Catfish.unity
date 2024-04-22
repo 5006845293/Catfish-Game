@@ -220,8 +220,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1138b295c136f574caf2719965ba5706, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bubble: {fileID: 59749474}
-  speed: 0.6
 --- !u!1 &390883418
 GameObject:
   m_ObjectHideFlags: 0
@@ -331,8 +329,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1138b295c136f574caf2719965ba5706, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bubble: {fileID: 524101282}
-  speed: 4
 --- !u!212 &524101284
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -561,8 +557,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 632313363}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.02, y: -0.84, z: 0}
-  m_LocalScale: {x: 0.7441979, y: 0.675653, z: 1}
+  m_LocalPosition: {x: -0.02, y: 0.04, z: 0}
+  m_LocalScale: {x: 0.27422577, y: 0.4692089, z: 0.5669}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -598,8 +594,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1138b295c136f574caf2719965ba5706, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bubble: {fileID: 667224368}
-  speed: 0.3
 --- !u!212 &667224370
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -697,8 +691,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1138b295c136f574caf2719965ba5706, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bubble: {fileID: 786062149}
-  speed: 0.5
 --- !u!212 &786062151
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -897,8 +889,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1138b295c136f574caf2719965ba5706, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bubble: {fileID: 884812025}
-  speed: 0.12
 --- !u!212 &884812027
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -996,8 +986,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1138b295c136f574caf2719965ba5706, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bubble: {fileID: 1076605111}
-  speed: 0.4
 --- !u!212 &1076605113
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1095,8 +1083,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1138b295c136f574caf2719965ba5706, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bubble: {fileID: 1202392942}
-  speed: 0.2
 --- !u!212 &1202392944
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1194,8 +1180,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1138b295c136f574caf2719965ba5706, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bubble: {fileID: 1246283922}
-  speed: 0.12
 --- !u!212 &1246283924
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1421,8 +1405,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1138b295c136f574caf2719965ba5706, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bubble: {fileID: 1589188162}
-  speed: 0.3
 --- !u!212 &1589188164
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1520,8 +1502,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1138b295c136f574caf2719965ba5706, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bubble: {fileID: 1614278599}
-  speed: 0.3
 --- !u!212 &1614278601
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1619,8 +1599,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1138b295c136f574caf2719965ba5706, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bubble: {fileID: 1673614963}
-  speed: 1
 --- !u!212 &1673614965
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1718,8 +1696,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1138b295c136f574caf2719965ba5706, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bubble: {fileID: 1776888200}
-  speed: 1
 --- !u!212 &1776888202
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1917,7 +1893,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: e903bbc9b4edd434abebb8a28223dbfb, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -2047,8 +2023,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1138b295c136f574caf2719965ba5706, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bubble: {fileID: 1849902133}
-  speed: 3
 --- !u!212 &1849902135
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2146,8 +2120,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1138b295c136f574caf2719965ba5706, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bubble: {fileID: 1854183420}
-  speed: 0.2
 --- !u!212 &1854183422
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2245,8 +2217,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1138b295c136f574caf2719965ba5706, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bubble: {fileID: 1900750141}
-  speed: 0.12
 --- !u!212 &1900750143
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2344,8 +2314,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1138b295c136f574caf2719965ba5706, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bubble: {fileID: 2014942651}
-  speed: 0.12
 --- !u!212 &2014942653
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2443,8 +2411,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1138b295c136f574caf2719965ba5706, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bubble: {fileID: 2118663853}
-  speed: 0.12
 --- !u!212 &2118663855
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2621,8 +2587,20 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3737887027157654761, guid: ee95a7562f4ca4dc190e8f124a453068, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.31717524
+      objectReference: {fileID: 0}
+    - target: {fileID: 3737887027157654761, guid: ee95a7562f4ca4dc190e8f124a453068, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.30520216
+      objectReference: {fileID: 0}
+    - target: {fileID: 3737887027157654761, guid: ee95a7562f4ca4dc190e8f124a453068, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.74367
+      objectReference: {fileID: 0}
+    - target: {fileID: 3737887027157654761, guid: ee95a7562f4ca4dc190e8f124a453068, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.85
+      value: 0.71
       objectReference: {fileID: 0}
     - target: {fileID: 3737887027157654761, guid: ee95a7562f4ca4dc190e8f124a453068, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2663,7 +2641,7 @@ PrefabInstance:
     - target: {fileID: 3737887027157654762, guid: ee95a7562f4ca4dc190e8f124a453068, type: 3}
       propertyPath: waterProjSFX
       value: 
-      objectReference: {fileID: 8300000, guid: e0d8b1ba3594b4640888556cf88bb9b2, type: 3}
+      objectReference: {fileID: 8300000, guid: 8911c1e1347d05a4dace280f6eaf624e, type: 3}
     - target: {fileID: 3737887027157654767, guid: ee95a7562f4ca4dc190e8f124a453068, type: 3}
       propertyPath: m_Name
       value: Catfish_Water
@@ -2683,7 +2661,7 @@ PrefabInstance:
     - target: {fileID: 3737887027157654772, guid: ee95a7562f4ca4dc190e8f124a453068, type: 3}
       propertyPath: damageSound
       value: 
-      objectReference: {fileID: 8300000, guid: 94734d44766e23540988da911e1fb288, type: 3}
+      objectReference: {fileID: 8300000, guid: d21a3e9fb41df9049816c6322641df83, type: 3}
     - target: {fileID: 3737887027157654772, guid: ee95a7562f4ca4dc190e8f124a453068, type: 3}
       propertyPath: bossHealthBar
       value: 
@@ -2836,7 +2814,7 @@ PrefabInstance:
     - target: {fileID: 7311519932289649802, guid: 15e9cd28823ee4bfba784f25e9d9227d, type: 3}
       propertyPath: playerShoot
       value: 
-      objectReference: {fileID: 8300000, guid: d3439ef03b86a6b4ba20e0b81a9706e0, type: 3}
+      objectReference: {fileID: 8300000, guid: 3f6640e940615e345830ad43b68fe1c3, type: 3}
     - target: {fileID: 7311519932289649803, guid: 15e9cd28823ee4bfba784f25e9d9227d, type: 3}
       propertyPath: m_Name
       value: Fight Hook
@@ -2848,7 +2826,7 @@ PrefabInstance:
     - target: {fileID: 7311519932289649809, guid: 15e9cd28823ee4bfba784f25e9d9227d, type: 3}
       propertyPath: damageSound
       value: 
-      objectReference: {fileID: 8300000, guid: 04310ce935fabf3419bee9f2a4e9e19f, type: 3}
+      objectReference: {fileID: 8300000, guid: d21a3e9fb41df9049816c6322641df83, type: 3}
     - target: {fileID: 7311519932289649809, guid: 15e9cd28823ee4bfba784f25e9d9227d, type: 3}
       propertyPath: playerDmgSound
       value: 
@@ -2859,15 +2837,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7311519932289649812, guid: 15e9cd28823ee4bfba784f25e9d9227d, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.1604171
+      value: 0.096611194
       objectReference: {fileID: 0}
     - target: {fileID: 7311519932289649812, guid: 15e9cd28823ee4bfba784f25e9d9227d, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.1418469
+      value: 0.08542729
+      objectReference: {fileID: 0}
+    - target: {fileID: 7311519932289649812, guid: 15e9cd28823ee4bfba784f25e9d9227d, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.60225
       objectReference: {fileID: 0}
     - target: {fileID: 7311519932289649812, guid: 15e9cd28823ee4bfba784f25e9d9227d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.8528
+      value: -0.31
       objectReference: {fileID: 0}
     - target: {fileID: 7311519932289649812, guid: 15e9cd28823ee4bfba784f25e9d9227d, type: 3}
       propertyPath: m_LocalPosition.y

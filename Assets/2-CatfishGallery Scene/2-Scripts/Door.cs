@@ -26,15 +26,16 @@ public class Door : MonoBehaviour
 
 	    void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            PlayerClicksPlay();
-        }
-		else if(Input.GetKeyDown(KeyCode.Space))
-		{
-			PlayerClicksQuit();
+		if(DoorMenu.activeSelf==true){
+			if (Input.GetKeyDown(KeyCode.Escape))
+			{
+				PlayerClicksPlay();
+			}
+			else if(Input.GetKeyDown(KeyCode.Space))
+			{
+				PlayerClicksQuit();
+			}
 		}
-
     }
 	
     // This function is called when another Collider2D enters the trigger
@@ -48,7 +49,7 @@ public class Door : MonoBehaviour
             else
             {
                 DoorMenu.SetActive(true);
-                Time.timeScale = 0f;
+                
             }
         }
     }
