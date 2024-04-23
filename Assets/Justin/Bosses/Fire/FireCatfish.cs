@@ -12,7 +12,7 @@ public class FireCatfish : MonoBehaviour
     public Transform flamePoint;
 
     private float timer;
-    [SerializeField] private float rayDist = 4f;
+    [SerializeField] private float rayDist = 10f;
     
     // Start is called before the first frame update
     void Start()
@@ -34,6 +34,8 @@ public class FireCatfish : MonoBehaviour
         ;
         transform.RotateAround(point, axis, 0.3f);
         transform.position = new Vector3(interpolateVal, 0, interpolateVal);
+
+        Flamethrower();
         
     }
 
@@ -47,6 +49,7 @@ public class FireCatfish : MonoBehaviour
             {
                 Debug.DrawRay(transform.position, Vector2.left, Color.red, 0);
                 Debug.Log("Player Hit!");
+                hc = GetComponent<HealthComponent>();
             }
         }
         
