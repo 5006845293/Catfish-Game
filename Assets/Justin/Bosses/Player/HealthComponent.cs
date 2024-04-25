@@ -31,7 +31,7 @@ public class HealthComponent : MonoBehaviour
         currentHealth -= amount;
         healthBar.fillAmount = currentHealth / 100f;
             
-        AudioManager.instance.PlaySoundClip(damageSound, 50);
+        AudioManager.instance.PlaySoundClip(damageSound, 20);
         
 
 

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3737887027157654763}
   - component: {fileID: 3737887027157654772}
   m_Layer: 0
-  m_Name: Catfish_Water
+  m_Name: Water Catfish
   m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

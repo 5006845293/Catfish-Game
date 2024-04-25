@@ -49,7 +49,7 @@ public class FireCatfish : MonoBehaviour
             {
                 Debug.DrawRay(transform.position, Vector2.left, Color.red, 0);
                 Debug.Log("Player Hit!");
-                hc = GetComponent<HealthComponent>();
+                
             }
         }
         
