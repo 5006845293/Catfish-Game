@@ -48,7 +48,7 @@ public class CatfishPatterns : MonoBehaviour
 			PlayerPrefs.SetString("Catfish", catfish);
 			Debug.Log(catfish);
 			Debug.Log("transition to next scene");
-			if(catfish=="basic catfish"){
+			if(catfish=="basic Catfish"){
 				SceneManager.LoadScene("Catfish");
 			}
 			else{

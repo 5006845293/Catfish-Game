@@ -5,7 +5,8 @@ public class CameraMovement : MonoBehaviour
     public float moveSpeedUp = 2.0f;   // Speed for going up
     public float moveSpeedDown = 1.0f; // Speed for going down
     public float pauseDuration = 2.0f; // Duration to pause at the bottom position
-
+	public Transform endPosition;
+	
     private Vector3 startPosition;
     private float timer = 0.0f;
     private bool movingDown = true;
@@ -23,10 +24,10 @@ public class CameraMovement : MonoBehaviour
 
         if (movingDown)
         {
-            Vector3 targetPositionDown = new Vector3(-1.7f,-58.5f,0.0f);
+            Vector3 targetPositionDown = new Vector3(-1.7f,endPosition.position.y,0.0f);
             float step = moveSpeedDown * Time.deltaTime;
             transform.position = Vector3.MoveTowards(transform.position, targetPositionDown, step);
-			Debug.Log(currentDepth);
+			
             if (currentDepth >= 500f)
             {
                 movingDown = false;

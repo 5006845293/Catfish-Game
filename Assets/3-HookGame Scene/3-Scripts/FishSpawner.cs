@@ -8,6 +8,8 @@ public class FishSpawner : MonoBehaviour
 {
     public GameObject fishPrefab;
     public Transform[] spawnPoints;
+	public Transform lightbound;
+	public Transform middlebound;
     public GameObject player;
     public float spawnInterval = 3.0f;
     public float maxSpawnDistance = 10.0f;
@@ -73,17 +75,22 @@ public class FishSpawner : MonoBehaviour
                     fishScript.Selected_Direction = DirectionOptions.Right;
                 }
 
-                float currentDepth = spawnPoint.transform.position.y * -6.85f;
-
-                if (currentDepth <= 200)
+                float currentDepth = spawnPoint.transform.position.y;
+				Debug.Log("SPAWN POINT");
+				Debug.Log(spawnPoint.transform.position.y);
+				Debug.Log("LIGHTBOUND");
+				Debug.Log(lightbound.position.y);
+				Debug.Log("DARKBOUND");
+				Debug.Log(middlebound.position.y);
+                if (currentDepth >= lightbound.position.y)
                 {
                     fishScript.Selected_Color = (ColorOptions)UnityEngine.Random.Range(0, System.Enum.GetValues(typeof(ColorOptions)).Length / 3);
                 }
-                else if (currentDepth <= 400 && currentDepth >= 200)
+                else if (currentDepth >= middlebound.position.y && currentDepth <= lightbound.position.y)
                 {
                     fishScript.Selected_Color = (ColorOptions)UnityEngine.Random.Range(System.Enum.GetValues(typeof(ColorOptions)).Length / 3, (System.Enum.GetValues(typeof(ColorOptions)).Length / 3 * 2)+1);
                 }
-                else if (currentDepth <= 500 && currentDepth >= 300)
+                else if (currentDepth <= middlebound.position.y)
                 {
                     fishScript.Selected_Color = (ColorOptions)UnityEngine.Random.Range( (System.Enum.GetValues(typeof(ColorOptions)).Length / 3 * 2)+1, System.Enum.GetValues(typeof(ColorOptions)).Length);
                 }
