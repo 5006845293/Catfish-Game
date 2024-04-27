@@ -451,7 +451,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &138760858
 Transform:
@@ -1484,6 +1484,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1cf55d1b53294317836c78b2f31b738, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!70 &619968676
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 619968656}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 8.58, y: 13.48}
+  m_Direction: 0
 --- !u!1 &641632987
 GameObject:
   m_ObjectHideFlags: 0
@@ -1591,7 +1607,7 @@ GameObject:
   m_TagString: Barrier
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &710862808
 Transform:
@@ -2832,7 +2848,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!212 &1356347485
 SpriteRenderer:
@@ -3161,12 +3177,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1394646484}
+  - component: {fileID: 1394646485}
   m_Layer: 0
   m_Name: edgeboundary2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1394646484
 Transform:
@@ -3183,6 +3200,50 @@ Transform:
   m_Father: {fileID: 710862808}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!68 &1394646485
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1394646483}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: 9.488683, y: -56.748764}
+  - {x: 9.487276, y: 4.6193085}
+  - {x: 9.465562, y: 5.5859833}
+  - {x: 9.361439, y: 6.13295}
+  - {x: 9.901203, y: 6.8832703}
+  - {x: 9.925278, y: 7.299637}
+  - {x: 9.769462, y: 7.7094574}
+  - {x: 10.269217, y: 9.8137665}
+  - {x: 9.603539, y: 10.783722}
+  - {x: 9.589776, y: 75.60013}
+  - {x: 8.940022, y: 76.537865}
+  - {x: 9.185722, y: 77.63542}
+  - {x: 9.59484, y: 78.11536}
+  - {x: 9.570569, y: 78.86991}
+  - {x: 9.616521, y: 79.500404}
+  - {x: 9.823753, y: 79.94423}
+  - {x: 9.914575, y: 80.26432}
+  - {x: 9.571249, y: 81.247345}
+  - {x: 9.540515, y: 145.76259}
+  - {x: 9.626819, y: 146.51393}
+  - {x: 9.933056, y: 146.97394}
+  - {x: 10.632229, y: 147.88239}
+  - {x: 11.33708, y: 148.37976}
+  - {x: 11.91817, y: 148.57959}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0
 --- !u!1 &1404775438
 GameObject:
   m_ObjectHideFlags: 0
@@ -3199,7 +3260,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!212 &1404775439
 SpriteRenderer:
@@ -3282,7 +3343,7 @@ EdgeCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: -56.26}
-  m_EdgeRadius: 0
+  m_EdgeRadius: 0.07
   m_Points:
   - {x: -13.405776, y: -2.888214}
   - {x: -4.3482294, y: -0.25484467}
@@ -3450,7 +3511,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!212 &1510581526
 SpriteRenderer:
@@ -3784,7 +3845,8 @@ PrefabInstance:
       propertyPath: m_WasSpriteAssigned
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7033611367778952678, guid: 6e2b0d621e6f31b42a3222e8d40d89eb, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 6e2b0d621e6f31b42a3222e8d40d89eb, type: 3}
 --- !u!1 &1590098575
 GameObject:
@@ -3907,7 +3969,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!212 &1715036292
 SpriteRenderer:
@@ -4047,13 +4109,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1768185040}
-  - component: {fileID: 1768185041}
-  m_Layer: 3
+  - component: {fileID: 1768185042}
+  - component: {fileID: 1768185043}
+  m_Layer: 0
   m_Name: edgeboundary
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1768185040
 Transform:
@@ -4070,8 +4133,29 @@ Transform:
   m_Father: {fileID: 710862808}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!68 &1768185041
-EdgeCollider2D:
+--- !u!50 &1768185042
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1768185039}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 100
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 0
+--- !u!60 &1768185043
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -4083,35 +4167,37 @@ EdgeCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_EdgeRadius: 0.2
+  m_Offset: {x: 2.79, y: 132.96}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   m_Points:
-  - {x: -9.591018, y: -57.934143}
-  - {x: -9.705244, y: 5.017227}
-  - {x: -10.05434, y: 5.885956}
-  - {x: -10.134769, y: 7.012802}
-  - {x: -9.767328, y: 7.8345337}
-  - {x: -9.347469, y: 8.558838}
-  - {x: -9.054268, y: 9.234863}
-  - {x: -9.179821, y: 9.9913025}
-  - {x: -9.6310425, y: 10.699524}
-  - {x: -9.636917, y: 76.189316}
-  - {x: -10.075996, y: 76.73602}
-  - {x: -10.40341, y: 77.5573}
-  - {x: -9.989138, y: 78.507}
-  - {x: -9.328512, y: 79.16699}
-  - {x: -9.03669, y: 79.87516}
-  - {x: -8.711264, y: 80.47116}
-  - {x: -8.966791, y: 80.74458}
-  - {x: -9.239309, y: 81.37231}
-  - {x: -9.593775, y: 81.6298}
-  - {x: -9.58449, y: 146.66531}
-  - {x: -10.052378, y: 147.43907}
-  - {x: -11.767561, y: 148.29047}
-  m_AdjacentStartPoint: {x: 0, y: 0}
-  m_AdjacentEndPoint: {x: 0, y: 0}
-  m_UseAdjacentStartPoint: 0
-  m_UseAdjacentEndPoint: 0
+    m_Paths:
+    - - {x: -12.864385, y: -125.915344}
+      - {x: -12.05136, y: -124.46277}
+      - {x: -11.650601, y: -123.534164}
+      - {x: -11.978271, y: -122.64665}
+      - {x: -12.341531, y: -122.08177}
+      - {x: -12.187415, y: -56.68682}
+      - {x: -12.932485, y: -55.980698}
+      - {x: -12.90426, y: -54.70456}
+      - {x: -11.866805, y: -53.821785}
+      - {x: -11.237285, y: -52.585335}
+      - {x: -11.82624, y: -51.8758}
+      - {x: -12.257804, y: -51.45224}
+      - {x: -12.316718, y: 8.767441}
+      - {x: -12.449064, y: 14.441238}
+      - {x: -14.752831, y: 15.405945}
+      - {x: -14.649307, y: -192.77327}
+      - {x: -12.59373, y: -191.14517}
+      - {x: -12.349984, y: -127.878784}
+      - {x: -12.790138, y: -126.671265}
 --- !u!1 &1791357448
 GameObject:
   m_ObjectHideFlags: 0
@@ -4555,7 +4641,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!212 &1998620930
 SpriteRenderer:
@@ -4639,7 +4725,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!212 &2006580144
 SpriteRenderer:

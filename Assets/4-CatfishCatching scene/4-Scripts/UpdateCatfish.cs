@@ -12,12 +12,25 @@ public class UpdateCatfish : MonoBehaviour
 	private SpriteRenderer spriteRenderer;
 	private Texture2D texture;
 	public bool[] MaskBool = new bool[12];
+	public AudioClip ZebraCatfish;
+	public AudioClip RainbowCatfish;
+	public AudioClip FireCatfish;
+	public AudioClip EarthCatfish;
+	public AudioClip AirCatfish;
+	public AudioClip WaterCatfish;
+	public AudioClip SpringCatfish;
+	public AudioClip WinterCatfish;
+	public AudioClip FallCatfish;
+	public AudioClip SummerCatfish;
+	public AudioClip LoveCatfish;
+	public AudioClip HateCatfish;
+	
 	
     // Start is called before the first frame update
     void Start()
     {
 		catfish = PlayerPrefs.GetString("Catfish"); //water Catfish grab the saved catfish
-		
+		//AudioSource.playbyname(catfish);
 		//change the text to the appropriate text
 		fishtext.text ="Congrats!You've caught a " + catfish +"!";
 		
@@ -34,6 +47,8 @@ public class UpdateCatfish : MonoBehaviour
             spriteRenderer.sprite = sprite;
             
         }
+		
+		
 		
 		//save the fish to the gallery
 		switch (catfish)
