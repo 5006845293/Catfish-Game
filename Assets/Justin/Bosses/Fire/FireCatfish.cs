@@ -6,18 +6,22 @@ using UnityEngine.Rendering;
 
 public class FireCatfish : MonoBehaviour
 {
-    public float startValue = -6f;
-    public float endValue = 6f;
+    public float startValue = -3f;
+    public float endValue = 3f;
     public float duration = 1f;
     public Transform flamePoint;
+    public GameObject flamePrefab;
+    public float flameDuration = 1f;
+    public float flameDelay = 2f;
 
+    private bool isFiring = false;
+    
     private float timer;
-    [SerializeField] private float rayDist = 10f;
     
     // Start is called before the first frame update
     void Start()
     {
-        
+        StartCoroutine(FireFlames());
     }
 
     // Update is called once per frame
@@ -35,29 +39,43 @@ public class FireCatfish : MonoBehaviour
         transform.RotateAround(point, axis, 0.3f);
         transform.position = new Vector3(interpolateVal, 0, interpolateVal);
 
-        Flamethrower();
-        
-    }
+        }
 
-    private void Flamethrower()
+    private IEnumerator FireFlames()
     {
-        RaycastHit2D flameStart = Physics2D.Raycast(flamePoint.position, Vector2.left, rayDist, LayerMask.GetMask("Player"));
-
-        if(flameStart.collider != null)
+        while(true)
         {
-            if(flameStart.collider.gameObject.tag == "Player")
+            if(isFiring)
             {
-                Debug.DrawRay(transform.position, Vector2.left, Color.red, 0);
-                Debug.Log("Player Hit!");
-                
+                GameObject flames = Instantiate(flamePrefab, flamePoint.position, Quaternion.identity);
+                Destroy(flames, flameDuration);
+
+                isFiring = true;
+
+                yield return new WaitForSeconds(flameDelay);
+
+                isFiring = false;
+            }
+            else
+            {
+                yield return null;
             }
         }
-        
-        
     }
         
+       
+
+    }
+
+    
+
+    
         
-}
+        
+        
+    
+        
+
         
 
 

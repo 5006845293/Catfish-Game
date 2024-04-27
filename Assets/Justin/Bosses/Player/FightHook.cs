@@ -9,6 +9,7 @@ public class FightHook : MonoBehaviour
     [SerializeField] private float speed = 5.0f;
     public GameObject projPrefab;
     public Transform shootPoint;
+    public bool canAttack = true;
 
     public float shootingCooldown = 0.5f;
     private float shootTimer = 0f;
@@ -35,12 +36,16 @@ public class FightHook : MonoBehaviour
 
         transform.Translate(direction * speed * Time.deltaTime);
 
-        if(Input.GetButtonDown("Fire1") && Time.time >= shootTimer)
+        if(canAttack)
         {
-            ShootProjectile();
+            if (Input.GetButtonDown("Fire1") && Time.time >= shootTimer)
+            {
+                ShootProjectile();
 
-            shootTimer = Time.time + shootingCooldown;
+                shootTimer = Time.time + shootingCooldown;
+            }
         }
+       
 
     }
 

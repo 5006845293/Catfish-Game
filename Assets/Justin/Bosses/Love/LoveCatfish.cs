@@ -1,37 +1,29 @@
 using System.Collections;
 using System.Collections.Generic;
+using TreeEditor;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class LoveCatfish : MonoBehaviour
 {
 
-    public GameObject player;
-    public float avoidDist;
-    public float speed;
+    public Transform hook;
+    public float speed = 5f;
+    public float followDist = 2f;
+
+    private bool isFollowing = false;
     
-    // Start is called before the first frame update
-    void Awake()
+
+    private void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
+        hook = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        if(player == null) { return; }
-
+        Vector2 distToPlayer = transform.position - hook.position;
         
-    }
-    
-    private void Follow()
-    {
-        Vector3 rayDirection = player.transform.position - transform.position;
-        RaycastHit2D lineOfSight = Physics2D.Raycast(transform.position, rayDirection, avoidDist, LayerMask.GetMask("Player"));
-
-        if(!lineOfSight)
-        {
-            transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
-        }
+        transform.position = Vector2.MoveTowards(transform.position, hook.position, speed * Time.deltaTime);
     }
 
 }

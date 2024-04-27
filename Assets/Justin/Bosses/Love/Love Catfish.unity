@@ -123,6 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!4 &313219307 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7311519932289649812, guid: 15e9cd28823ee4bfba784f25e9d9227d, type: 3}
+  m_PrefabInstance: {fileID: 443439515}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &443439515
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -130,6 +135,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7311519932289649802, guid: 15e9cd28823ee4bfba784f25e9d9227d, type: 3}
+      propertyPath: playerShoot
+      value: 
+      objectReference: {fileID: 8300000, guid: d3439ef03b86a6b4ba20e0b81a9706e0, type: 3}
     - target: {fileID: 7311519932289649803, guid: 15e9cd28823ee4bfba784f25e9d9227d, type: 3}
       propertyPath: m_Name
       value: Fight Hook
@@ -139,12 +148,20 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7311519932289649812, guid: 15e9cd28823ee4bfba784f25e9d9227d, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.07305708
+      objectReference: {fileID: 0}
+    - target: {fileID: 7311519932289649812, guid: 15e9cd28823ee4bfba784f25e9d9227d, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.06935065
+      objectReference: {fileID: 0}
+    - target: {fileID: 7311519932289649812, guid: 15e9cd28823ee4bfba784f25e9d9227d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.13
+      value: -0.8376
       objectReference: {fileID: 0}
     - target: {fileID: 7311519932289649812, guid: 15e9cd28823ee4bfba784f25e9d9227d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.85
+      value: -2.5849
       objectReference: {fileID: 0}
     - target: {fileID: 7311519932289649812, guid: 15e9cd28823ee4bfba784f25e9d9227d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -180,11 +197,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 15e9cd28823ee4bfba784f25e9d9227d, type: 3}
---- !u!1 &443439516 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7311519932289649803, guid: 15e9cd28823ee4bfba784f25e9d9227d, type: 3}
-  m_PrefabInstance: {fileID: 443439515}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &971792556
 GameObject:
   m_ObjectHideFlags: 0
@@ -242,6 +254,8 @@ MonoBehaviour:
   maxHealth: 100
   currentHealth: 0
   healthBar: {fileID: 1595942959}
+  isBoss: 0
+  damageSound: {fileID: 0}
 --- !u!212 &971792559
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -302,8 +316,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 971792556}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.32, y: 2.54, z: 0}
-  m_LocalScale: {x: 0.4129, y: 0.4109, z: 1}
+  m_LocalPosition: {x: 0.08, y: 1.71, z: 0}
+  m_LocalScale: {x: 0.20805235, y: 0.22990374, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -390,9 +404,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31ba5f8d4058208458ea14ea86b24af7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 443439516}
-  avoidDist: 0
-  speed: 0
+  hook: {fileID: 313219307}
+  speed: 3
+  followDist: 2
 --- !u!1 &1169951707
 GameObject:
   m_ObjectHideFlags: 0
