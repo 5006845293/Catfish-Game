@@ -7,21 +7,16 @@ using TMPro;
 public class Hook : MonoBehaviour
 {
     private Rigidbody2D rb;
-    private float horizontalMovement;
-    public float movementSpeed = 5f;
     public Transform fishHolder;  
     public int maxFishCount = 5;
     public DepthController DepthScript;
     public bool isHooking = true;
     public List<GameObject> fishesOnHook = new List<GameObject>();
-    private const float TopPositionY = 12.3f;
-    private Vector2 hookOriginalPosition;
     [SerializeField] private AudioClip fishCatch;
-
-    // Store original positions for fishes and trash when the game starts
-    private Dictionary<GameObject, Vector2> originalFishPositions = new Dictionary<GameObject, Vector2>();
-    private Vector2 originalTrashPosition;
+	public GameObject objectTypeToFind;
+	public GameObject[] objectsOfType;
     private Dictionary<GameObject, float> originalFishSpeeds = new Dictionary<GameObject, float>();
+	private Fish fishController;
 
     // Variable to keep track of collected fishes.
     private int fishCount = 0;
@@ -35,11 +30,7 @@ public class Hook : MonoBehaviour
         rb.constraints = RigidbodyConstraints2D.FreezeRotation;
         rb.interpolation = RigidbodyInterpolation2D.Interpolate;
         isHooking = true;
-        // Store the original position of the hook
-        hookOriginalPosition = rb.position;
-
-        // Store the original positions of all fishes and trash
-        StoreOriginalPositions();
+		
 
         // Initialize fishCount to zero.
         fishCount = 0;
@@ -48,36 +39,13 @@ public class Hook : MonoBehaviour
         SetFishCountText();
     }
 
-    void OnMove(InputValue movementValue)
-    {
-        Vector2 movementVector = movementValue.Get<Vector2>();
-
-        if (Mathf.Abs(movementVector.y) > Mathf.Abs(movementVector.x))
-        {
-            horizontalMovement = 0f;
-            rb.velocity = new Vector2(rb.velocity.x, movementVector.y * movementSpeed);
-        }
-        else
-        {
-            horizontalMovement = movementVector.x;
-            rb.velocity = new Vector2(movementVector.x * movementSpeed, rb.velocity.y);
-        }
-    }
-
     private void FixedUpdate()
     {
-        HandleMovementInput();
         if (DepthScript.GetCurrentDepth() >= 500)
         {
             isHooking = false;
         }
 
-    }
-
-    void HandleMovementInput()
-    {
-        Vector2 movement = new Vector2(horizontalMovement, 0.0f);
-        rb.velocity = new Vector2(movement.x * movementSpeed, rb.velocity.y);
     }
 
     private void OnTriggerEnter2D(Collider2D collider)
@@ -155,11 +123,6 @@ public class Hook : MonoBehaviour
         fishesOnHook.Add(fish);
         fish.SetActive(false);
 
-        if (!originalFishPositions.ContainsKey(fish))
-        {
-            originalFishPositions.Add(fish, fish.transform.position);
-        }
-
         fish.transform.position = fishHolder.position;
         fish.transform.SetParent(fishHolder);
     }
@@ -169,57 +132,8 @@ public class Hook : MonoBehaviour
         fishesOnHook.RemoveAt(fishCount);
     }
 
-    void ResetHookPosition()
-    {
-        Invoke("PerformResetHookPosition", 0.5f);
-    }
 
-    void PerformResetHookPosition()
-    {
-        rb.position = hookOriginalPosition;
-        rb.velocity = Vector2.zero;
 
-        // Reset fish count to zero
-        fishCount = 0;
-
-        // Update the fish count display
-        SetFishCountText();
-
-        ActivateAllFishes();
-    }
-
-    void ActivateAllFishes()
-    {
-        foreach (GameObject fish in originalFishPositions.Keys)
-        {
-            if (originalFishPositions.TryGetValue(fish, out Vector2 originalPosition))
-            {
-                fish.SetActive(true);
-                fish.transform.position = originalPosition;
-                fish.transform.SetParent(null);
-            }
-        }
-
-        fishesOnHook.Clear();
-    }
-
-    void StoreOriginalPositions()
-    {
-        GameObject[] allFishes = GameObject.FindGameObjectsWithTag("Fish");
-        foreach (GameObject fish in allFishes)
-        {
-            if (!originalFishPositions.ContainsKey(fish))
-            {
-                originalFishPositions.Add(fish, fish.transform.position);
-            }
-        }
-
-        GameObject trash = GameObject.FindGameObjectWithTag("Trash");
-        if (trash != null)
-        {
-            originalTrashPosition = trash.transform.position;
-        }
-    }
 
     // Function to update the displayed count of fishes collected.
     void SetFishCountText()
@@ -229,37 +143,31 @@ public class Hook : MonoBehaviour
 
     IEnumerator SlowDownFishes(float duration)
     {
-        // Reduce the swim speed of all fishes except the green one
-        foreach (GameObject fish in fishesOnHook)
-        {
-            Fish fishScript = fish.GetComponent<Fish>();
-            if (fishScript != null && fishScript.Selected_Color != ColorOptions.Green)
-            {
-                // Store the original speed if not already stored
-                if (!originalFishSpeeds.ContainsKey(fish))
-                {
-                    originalFishSpeeds.Add(fish, fishScript.swimSpeed);
-                }
+        		GameObject[] allFishes = GameObject.FindGameObjectsWithTag("Fish");
 
-                // Slow down the fish
-                fishScript.swimSpeed /= 2; // You can adjust the slowdown factor as needed
-            }
-        }
+		// Increase the swim speed of all fishes
+		foreach (GameObject fish in allFishes)
+		{
+			Fish fishScript = fish.GetComponent<Fish>();
+			if (fishScript != null)
+			{
+				// Modify the swim speed for all fishes
+				fishScript.swimSpeed = 4; // You can adjust the speed increase factor as needed
+			}
+		}
 
-        yield return new WaitForSeconds(duration);
+		// Wait for the specified duration
+		yield return new WaitForSeconds(duration);
 
-        // Restore the original swim speeds of fishes
-        foreach (GameObject fish in originalFishSpeeds.Keys)
-        {
-            Fish fishScript = fish.GetComponent<Fish>();
-            if (fishScript != null)
-            {
-                fishScript.swimSpeed = originalFishSpeeds[fish];
-            }
-        }
-
-        // Clear the dictionary
-        originalFishSpeeds.Clear();
+		// Restore the original swim speeds of fishes
+		foreach (GameObject fish in originalFishSpeeds.Keys)
+		{
+			Fish fishScript = fish.GetComponent<Fish>();
+			if (fishScript != null)
+			{
+				fishScript.swimSpeed = 7;
+			}
+		}
     }
 
     IEnumerator FreezeHook(float duration)
@@ -273,38 +181,34 @@ public class Hook : MonoBehaviour
         rb.constraints = RigidbodyConstraints2D.FreezeRotation;
     }
 
-    IEnumerator SpeedUpFishes(float duration)
-    {
-        // Increase the swim speed of all fishes except the red one
-        foreach (GameObject fish in fishesOnHook)
-        {
-            Fish fishScript = fish.GetComponent<Fish>();
-            if (fishScript != null && fishScript.Selected_Color != ColorOptions.Red)
-            {
-                // Store the original speed if not already stored
-                if (!originalFishSpeeds.ContainsKey(fish))
-                {
-                    originalFishSpeeds.Add(fish, fishScript.swimSpeed);
-                }
+	IEnumerator SpeedUpFishes(float duration)
+	{
+		
+		GameObject[] allFishes = GameObject.FindGameObjectsWithTag("Fish");
 
-                // Speed up the fish
-                fishScript.swimSpeed *= 2; // You can adjust the speedup factor as needed
-            }
-        }
+		// Increase the swim speed of all fishes
+		foreach (GameObject fish in allFishes)
+		{
+			Fish fishScript = fish.GetComponent<Fish>();
+			if (fishScript != null)
+			{
+				// Modify the swim speed for all fishes
+				fishScript.swimSpeed = 10; // You can adjust the speed increase factor as needed
+			}
+		}
 
-        yield return new WaitForSeconds(duration);
+		// Wait for the specified duration
+		yield return new WaitForSeconds(duration);
 
-        // Restore the original swim speeds of fishes
-        foreach (GameObject fish in originalFishSpeeds.Keys)
-        {
-            Fish fishScript = fish.GetComponent<Fish>();
-            if (fishScript != null)
-            {
-                fishScript.swimSpeed = originalFishSpeeds[fish];
-            }
-        }
+		// Restore the original swim speeds of fishes
+		foreach (GameObject fish in originalFishSpeeds.Keys)
+		{
+			Fish fishScript = fish.GetComponent<Fish>();
+			if (fishScript != null)
+			{
+				fishScript.swimSpeed = 7;
+			}
+		}
+	}
 
-        // Clear the dictionary
-        originalFishSpeeds.Clear();
-    }
 }

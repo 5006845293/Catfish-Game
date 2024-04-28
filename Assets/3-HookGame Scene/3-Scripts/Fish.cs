@@ -30,10 +30,11 @@ public class Fish : MonoBehaviour
     public float sine = 7.0f;
     public float fadeSpeed = 0.5f; // Speed at which the fish fades in/out
     private bool fadingOut = false;
-
+	private float verticalSineValue;
     // Start is called before the first frame update
     void Start()
     {
+		verticalSineValue = sine * Mathf.Sin(Time.time);
         spriteRenderer = GetComponent<SpriteRenderer>();
 
         string fileName = "BaitFish_" + Selected_Color.ToString() + ".png"; // Folder name corresponds to enum option
@@ -58,41 +59,44 @@ public class Fish : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+		// Check if fish is out of bounds for destruction
+		if (transform.position.x > 23f || transform.position.x < -20f)
+		{
+			Destroy(gameObject); // Destroy the fish object
+		}
+		
         // Check if the fish is black
         if (Selected_Color == ColorOptions.Black)
-        {
-            // Calculate vertical movement based on a sine wave
-            float verticalMovement = Mathf.Sin(Time.time) * sine;
+		{
+			// Move black fish in the selected direction horizontally
+			if (Selected_Direction == DirectionOptions.Right)
+			{
+				transform.Translate(Vector3.right * sine * Time.deltaTime);
+				spriteRenderer.flipX = true;
+			}
+			else if (Selected_Direction == DirectionOptions.Left)
+			{
+				transform.Translate(Vector3.left * sine * Time.deltaTime);
+				spriteRenderer.flipX = false;
+			}
 
-            // Move black fish in the selected direction horizontally
-            if (Selected_Direction == DirectionOptions.Right)
-            {
-                transform.Translate(Vector3.right * sine * Time.deltaTime);
-                spriteRenderer.flipX = true;
-            }
-            else if (Selected_Direction == DirectionOptions.Left)
-            {
-                transform.Translate(Vector3.left * sine * Time.deltaTime);
-                spriteRenderer.flipX = false;
-            }
-
-            // Apply the vertical movement
-            transform.Translate(Vector3.up * verticalMovement * Time.deltaTime);
-        }
-        else
-        {
-            // Move non-black fish in the selected direction
-            if (Selected_Direction == DirectionOptions.Right)
-            {
-                transform.Translate(Vector3.right * swimSpeed * Time.deltaTime);
-                spriteRenderer.flipX = true;
-            }
-            else if (Selected_Direction == DirectionOptions.Left)
-            {
-                transform.Translate(Vector3.left * swimSpeed * Time.deltaTime);
-                spriteRenderer.flipX = false;
-            }
-        }
+			// Apply the precalculated vertical movement
+			transform.Translate(Vector3.up * verticalSineValue * Time.deltaTime);
+		}
+		else
+		{
+			// Move non-black fish in the selected direction
+			if (Selected_Direction == DirectionOptions.Right)
+			{
+				transform.Translate(Vector3.right * swimSpeed * Time.deltaTime);
+				spriteRenderer.flipX = true;
+			}
+			else if (Selected_Direction == DirectionOptions.Left)
+			{
+				transform.Translate(Vector3.left * swimSpeed * Time.deltaTime);
+				spriteRenderer.flipX = false;
+			}
+		}
 
         // If the fish is purple and fading out, decrease its alpha value
         if (Selected_Color == ColorOptions.Purple && fadingOut)
