@@ -3772,6 +3772,14 @@ PrefabInstance:
       propertyPath: fishCountText
       value: 
       objectReference: {fileID: 113229602}
+    - target: {fileID: 4140978036557965558, guid: 6e2b0d621e6f31b42a3222e8d40d89eb, type: 3}
+      propertyPath: objectTypeToFind
+      value: 
+      objectReference: {fileID: 7065829227148563979, guid: 4e6532e913dbeda4493871c6ef825bb4, type: 3}
+    - target: {fileID: 4140978036557965558, guid: 6e2b0d621e6f31b42a3222e8d40d89eb, type: 3}
+      propertyPath: hookPlayerMovement
+      value: 
+      objectReference: {fileID: 619968663}
     - target: {fileID: 4626661210787840473, guid: 6e2b0d621e6f31b42a3222e8d40d89eb, type: 3}
       propertyPath: m_Sprite
       value: 

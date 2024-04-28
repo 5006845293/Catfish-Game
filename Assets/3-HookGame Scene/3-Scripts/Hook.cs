@@ -17,6 +17,7 @@ public class Hook : MonoBehaviour
 	public GameObject[] objectsOfType;
     private Dictionary<GameObject, float> originalFishSpeeds = new Dictionary<GameObject, float>();
 	private Fish fishController;
+	public HookPlayerMovement hookPlayerMovement;
 
     // Variable to keep track of collected fishes.
     private int fishCount = 0;
@@ -88,7 +89,8 @@ public class Hook : MonoBehaviour
                 else if (fishScript.Selected_Color == ColorOptions.Yellow)
                 {
                     // Freeze the hook for 2 seconds
-                    StartCoroutine(FreezeHook(4f));
+					StartCoroutine(FreezeHook(4f));
+
                 }
                 else if (fishScript.Selected_Color == ColorOptions.Red)
                 {
@@ -152,7 +154,7 @@ public class Hook : MonoBehaviour
 			if (fishScript != null)
 			{
 				// Modify the swim speed for all fishes
-				fishScript.swimSpeed = 4; // You can adjust the speed increase factor as needed
+				fishScript.swimSpeed = 3; // You can adjust the speed increase factor as needed
 			}
 		}
 
@@ -169,17 +171,13 @@ public class Hook : MonoBehaviour
 			}
 		}
     }
+	IEnumerator FreezeHook(float duration)
+	{
+		hookPlayerMovement.FreezeMovement(); // Freeze movement
+		yield return new WaitForSeconds(duration);
+		hookPlayerMovement.UnfreezeMovement(); // Unfreeze movement
+	}
 
-    IEnumerator FreezeHook(float duration)
-    {
-        // Disable movement for the hook
-        rb.constraints = RigidbodyConstraints2D.FreezeAll;
-
-        yield return new WaitForSeconds(duration);
-
-        // Enable movement for the hook after the specified duration
-        rb.constraints = RigidbodyConstraints2D.FreezeRotation;
-    }
 
 	IEnumerator SpeedUpFishes(float duration)
 	{
