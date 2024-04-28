@@ -263,6 +263,8 @@ MonoBehaviour:
   currentHealth: 0
   healthBar: {fileID: 1595942959}
   isBoss: 0
+  canBeDamaged: 0
+  isFlower: 0
   damageSound: {fileID: 8300000, guid: 94734d44766e23540988da911e1fb288, type: 3}
 --- !u!212 &971792559
 SpriteRenderer:
