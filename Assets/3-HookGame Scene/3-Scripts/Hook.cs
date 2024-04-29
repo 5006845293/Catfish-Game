@@ -135,8 +135,6 @@ public class Hook : MonoBehaviour
     }
 
 
-
-
     // Function to update the displayed count of fishes collected.
     void SetFishCountText()
     {
@@ -145,7 +143,7 @@ public class Hook : MonoBehaviour
 
     IEnumerator SlowDownFishes(float duration)
     {
-        		GameObject[] allFishes = GameObject.FindGameObjectsWithTag("Fish");
+        GameObject[] allFishes = GameObject.FindGameObjectsWithTag("Fish");
 
 		// Increase the swim speed of all fishes
 		foreach (GameObject fish in allFishes)
@@ -171,6 +169,7 @@ public class Hook : MonoBehaviour
 			}
 		}
     }
+    
 	IEnumerator FreezeHook(float duration)
 	{
 		hookPlayerMovement.FreezeMovement(); // Freeze movement

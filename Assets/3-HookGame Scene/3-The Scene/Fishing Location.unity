@@ -154,6 +154,24 @@ Transform:
   m_Father: {fileID: 815957899}
   m_RootOrder: 50
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &31656975 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6757718306300187785, guid: 219c5a91206b5d24f825a88f5e9ee69f, type: 3}
+  m_PrefabInstance: {fileID: 1392578846}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &31656978
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 31656975}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 382ae0bfae22340d9b0843fcb050e90c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hook: {fileID: 619968670}
 --- !u!1 &51598819
 GameObject:
   m_ObjectHideFlags: 0
@@ -1777,7 +1795,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 511
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -3122,9 +3140,33 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4344455001000253650, guid: 219c5a91206b5d24f825a88f5e9ee69f, type: 3}
+      propertyPath: m_Color.a
+      value: 0.69411767
+      objectReference: {fileID: 0}
+    - target: {fileID: 4344455001000253650, guid: 219c5a91206b5d24f825a88f5e9ee69f, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4344455001000253650, guid: 219c5a91206b5d24f825a88f5e9ee69f, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4344455001000253650, guid: 219c5a91206b5d24f825a88f5e9ee69f, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6757718306300187785, guid: 219c5a91206b5d24f825a88f5e9ee69f, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 7454929645414167002, guid: 219c5a91206b5d24f825a88f5e9ee69f, type: 3}
       propertyPath: orthographic size
       value: 41.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7454929645414167002, guid: 219c5a91206b5d24f825a88f5e9ee69f, type: 3}
+      propertyPath: m_CullingMask.m_Bits
+      value: 639
       objectReference: {fileID: 0}
     - target: {fileID: 7454929645414167002, guid: 219c5a91206b5d24f825a88f5e9ee69f, type: 3}
       propertyPath: m_NormalizedViewPortRect.width
