@@ -2730,7 +2730,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3737887027157654772, guid: ee95a7562f4ca4dc190e8f124a453068, type: 3}
       propertyPath: isBoss
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3737887027157654772, guid: ee95a7562f4ca4dc190e8f124a453068, type: 3}
       propertyPath: healthBar
@@ -2744,6 +2744,10 @@ PrefabInstance:
       propertyPath: damageSound
       value: 
       objectReference: {fileID: 8300000, guid: 94734d44766e23540988da911e1fb288, type: 3}
+    - target: {fileID: 3737887027157654772, guid: ee95a7562f4ca4dc190e8f124a453068, type: 3}
+      propertyPath: canBeDamaged
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3737887027157654772, guid: ee95a7562f4ca4dc190e8f124a453068, type: 3}
       propertyPath: bossHealthBar
       value: 

@@ -263,7 +263,7 @@ MonoBehaviour:
   currentHealth: 0
   healthBar: {fileID: 1595942959}
   isBoss: 0
-  canBeDamaged: 0
+  canBeDamaged: 1
   isFlower: 0
   damageSound: {fileID: 8300000, guid: 94734d44766e23540988da911e1fb288, type: 3}
 --- !u!212 &971792559
@@ -422,6 +422,7 @@ MonoBehaviour:
   spawnPoint: {fileID: 1124378290}
   shootingInterval: 2
   kissSFX: {fileID: 8300000, guid: b0c142c744938a942a7d835965bf89c4, type: 3}
+  health: {fileID: 0}
 --- !u!1 &1005215714
 GameObject:
   m_ObjectHideFlags: 0

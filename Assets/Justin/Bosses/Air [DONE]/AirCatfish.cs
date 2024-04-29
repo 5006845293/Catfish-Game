@@ -31,6 +31,7 @@ public class AirCatfish : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
         startPos = transform.position;
         SetNewTarget();
         hook = GameObject.FindGameObjectWithTag("Player").transform;

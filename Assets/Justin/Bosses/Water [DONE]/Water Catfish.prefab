@@ -105,6 +105,7 @@ MonoBehaviour:
   rightPos: 4
   waterProj: {fileID: 7830390390226727621, guid: 73a4de1057ba4734b9056b0f2ed983f4, type: 3}
   projPos: {fileID: 3737887027275041834}
+  waterProjSFX: {fileID: 0}
 --- !u!68 &3737887027157654763
 EdgeCollider2D:
   m_ObjectHideFlags: 0
@@ -150,6 +151,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 300
   currentHealth: 0
+  healthBar: {fileID: 0}
+  isBoss: 0
+  canBeDamaged: 1
+  isFlower: 0
+  damageSound: {fileID: 0}
 --- !u!1 &3737887027275041833
 GameObject:
   m_ObjectHideFlags: 0

@@ -33,53 +33,41 @@ public class SpringCatfish : MonoBehaviour
         }
        
         initPos = transform.position;
-        InvokeRepeating("SpawnFlowers", 1f, 8.5f);
+
+        flower1 = Instantiate(flowerPrefab, flowerSpawnLeft.position, Quaternion.identity);
+        flower2 = Instantiate(flowerPrefab, flowerSpawnRight.position, Quaternion.identity);
     }
 
     // Update is called once per frame
     void Update()
     {
+
+        
+
         float xMvmt = Mathf.Sin(Time.time * speed) * mvmtRange;
         float yMvmt = Mathf.Cos(Time.time * speed) * mvmtRange;
 
         Vector3 targetPos = initPos + new Vector3(xMvmt, yMvmt, 0f);
 
         transform.position = Vector3.MoveTowards(transform.position, targetPos, speed * Time.deltaTime);
-    }
 
-    void SpawnFlowers()
-    {
-        
-        if(!flowersActive)
+        if (flower1 == null && flower2 == null)
         {
-             flower1 = Instantiate(flowerPrefab, flowerSpawnLeft.position, Quaternion.identity);
-             flower2 = Instantiate(flowerPrefab, flowerSpawnRight.position, Quaternion.identity);
-
-            flowersActive = true;
-
-            Invoke("CheckFlowersDestroy", 0.5f);
-        }
-        
-    }
-
-    void CheckFlowersDestroy()
-    {
-        if(flower1 == null && flower2 == null)
-        {
-            EnableDamage();
-            flowersActive = false;
-        }
-
-        else
-        {
-            Invoke("CheckFlowersDestroy", 0.5f);
             
+            Debug.Log("flowers destroyed");
+            EnableDamage();
+
         }
     }
 
+   
     private void EnableDamage()
     {
-        health.canBeDamaged = true;
+        if(health != null)
+        {
+            health.canBeDamaged = true;
+        }
+        
     }
 
 }

@@ -136,6 +136,8 @@ MonoBehaviour:
   currentHealth: 0
   healthBar: {fileID: 0}
   isBoss: 0
+  canBeDamaged: 1
+  isFlower: 0
   damageSound: {fileID: 8300000, guid: 94734d44766e23540988da911e1fb288, type: 3}
 --- !u!50 &1345135543463307043
 Rigidbody2D:

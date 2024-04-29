@@ -9,19 +9,26 @@ public class FireCatfish : MonoBehaviour
     public float startValue = -3f;
     public float endValue = 3f;
     public float duration = 1f;
-    public Transform flamePoint;
-    public GameObject flamePrefab;
-    public float flameDuration = 1f;
-    public float flameDelay = 2f;
 
-    private bool isFiring = false;
-    
     private float timer;
+
+    public GameObject projectilePrefab;
+    public Transform shootPoint;
+    public float shootingInterval = 3f;
+    public float projectileSpeed = 5f;
+    public int numProj = 6;
+
+   
+    
+
+    
+    
+   
     
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(FireFlames());
+        
     }
 
     // Update is called once per frame
@@ -39,31 +46,24 @@ public class FireCatfish : MonoBehaviour
         transform.RotateAround(point, axis, 0.3f);
         transform.position = new Vector3(interpolateVal, 0, interpolateVal);
 
-        }
+        timer += Time.deltaTime;
 
-    private IEnumerator FireFlames()
-    {
-        while(true)
+        if (timer > 2)
         {
-            if(isFiring)
-            {
-                GameObject flames = Instantiate(flamePrefab, flamePoint.position, Quaternion.identity);
-                Destroy(flames, flameDuration);
+            timer = 0;
+            ShootProjectiles();
 
-                isFiring = true;
-
-                yield return new WaitForSeconds(flameDelay);
-
-                isFiring = false;
-            }
-            else
-            {
-                yield return null;
-            }
         }
+
+
     }
-        
-       
+
+    void ShootProjectiles()
+    {
+        Instantiate(projectilePrefab, shootPoint.position, Quaternion.identity);
+    }
+
+    
 
     }
 

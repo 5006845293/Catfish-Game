@@ -18,9 +18,11 @@ public class WaterCatfish : MonoBehaviour
     private Vector3 dir = Vector3.left;
     private float timer;
     [SerializeField] private AudioClip waterProjSFX;
+
+    
     void Start()
     {
-        
+       
     }
 
     // Update is called once per frame
