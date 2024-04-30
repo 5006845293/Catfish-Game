@@ -23,10 +23,6 @@ public class FightHook : MonoBehaviour
     private float timer;
     void Start()
     {
-        if(health != null)
-        {
-            health.canBeDamaged = true;
-        }
         
     }
 

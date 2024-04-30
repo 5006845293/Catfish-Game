@@ -20,22 +20,17 @@ public class SpringCatfish : MonoBehaviour
     public int objectsToDestroy = 2;
     private int destroyedObjects = 0;
     public List<GameObject> FlowerList;
-    public HealthComponent health;
     
     // Start is called before the first frame update
     //spawn flowers that shoot thorns at player
     void Start()
     {
-        
-        if(health != null)
-        {
-            health.canBeDamaged = false;
-        }
        
         initPos = transform.position;
 
         flower1 = Instantiate(flowerPrefab, flowerSpawnLeft.position, Quaternion.identity);
         flower2 = Instantiate(flowerPrefab, flowerSpawnRight.position, Quaternion.identity);
+ 
     }
 
     // Update is called once per frame
@@ -51,23 +46,12 @@ public class SpringCatfish : MonoBehaviour
 
         transform.position = Vector3.MoveTowards(transform.position, targetPos, speed * Time.deltaTime);
 
-        if (flower1 == null && flower2 == null)
-        {
-            
-            Debug.Log("flowers destroyed");
-            EnableDamage();
-
-        }
+        
     }
 
    
-    private void EnableDamage()
-    {
-        if(health != null)
-        {
-            health.canBeDamaged = true;
-        }
+    
         
-    }
+    
 
 }

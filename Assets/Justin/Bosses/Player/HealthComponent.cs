@@ -38,18 +38,13 @@ public class HealthComponent : MonoBehaviour
         
         
         
-        if(!isFlower && canBeDamaged)
+       if(!isFlower)
         {
             currentHealth -= amount;
             healthBar.fillAmount = currentHealth / 100f;
 
             AudioManager.instance.PlaySoundClip(damageSound, 20);
-        }
-        /*currentHealth -= amount;
-        healthBar.fillAmount = currentHealth / 100f;
-            
-        AudioManager.instance.PlaySoundClip(damageSound, 20); */
-        
+        } 
 
 
     }
