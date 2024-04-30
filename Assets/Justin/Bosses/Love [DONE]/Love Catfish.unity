@@ -138,7 +138,7 @@ PrefabInstance:
     - target: {fileID: 7311519932289649802, guid: 15e9cd28823ee4bfba784f25e9d9227d, type: 3}
       propertyPath: playerShoot
       value: 
-      objectReference: {fileID: 8300000, guid: 0b991db4d631b2647ba0aa61e0082d89, type: 3}
+      objectReference: {fileID: 8300000, guid: d3439ef03b86a6b4ba20e0b81a9706e0, type: 3}
     - target: {fileID: 7311519932289649803, guid: 15e9cd28823ee4bfba784f25e9d9227d, type: 3}
       propertyPath: m_Name
       value: Fight Hook
@@ -150,11 +150,7 @@ PrefabInstance:
     - target: {fileID: 7311519932289649809, guid: 15e9cd28823ee4bfba784f25e9d9227d, type: 3}
       propertyPath: damageSound
       value: 
-      objectReference: {fileID: 8300000, guid: 800306fa7caf7dc48a98a5087d2e5d57, type: 3}
-    - target: {fileID: 7311519932289649809, guid: 15e9cd28823ee4bfba784f25e9d9227d, type: 3}
-      propertyPath: canBeDamaged
-      value: 1
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 8300000, guid: 04310ce935fabf3419bee9f2a4e9e19f, type: 3}
     - target: {fileID: 7311519932289649812, guid: 15e9cd28823ee4bfba784f25e9d9227d, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -236,7 +232,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 1cfad9edcc268ef4081dae5c56e55ed3, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 47e0082c90d5302409298f4215756805, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -585,54 +581,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5870173318780333900, guid: 23d31110abf71a64e97720175577f912, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 823.09
-      objectReference: {fileID: 0}
-    - target: {fileID: 5870173318780333900, guid: 23d31110abf71a64e97720175577f912, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 82.923
-      objectReference: {fileID: 0}
-    - target: {fileID: 5870173318780333900, guid: 23d31110abf71a64e97720175577f912, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -454.77
-      objectReference: {fileID: 0}
-    - target: {fileID: 5870173318780333900, guid: 23d31110abf71a64e97720175577f912, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 1528.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5870173319164864602, guid: 23d31110abf71a64e97720175577f912, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 824.09
-      objectReference: {fileID: 0}
-    - target: {fileID: 5870173319164864602, guid: 23d31110abf71a64e97720175577f912, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 81.906
-      objectReference: {fileID: 0}
-    - target: {fileID: 5870173319164864602, guid: 23d31110abf71a64e97720175577f912, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -455.27
-      objectReference: {fileID: 0}
-    - target: {fileID: 5870173319164864602, guid: 23d31110abf71a64e97720175577f912, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 1527.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 5870173319259292150, guid: 23d31110abf71a64e97720175577f912, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 827.5522
-      objectReference: {fileID: 0}
-    - target: {fileID: 5870173319259292150, guid: 23d31110abf71a64e97720175577f912, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 86.7561
-      objectReference: {fileID: 0}
-    - target: {fileID: 5870173319259292150, guid: 23d31110abf71a64e97720175577f912, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -457
-      objectReference: {fileID: 0}
-    - target: {fileID: 5870173319259292150, guid: 23d31110abf71a64e97720175577f912, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 1530
-      objectReference: {fileID: 0}
     - target: {fileID: 5870173319293484680, guid: 23d31110abf71a64e97720175577f912, type: 3}
       propertyPath: m_Name
       value: Player Health Bar
@@ -741,45 +689,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2034596614494201821, guid: e178ea46d30ca4e4ba44f099549591dc, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -453
-      objectReference: {fileID: 0}
-    - target: {fileID: 2034596614494201821, guid: e178ea46d30ca4e4ba44f099549591dc, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -1337
-      objectReference: {fileID: 0}
     - target: {fileID: 2034596614494201822, guid: e178ea46d30ca4e4ba44f099549591dc, type: 3}
       propertyPath: m_text
       value: Heartfin, Catfish of Love
-      objectReference: {fileID: 0}
-    - target: {fileID: 2034596614494201822, guid: e178ea46d30ca4e4ba44f099549591dc, type: 3}
-      propertyPath: m_fontSize
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 2034596614494201822, guid: e178ea46d30ca4e4ba44f099549591dc, type: 3}
-      propertyPath: m_margin.z
-      value: -1050.275
-      objectReference: {fileID: 0}
-    - target: {fileID: 2034596614494201822, guid: e178ea46d30ca4e4ba44f099549591dc, type: 3}
-      propertyPath: m_fontSizeBase
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 5569648026780563910, guid: e178ea46d30ca4e4ba44f099549591dc, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 534.9517
-      objectReference: {fileID: 0}
-    - target: {fileID: 5569648026780563910, guid: e178ea46d30ca4e4ba44f099549591dc, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 102.79
-      objectReference: {fileID: 0}
-    - target: {fileID: 5569648026780563910, guid: e178ea46d30ca4e4ba44f099549591dc, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -6.9525
-      objectReference: {fileID: 0}
-    - target: {fileID: 5569648026780563910, guid: e178ea46d30ca4e4ba44f099549591dc, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -1499.8
       objectReference: {fileID: 0}
     - target: {fileID: 5569648028415158274, guid: e178ea46d30ca4e4ba44f099549591dc, type: 3}
       propertyPath: m_Name
@@ -869,38 +781,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5569648028450051964, guid: e178ea46d30ca4e4ba44f099549591dc, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 545.5471
-      objectReference: {fileID: 0}
-    - target: {fileID: 5569648028450051964, guid: e178ea46d30ca4e4ba44f099549591dc, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 107.2413
-      objectReference: {fileID: 0}
-    - target: {fileID: 5569648028450051964, guid: e178ea46d30ca4e4ba44f099549591dc, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -7.3635
-      objectReference: {fileID: 0}
-    - target: {fileID: 5569648028450051964, guid: e178ea46d30ca4e4ba44f099549591dc, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -1497.6206
-      objectReference: {fileID: 0}
-    - target: {fileID: 5569648028540305104, guid: e178ea46d30ca4e4ba44f099549591dc, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 536.308
-      objectReference: {fileID: 0}
-    - target: {fileID: 5569648028540305104, guid: e178ea46d30ca4e4ba44f099549591dc, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 102.74
-      objectReference: {fileID: 0}
-    - target: {fileID: 5569648028540305104, guid: e178ea46d30ca4e4ba44f099549591dc, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -3.7509
-      objectReference: {fileID: 0}
-    - target: {fileID: 5569648028540305104, guid: e178ea46d30ca4e4ba44f099549591dc, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -1499.8
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e178ea46d30ca4e4ba44f099549591dc, type: 3}
 --- !u!1001 &6005000145247153635
@@ -914,10 +794,6 @@ PrefabInstance:
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 1595942959}
-    - target: {fileID: 6005000144553790797, guid: f841b87c8dd1eab44bebfea11f744cd6, type: 3}
-      propertyPath: damageSound
-      value: 
-      objectReference: {fileID: 8300000, guid: a8722fa7bafa1834cb90a8019bf6f9bf, type: 3}
     - target: {fileID: 6005000144553790799, guid: f841b87c8dd1eab44bebfea11f744cd6, type: 3}
       propertyPath: m_Name
       value: Catfish_Love
