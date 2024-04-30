@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<<< HEAD:Assets/QRScanner.cs.meta
-guid: d163c37d98d6f9e429fd72cc93af7514
-========
-guid: 9e545e805143108429ff848e09332769
->>>>>>>> main:Assets/PopUp.cs.meta
+guid: fc88a746f709247489d70d56f7919e52
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2

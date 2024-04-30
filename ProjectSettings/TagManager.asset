@@ -11,6 +11,8 @@ TagManager:
   - Grass
   - BottomGrass
   - DialogueText
+  - Fish Setter
+  - GenerateQR
   layers:
   - Default
   - TransparentFX
