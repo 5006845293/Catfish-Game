@@ -9,6 +9,8 @@ public class FightHook : MonoBehaviour
     [SerializeField] private float speed = 5.0f;
     public GameObject projPrefab;
     public Transform shootPoint;
+    public bool canAttack = true;
+    public HealthComponent health;
 
     public float shootingCooldown = 0.5f;
     private float shootTimer = 0f;
@@ -21,7 +23,6 @@ public class FightHook : MonoBehaviour
     private float timer;
     void Start()
     {
-        
         
     }
 
@@ -37,10 +38,14 @@ public class FightHook : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.Escape) && Time.time >= shootTimer)
         {
-            ShootProjectile();
+            if (Input.GetButtonDown("Fire1") && Time.time >= shootTimer)
+            {
+                ShootProjectile();
 
-            shootTimer = Time.time + shootingCooldown;
+                shootTimer = Time.time + shootingCooldown;
+            }
         }
+       
 
     }
 
@@ -51,7 +56,7 @@ public class FightHook : MonoBehaviour
     }
 
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    /*private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.tag == "Boss")
         {
@@ -59,7 +64,7 @@ public class FightHook : MonoBehaviour
 
         }
 
-    }
+    }*/
 
 
 }

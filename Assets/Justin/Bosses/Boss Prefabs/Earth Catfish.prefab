@@ -1,0 +1,209 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6568815165622744468
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6568815165622744470}
+  - component: {fileID: 6568815165622744471}
+  - component: {fileID: 6568815165622744464}
+  - component: {fileID: 6568815165622744465}
+  - component: {fileID: 6568815165622744467}
+  - component: {fileID: 6568815165622744466}
+  m_Layer: 0
+  m_Name: Earth Catfish
+  m_TagString: Boss
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6568815165622744470
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6568815165622744468}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.52, y: 2.59, z: 0}
+  m_LocalScale: {x: 0.2674, y: 0.2724, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &6568815165622744471
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6568815165622744468}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: f414486cfc8571149a3185fef40a9071, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 10.24, y: 10.24}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!50 &6568815165622744464
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6568815165622744468}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!114 &6568815165622744465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6568815165622744468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3dc71520918c9640897e2f35a76332b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 2
+  rotationSpeed: 2
+  mudball: {fileID: 1983626203398002596, guid: 5d7ea2dbdddf9674f8dbd9850529c219, type: 3}
+  shootInterval: 4
+  projectileSpeed: 1
+  hook: {fileID: 0}
+--- !u!68 &6568815165622744467
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6568815165622744468}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -4.769097, y: 0}
+  - {x: -4.2267847, y: 0.8141829}
+  - {x: -3.6844795, y: 1.0960157}
+  - {x: -3.4930778, y: 1.6596813}
+  - {x: -1.8342627, y: 2.0354586}
+  - {x: -0.87725425, y: 3.3506777}
+  - {x: 0.30305648, y: 3.569881}
+  - {x: 0.6220593, y: 2.7243824}
+  - {x: 0.462558, y: 2.6304383}
+  - {x: 0.65395963, y: 2.1920326}
+  - {x: 0.49445835, y: 1.9101996}
+  - {x: 0.71776044, y: 1.3778487}
+  - {x: 0.46255827, y: 0.8768126}
+  - {x: 1.6747693, y: 0.5323511}
+  - {x: 1.9299712, y: 1.6909971}
+  - {x: 2.8550801, y: 1.9415152}
+  - {x: 3.0145817, y: 1.5344234}
+  - {x: 3.8120883, y: 2.4425504}
+  - {x: 4.800997, y: 2.4738653}
+  - {x: 5.0880995, y: 1.9102005}
+  - {x: 4.673395, y: 1.5344234}
+  - {x: 5.088099, y: 1.1273314}
+  - {x: 4.737196, y: 0.5323518}
+  - {x: 4.9923983, y: 0.18788943}
+  - {x: 4.0991898, y: -0.9081272}
+  - {x: 2.5998766, y: -0.8141829}
+  - {x: 2.2489734, y: -1.2212746}
+  - {x: 1.8342694, y: -2.1607165}
+  - {x: 1.1005629, y: -2.1294017}
+  - {x: 0.9729617, y: -2.724382}
+  - {x: 0.71775955, y: -2.7556968}
+  - {x: 0.49445763, y: -3.1627886}
+  - {x: -0.5901519, y: -3.0062149}
+  - {x: -1.1005564, y: -2.7870116}
+  - {x: -2.0894654, y: -2.755697}
+  - {x: -3.843981, y: -2.098087}
+  - {x: -3.8120806, y: -2.8809562}
+  - {x: -4.1948843, y: -2.5678086}
+  - {x: -4.162984, y: -1.7536248}
+  - {x: -4.545788, y: -1.597051}
+  - {x: -4.8328905, y: -0.939442}
+  - {x: -5.024292, y: -0.40709102}
+  - {x: -4.7052884, y: 0.093945146}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0
+--- !u!114 &6568815165622744466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6568815165622744468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4da99f42eb62a3241bcf9bcab15aedf0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  currentHealth: 0
+  healthBar: {fileID: 0}
+  isBoss: 0
+  damageSound: {fileID: 8300000, guid: 94734d44766e23540988da911e1fb288, type: 3}
