@@ -889,7 +889,7 @@ SpriteShapeRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
+  m_DynamicOccludee: 0
   m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
@@ -1420,7 +1420,7 @@ SpriteShapeRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
+  m_DynamicOccludee: 0
   m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
@@ -2231,7 +2231,7 @@ SpriteShapeRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
+  m_DynamicOccludee: 0
   m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
@@ -2769,7 +2769,7 @@ SpriteShapeRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
+  m_DynamicOccludee: 0
   m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
@@ -4550,6 +4550,30 @@ PrefabInstance:
       propertyPath: hookPlayerMovement
       value: 
       objectReference: {fileID: 619968663}
+    - target: {fileID: 4140978036557965558, guid: 6e2b0d621e6f31b42a3222e8d40d89eb, type: 3}
+      propertyPath: Fishrenderer.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4140978036557965558, guid: 6e2b0d621e6f31b42a3222e8d40d89eb, type: 3}
+      propertyPath: Fishrenderer.Array.data[0]
+      value: 
+      objectReference: {fileID: 363676694}
+    - target: {fileID: 4140978036557965558, guid: 6e2b0d621e6f31b42a3222e8d40d89eb, type: 3}
+      propertyPath: Fishrenderer.Array.data[1]
+      value: 
+      objectReference: {fileID: 915064360}
+    - target: {fileID: 4140978036557965558, guid: 6e2b0d621e6f31b42a3222e8d40d89eb, type: 3}
+      propertyPath: Fishrenderer.Array.data[2]
+      value: 
+      objectReference: {fileID: 1756498254}
+    - target: {fileID: 4140978036557965558, guid: 6e2b0d621e6f31b42a3222e8d40d89eb, type: 3}
+      propertyPath: Fishrenderer.Array.data[3]
+      value: 
+      objectReference: {fileID: 444289804}
+    - target: {fileID: 4140978036557965558, guid: 6e2b0d621e6f31b42a3222e8d40d89eb, type: 3}
+      propertyPath: Fishrenderer.Array.data[4]
+      value: 
+      objectReference: {fileID: 1053010170}
     - target: {fileID: 4626661210787840473, guid: 6e2b0d621e6f31b42a3222e8d40d89eb, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -4951,7 +4975,7 @@ SpriteShapeRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
+  m_DynamicOccludee: 0
   m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
