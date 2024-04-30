@@ -178,6 +178,8 @@ MonoBehaviour:
   currentHealth: 0
   healthBar: {fileID: 0}
   isBoss: 0
+  canBeDamaged: 1
+  isFlower: 0
   damageSound: {fileID: 0}
 --- !u!68 &534611757
 EdgeCollider2D:
@@ -289,7 +291,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7311519932289649812, guid: 15e9cd28823ee4bfba784f25e9d9227d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.22
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7311519932289649812, guid: 15e9cd28823ee4bfba784f25e9d9227d, type: 3}
       propertyPath: m_LocalPosition.y
