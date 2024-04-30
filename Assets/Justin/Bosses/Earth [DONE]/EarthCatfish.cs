@@ -21,13 +21,16 @@ public class EarthCatfish : MonoBehaviour
     private bool canShoot = true;
     private float timer = 0f;
 
-   
+    public HealthComponent health;
     
     
     // Start is called before the first frame update
     void Start()
     {
-        
+        if(health != null)
+        {
+            health.canBeDamaged = true;
+        }
         
         rb = GetComponent<Rigidbody2D>();
     }

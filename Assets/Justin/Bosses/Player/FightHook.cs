@@ -10,7 +10,7 @@ public class FightHook : MonoBehaviour
     public GameObject projPrefab;
     public Transform shootPoint;
     public bool canAttack = true;
-    
+    public HealthComponent health;
 
     public float shootingCooldown = 0.5f;
     private float shootTimer = 0f;

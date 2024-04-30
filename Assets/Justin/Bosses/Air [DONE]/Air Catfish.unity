@@ -278,7 +278,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 70c17bfd28b270f4bbb16faf92f57ce7, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 338bb1c71dce1304e9569750bf84f703, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -543,7 +543,7 @@ PrefabInstance:
     - target: {fileID: 7311519932289649802, guid: 15e9cd28823ee4bfba784f25e9d9227d, type: 3}
       propertyPath: playerShoot
       value: 
-      objectReference: {fileID: 8300000, guid: 0b991db4d631b2647ba0aa61e0082d89, type: 3}
+      objectReference: {fileID: 8300000, guid: d3439ef03b86a6b4ba20e0b81a9706e0, type: 3}
     - target: {fileID: 7311519932289649803, guid: 15e9cd28823ee4bfba784f25e9d9227d, type: 3}
       propertyPath: m_Name
       value: Fight Hook
@@ -555,11 +555,7 @@ PrefabInstance:
     - target: {fileID: 7311519932289649809, guid: 15e9cd28823ee4bfba784f25e9d9227d, type: 3}
       propertyPath: damageSound
       value: 
-      objectReference: {fileID: 8300000, guid: 800306fa7caf7dc48a98a5087d2e5d57, type: 3}
-    - target: {fileID: 7311519932289649809, guid: 15e9cd28823ee4bfba784f25e9d9227d, type: 3}
-      propertyPath: canBeDamaged
-      value: 1
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 8300000, guid: 04310ce935fabf3419bee9f2a4e9e19f, type: 3}
     - target: {fileID: 7311519932289649812, guid: 15e9cd28823ee4bfba784f25e9d9227d, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -645,7 +641,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 1cfad9edcc268ef4081dae5c56e55ed3, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 47e0082c90d5302409298f4215756805, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -957,10 +953,6 @@ PrefabInstance:
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 180655883}
-    - target: {fileID: 1345135543463307042, guid: fc48068b499fe194c8856c3856a0485c, type: 3}
-      propertyPath: damageSound
-      value: 
-      objectReference: {fileID: 8300000, guid: a8722fa7bafa1834cb90a8019bf6f9bf, type: 3}
     - target: {fileID: 1345135543463307047, guid: fc48068b499fe194c8856c3856a0485c, type: 3}
       propertyPath: m_Name
       value: Catfish_Air
