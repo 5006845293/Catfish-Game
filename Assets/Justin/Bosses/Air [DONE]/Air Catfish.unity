@@ -950,6 +950,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1345135543463307042, guid: fc48068b499fe194c8856c3856a0485c, type: 3}
+      propertyPath: isBoss
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1345135543463307042, guid: fc48068b499fe194c8856c3856a0485c, type: 3}
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 180655883}

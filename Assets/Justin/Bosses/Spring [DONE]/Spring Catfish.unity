@@ -161,6 +161,54 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5870173318780333900, guid: 23d31110abf71a64e97720175577f912, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 852.91
+      objectReference: {fileID: 0}
+    - target: {fileID: 5870173318780333900, guid: 23d31110abf71a64e97720175577f912, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 78.842
+      objectReference: {fileID: 0}
+    - target: {fileID: 5870173318780333900, guid: 23d31110abf71a64e97720175577f912, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -476.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 5870173318780333900, guid: 23d31110abf71a64e97720175577f912, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 1569.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5870173319164864602, guid: 23d31110abf71a64e97720175577f912, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 849.84
+      objectReference: {fileID: 0}
+    - target: {fileID: 5870173319164864602, guid: 23d31110abf71a64e97720175577f912, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 78.842
+      objectReference: {fileID: 0}
+    - target: {fileID: 5870173319164864602, guid: 23d31110abf71a64e97720175577f912, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -475.33
+      objectReference: {fileID: 0}
+    - target: {fileID: 5870173319164864602, guid: 23d31110abf71a64e97720175577f912, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 1569.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5870173319259292150, guid: 23d31110abf71a64e97720175577f912, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 849.8396
+      objectReference: {fileID: 0}
+    - target: {fileID: 5870173319259292150, guid: 23d31110abf71a64e97720175577f912, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 78.7973
+      objectReference: {fileID: 0}
+    - target: {fileID: 5870173319259292150, guid: 23d31110abf71a64e97720175577f912, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -475.33038
+      objectReference: {fileID: 0}
+    - target: {fileID: 5870173319259292150, guid: 23d31110abf71a64e97720175577f912, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 1569.6013
+      objectReference: {fileID: 0}
     - target: {fileID: 5870173319293484680, guid: 23d31110abf71a64e97720175577f912, type: 3}
       propertyPath: m_Name
       value: Player Health Bar
@@ -269,6 +317,46 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2034596614494201821, guid: e178ea46d30ca4e4ba44f099549591dc, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -537
+      objectReference: {fileID: 0}
+    - target: {fileID: 2034596614494201821, guid: e178ea46d30ca4e4ba44f099549591dc, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -1340
+      objectReference: {fileID: 0}
+    - target: {fileID: 2034596614494201822, guid: e178ea46d30ca4e4ba44f099549591dc, type: 3}
+      propertyPath: m_text
+      value: Blossomfin, Catfish of Spring
+      objectReference: {fileID: 0}
+    - target: {fileID: 2034596614494201822, guid: e178ea46d30ca4e4ba44f099549591dc, type: 3}
+      propertyPath: m_fontSize
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 2034596614494201822, guid: e178ea46d30ca4e4ba44f099549591dc, type: 3}
+      propertyPath: m_margin.z
+      value: -1296.5918
+      objectReference: {fileID: 0}
+    - target: {fileID: 2034596614494201822, guid: e178ea46d30ca4e4ba44f099549591dc, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 5569648026780563910, guid: e178ea46d30ca4e4ba44f099549591dc, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 550.6221
+      objectReference: {fileID: 0}
+    - target: {fileID: 5569648026780563910, guid: e178ea46d30ca4e4ba44f099549591dc, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 95.267
+      objectReference: {fileID: 0}
+    - target: {fileID: 5569648026780563910, guid: e178ea46d30ca4e4ba44f099549591dc, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 5.9614
+      objectReference: {fileID: 0}
+    - target: {fileID: 5569648026780563910, guid: e178ea46d30ca4e4ba44f099549591dc, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -1495
+      objectReference: {fileID: 0}
     - target: {fileID: 5569648028415158274, guid: e178ea46d30ca4e4ba44f099549591dc, type: 3}
       propertyPath: m_Name
       value: Boss Health Bar
@@ -356,6 +444,38 @@ PrefabInstance:
     - target: {fileID: 5569648028415158278, guid: e178ea46d30ca4e4ba44f099549591dc, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5569648028450051964, guid: e178ea46d30ca4e4ba44f099549591dc, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 562.1697
+      objectReference: {fileID: 0}
+    - target: {fileID: 5569648028450051964, guid: e178ea46d30ca4e4ba44f099549591dc, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 95.2529
+      objectReference: {fileID: 0}
+    - target: {fileID: 5569648028450051964, guid: e178ea46d30ca4e4ba44f099549591dc, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.000012279
+      objectReference: {fileID: 0}
+    - target: {fileID: 5569648028450051964, guid: e178ea46d30ca4e4ba44f099549591dc, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -1495
+      objectReference: {fileID: 0}
+    - target: {fileID: 5569648028540305104, guid: e178ea46d30ca4e4ba44f099549591dc, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 547.9177
+      objectReference: {fileID: 0}
+    - target: {fileID: 5569648028540305104, guid: e178ea46d30ca4e4ba44f099549591dc, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 95.271
+      objectReference: {fileID: 0}
+    - target: {fileID: 5569648028540305104, guid: e178ea46d30ca4e4ba44f099549591dc, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 2.3919
+      objectReference: {fileID: 0}
+    - target: {fileID: 5569648028540305104, guid: e178ea46d30ca4e4ba44f099549591dc, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -1495
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e178ea46d30ca4e4ba44f099549591dc, type: 3}
@@ -867,8 +987,8 @@ MonoBehaviour:
   maxHealth: 100
   currentHealth: 0
   healthBar: {fileID: 817288573}
-  isBoss: 0
-  canBeDamaged: 0
+  isBoss: 1
+  canBeDamaged: 1
   isFlower: 0
   damageSound: {fileID: 8300000, guid: 94734d44766e23540988da911e1fb288, type: 3}
 --- !u!114 &1166619648
