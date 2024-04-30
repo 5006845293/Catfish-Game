@@ -126,6 +126,7 @@ MonoBehaviour:
   mudball: {fileID: 1983626203398002596, guid: 5d7ea2dbdddf9674f8dbd9850529c219, type: 3}
   shootInterval: 4
   projectileSpeed: 1
+  mudballSFX: {fileID: 0}
   hook: {fileID: 0}
 --- !u!68 &6568815165622744467
 EdgeCollider2D:
@@ -205,5 +206,7 @@ MonoBehaviour:
   maxHealth: 100
   currentHealth: 0
   healthBar: {fileID: 0}
-  isBoss: 0
-  damageSound: {fileID: 8300000, guid: 94734d44766e23540988da911e1fb288, type: 3}
+  isBoss: 1
+  canBeDamaged: 0
+  isFlower: 0
+  damageSound: {fileID: 8300000, guid: a8722fa7bafa1834cb90a8019bf6f9bf, type: 3}
