@@ -18,6 +18,8 @@ public class Hook : MonoBehaviour
     private Dictionary<GameObject, float> originalFishSpeeds = new Dictionary<GameObject, float>();
 	private Fish fishController;
 	public HookPlayerMovement hookPlayerMovement;
+	public UnityEngine.U2D.SpriteShapeRenderer [] Fishrenderer;
+	
 
     // Variable to keep track of collected fishes.
     private int fishCount = 0;
@@ -103,8 +105,53 @@ public class Hook : MonoBehaviour
         {
             fish.SetActive(true);
         }
-    }
+		
 
+		foreach (GameObject i in fishesOnHook)
+		{
+			Fish fishScript = i.GetComponent<Fish>();
+			ColorOptions colorOption = fishScript.Selected_Color;
+
+			int fishIndex = fishesOnHook.IndexOf(i);
+			if (fishIndex >= 0 && fishIndex < Fishrenderer.Length)
+			{
+				switch (colorOption)
+				{
+					case ColorOptions.Red:
+						Fishrenderer[fishIndex].color = Color.red;
+						break;
+					case ColorOptions.Yellow:
+						Fishrenderer[fishIndex].color = Color.yellow;
+						break;
+					case ColorOptions.Green:
+						Fishrenderer[fishIndex].color = Color.green;
+						break;
+					case ColorOptions.Blue:
+						Fishrenderer[fishIndex].color = Color.blue;
+						break;
+					case ColorOptions.Purple:
+						Fishrenderer[fishIndex].color = Color.magenta;
+						break;
+					case ColorOptions.Black:
+						Fishrenderer[fishIndex].color = Color.black;
+						break;
+					case ColorOptions.White:
+						Fishrenderer[fishIndex].color = Color.white;
+						break;
+					default:
+						Debug.LogError("Invalid color option: " + colorOption);
+						break;
+				}
+			}
+			else
+			{
+				Debug.LogError("Fish index out of range or Fishrenderer array is not large enough.");
+			}
+		}
+
+
+
+	}
     void HandleTrashCollision(GameObject trash)
     {
         if (isHooking)
