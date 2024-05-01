@@ -30,8 +30,7 @@ public class Hook : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        rb.constraints = RigidbodyConstraints2D.FreezeRotation;
-        rb.interpolation = RigidbodyInterpolation2D.Interpolate;
+        
         isHooking = true;
 		
 
@@ -159,15 +158,15 @@ public class Hook : MonoBehaviour
 			
 			if (fishCount > 0)
 			{
-				
+				Debug.Log("TRah");
 				// Check if the fish has a SpriteRenderer component
-				SpriteRenderer fishRenderer =  Fishrenderer[fishCount-1].GetComponent<SpriteRenderer>();
+				UnityEngine.U2D.SpriteShapeRenderer fishRenderer =  Fishrenderer[fishCount-1];
 				// Set the alpha value of the fish to 0
 				Color currentColor = fishRenderer.color;
 				currentColor.a = 0f;
 				fishRenderer.color = currentColor;
-			}
-            // Reset fish count to zero
+			
+			// Reset fish count to zero
             fishCount--;
             // Update the fish count display
             SetFishCountText();
@@ -175,6 +174,8 @@ public class Hook : MonoBehaviour
 
             LoseFish();
             Destroy(trash);
+			}
+            
         }
     }
 
