@@ -156,11 +156,22 @@ public class Hook : MonoBehaviour
     {
         if (isHooking)
         {
-            Debug.Log("Hit trash, losing 1 fish!");
+			
+			if (fishCount > 0)
+			{
+				
+				// Check if the fish has a SpriteRenderer component
+				SpriteRenderer fishRenderer =  Fishrenderer[fishCount-1].GetComponent<SpriteRenderer>();
+				// Set the alpha value of the fish to 0
+				Color currentColor = fishRenderer.color;
+				currentColor.a = 0f;
+				fishRenderer.color = currentColor;
+			}
             // Reset fish count to zero
             fishCount--;
             // Update the fish count display
             SetFishCountText();
+			
 
             LoseFish();
             Destroy(trash);
