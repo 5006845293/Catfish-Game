@@ -1,24 +1,41 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Data.Common;
 using UnityEngine;
 
 public class HookPlayerMovement : MonoBehaviour
 {
-    public float speed;
+    public float defaultSpeed = 10f; // Default speed
+    public float boostedSpeed = 15f; // Speed when spacebar is held down
+    private float currentSpeed; // Current speed (default or boosted)
+
     public Camera mainCamera;
-private bool canMove = true; // Flag to control movement
+    private bool canMove = true; // Flag to control movement
+
+    void Start()
+    {
+        currentSpeed = defaultSpeed; // Initialize speed to default
+    }
 
     void Update()
     {
         if (canMove)
         {
+            // Check if spacebar is held down
+            if (Input.GetKey(KeyCode.Space))
+            {
+                currentSpeed = boostedSpeed; // Set speed to boosted speed
+            }
+            else
+            {
+                currentSpeed = defaultSpeed; // Set speed to default speed
+            }
+
             // Get input for player movement
             float moveHorizontal = Input.GetAxis("Horizontal");
             float moveVertical = Input.GetAxis("Vertical");
 
             // Calculate movement vector
-            Vector3 movement = new Vector3(moveHorizontal, moveVertical, 0) * speed * Time.deltaTime;
+            Vector3 movement = new Vector3(moveHorizontal, moveVertical, 0) * currentSpeed * Time.deltaTime;
 
             // Move the player
             transform.Translate(movement);
@@ -53,7 +70,7 @@ private bool canMove = true; // Flag to control movement
         {
             // If the player collides with a barrier, prevent it from passing through
             Vector2 movementDirection = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
-            transform.Translate(-movementDirection * speed * Time.deltaTime);
+            transform.Translate(-movementDirection * currentSpeed * Time.deltaTime);
         }
     }
 }
