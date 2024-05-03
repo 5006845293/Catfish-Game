@@ -219,7 +219,7 @@ public class Tutorial : MonoBehaviour
 		dialog.text = "for instance to attract the zebra catfish";
 		catfish.SetActive(true);
 		yield return new WaitForSeconds(3f);
-		dialog.text = "you can catch any aternation of black and white fish";
+		dialog.text = "you can catch any alternation of black and white fish";
 		
 		
 		CanContinue = true;

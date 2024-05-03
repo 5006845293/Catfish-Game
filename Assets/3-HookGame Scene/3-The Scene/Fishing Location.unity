@@ -2492,8 +2492,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 180424fc2211ed940af42d35aa6393da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeedUp: 10
-  moveSpeedDown: 3
+  moveSpeedUp: 30
+  moveSpeedDown: 4
   pauseDuration: 2
   endPosition: {fileID: 1719801804}
 --- !u!114 &930872893

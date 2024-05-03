@@ -38,12 +38,11 @@ public class FightHook : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.Escape) && Time.time >= shootTimer)
         {
-            if (Input.GetButtonDown("Fire1") && Time.time >= shootTimer)
-            {
-                ShootProjectile();
+            
+			ShootProjectile();
 
-                shootTimer = Time.time + shootingCooldown;
-            }
+			shootTimer = Time.time + shootingCooldown;
+
         }
        
 
