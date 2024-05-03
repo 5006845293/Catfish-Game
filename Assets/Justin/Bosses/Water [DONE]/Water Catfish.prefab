@@ -101,8 +101,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 6
-  leftPos: -3
-  rightPos: 3
+  leftPos: -4
+  rightPos: 4
   waterProj: {fileID: 7830390390226727621, guid: 73a4de1057ba4734b9056b0f2ed983f4, type: 3}
   projPos: {fileID: 3737887027275041834}
   waterProjSFX: {fileID: 0}
