@@ -31,34 +31,30 @@ public class Fish : MonoBehaviour
     public float fadeSpeed = 0.5f; // Speed at which the fish fades in/out
     private bool fadingOut = false;
 	private float verticalSineValue;
+	
+	
     // Start is called before the first frame update
-    void Start()
-    {
-		verticalSineValue = sine * Mathf.Sin(Time.time);
-        spriteRenderer = GetComponent<SpriteRenderer>();
+	void Start()
+	{
+		// Initialize sprite renderer
+		spriteRenderer = GetComponent<SpriteRenderer>();
 
-        string fileName = "BaitFish_" + Selected_Color.ToString() + ".png"; // Folder name corresponds to enum option
-        string filePath = "Assets/3-HookGame Scene/3-Textures/Fish/BaitFish/" + fileName;
-        texture = LoadTextureFromFile(filePath);
-        if (texture != null)
-        {
-            // Create a sprite from the loaded texture
-            Sprite sprite = Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), Vector2.one * 0.5f);
 
-            // Set the sprite to the Sprite Renderer
-            spriteRenderer.sprite = sprite;
-        }
+		// Start the fade out process for the purple fish
+		if (Selected_Color == ColorOptions.Purple)
+		{
+			fadingOut = true;
+		}
+	}
 
-        // Start the fade out process for the purple fish
-        if (Selected_Color == ColorOptions.Purple)
-        {
-            fadingOut = true;
-        }
-    }
+
+
+
 
     // Update is called once per frame
     void Update()
     {
+		
 		// Check if fish is out of bounds for destruction
 		if (transform.position.x > 23f || transform.position.x < -20f)
 		{
@@ -68,6 +64,7 @@ public class Fish : MonoBehaviour
         // Check if the fish is black
         if (Selected_Color == ColorOptions.Black)
 		{
+			verticalSineValue = sine * Mathf.Sin(Time.time);
 			// Move black fish in the selected direction horizontally
 			if (Selected_Direction == DirectionOptions.Right)
 			{
@@ -124,20 +121,5 @@ public class Fish : MonoBehaviour
         }
     }
 
-    private Texture2D LoadTextureFromFile(string path)
-    {
-        Texture2D tex = new Texture2D(2, 2);
-        byte[] fileData = System.IO.File.ReadAllBytes(path);
-
-        if (fileData != null)
-        {
-            tex.LoadImage(fileData);
-            return tex;
-        }
-        else
-        {
-            Debug.LogError("Failed to read file data at path: " + path);
-            return null;
-        }
-    }
+    
 }

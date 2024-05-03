@@ -722,7 +722,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextSceneName: Tutorial
-  delay: 4
+  delay: 3
 --- !u!4 &1055327688
 Transform:
   m_ObjectHideFlags: 0
