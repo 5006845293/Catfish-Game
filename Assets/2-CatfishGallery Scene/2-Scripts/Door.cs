@@ -40,8 +40,11 @@ public class Door : MonoBehaviour
 	
     // This function is called when another Collider2D enters the trigger
     void OnTriggerEnter2D(Collider2D other){
+		
+		
         // Check if the colliding object is tagged as "Player"
         if (other.CompareTag("Player")){
+			Time.timeScale = 0f;
             if(returningPlayer == 0)
             {
                 SceneManager.LoadScene(nextSceneName);
