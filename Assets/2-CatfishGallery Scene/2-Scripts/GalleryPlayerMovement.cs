@@ -29,6 +29,5 @@ public class GalleryPlayerMovement : MonoBehaviour
 
         // Apply the movement to the player's position
         transform.Translate(movement);
-		transform.rotation = Quaternion.identity;
     }
 }
