@@ -19,7 +19,8 @@ public class MainMenu : MonoBehaviour
     {
         PlayerPrefs.SetInt("ReturningPlayer", 0);
         PlayerPrefs.Save();
-		bool[] boolArray = new bool[] { false, false, false, false, false, false, false, false, false, false, false, false};
+        bool[] boolArray = new bool[] { false, false, false, false, false, false, false, false, false, false, false, false};
+
 		SaveBoolArrayToPlayerPrefs(boolArray);
         SceneManager.LoadScene(1);
     }

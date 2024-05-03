@@ -100,8 +100,8 @@ public class Hook : MonoBehaviour
                 }
                 else if (fishScript.Selected_Color == ColorOptions.Yellow)
                 {
-                    // Freezing hook and activating lightning for 4 seconds
-                    StartCoroutine(FreezeHookAndActivateLightning(4f, hook.position));
+                    // Freezing hook and activating lightning for 2 seconds
+                    StartCoroutine(FreezeHookAndActivateLightning(2f, hook.position));
                 }
                 else if (fishScript.Selected_Color == ColorOptions.Red)
                 {
