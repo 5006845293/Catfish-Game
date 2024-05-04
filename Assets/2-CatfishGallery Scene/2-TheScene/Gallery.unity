@@ -2107,7 +2107,7 @@ MonoBehaviour:
   dialoguePanel: {fileID: 1295371729297690804}
   dialogueText: {fileID: 2704792411908272471}
   dialogue:
-  - You made it huh? I am the Mega Catfish!
+  - Ahh You have come for Knowledge? Go Touch Some Grass haha
   - 
   ContinueButton: {fileID: 2237908467188846871}
   wordSpeed: 0.07
@@ -2600,7 +2600,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!70 &1513795742
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -2630,7 +2630,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
-  popUp: {fileID: 0}
 --- !u!1 &1519100153
 GameObject:
   m_ObjectHideFlags: 0
@@ -4371,8 +4370,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 3.9644, y: 4.2203}
-  m_SizeDelta: {x: 596.7675, y: 214.9505}
+  m_AnchoredPosition: {x: 1.0556, y: -0.1423}
+  m_SizeDelta: {x: 753.8382, y: 328.3904}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4611939583642062000
 CanvasRenderer:
@@ -4573,8 +4572,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -1047.1985, y: -424.68213}
-  m_SizeDelta: {x: 943.829, y: 396.8522}
+  m_AnchoredPosition: {x: -948.3021, y: -513.3981}
+  m_SizeDelta: {x: 1141.6217, y: 574.2839}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &9188589115397680403
 RectTransform:

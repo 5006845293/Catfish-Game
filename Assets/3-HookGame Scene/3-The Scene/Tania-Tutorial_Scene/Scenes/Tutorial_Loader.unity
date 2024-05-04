@@ -722,7 +722,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextSceneName: Tutorial
-  delay: 4
+  delay: 5
 --- !u!4 &1055327688
 Transform:
   m_ObjectHideFlags: 0
@@ -927,9 +927,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _textMeshPro: {fileID: 1810802191}
-  stringArray: []
-  timeBtwnChars: 0
-  timeBtwnWords: 0
+  stringArray:
+  - tutorial
+  - tutorial
+  timeBtwnChars: 0.39
+  timeBtwnWords: 1
 --- !u!1 &2036544696 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8010842045215241821, guid: b49b8ffbe42964deb82a2c6882bde02b, type: 3}

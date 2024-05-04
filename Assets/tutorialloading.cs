@@ -18,6 +18,7 @@ public class tutorialloading : MonoBehaviour
 
     void Start()
     {   
+		Time.timeScale = 1f;
         PlayerPrefs.SetInt("ReturningPlayer", 1);
         PlayerPrefs.Save();
         EndCheck();

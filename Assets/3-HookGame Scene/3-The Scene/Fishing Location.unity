@@ -2852,7 +2852,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1023715536}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.3, y: -118.4, z: 0}
+  m_LocalPosition: {x: 289.6, y: -118.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3492,9 +3492,41 @@ PrefabInstance:
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7703119953179043162, guid: f85867281b11d9544ba45f08f3dc5c10, type: 3}
+      propertyPath: fishSprites.Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7703119953179043162, guid: f85867281b11d9544ba45f08f3dc5c10, type: 3}
       propertyPath: spawnPoints.Array.size
       value: 49
       objectReference: {fileID: 0}
+    - target: {fileID: 7703119953179043162, guid: f85867281b11d9544ba45f08f3dc5c10, type: 3}
+      propertyPath: fishSprites.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: cddd52330ee778f4bb4c90a3d4870b13, type: 3}
+    - target: {fileID: 7703119953179043162, guid: f85867281b11d9544ba45f08f3dc5c10, type: 3}
+      propertyPath: fishSprites.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: 1eeeb9d01d9017b4388124c6778e4be4, type: 3}
+    - target: {fileID: 7703119953179043162, guid: f85867281b11d9544ba45f08f3dc5c10, type: 3}
+      propertyPath: fishSprites.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300000, guid: 0e9c6154cd4f9b94a96a3ca243d446c1, type: 3}
+    - target: {fileID: 7703119953179043162, guid: f85867281b11d9544ba45f08f3dc5c10, type: 3}
+      propertyPath: fishSprites.Array.data[3]
+      value: 
+      objectReference: {fileID: 21300000, guid: 441f0226fc053b8479880379fba6bc51, type: 3}
+    - target: {fileID: 7703119953179043162, guid: f85867281b11d9544ba45f08f3dc5c10, type: 3}
+      propertyPath: fishSprites.Array.data[4]
+      value: 
+      objectReference: {fileID: 21300000, guid: 9fe61ae7aad49cd4b8572acee90bffff, type: 3}
+    - target: {fileID: 7703119953179043162, guid: f85867281b11d9544ba45f08f3dc5c10, type: 3}
+      propertyPath: fishSprites.Array.data[5]
+      value: 
+      objectReference: {fileID: 21300000, guid: f298d2077b2fcf345850bf95a34d951b, type: 3}
+    - target: {fileID: 7703119953179043162, guid: f85867281b11d9544ba45f08f3dc5c10, type: 3}
+      propertyPath: fishSprites.Array.data[6]
+      value: 
+      objectReference: {fileID: 21300000, guid: 624c656b5cb0e4740bb636f996d5f805, type: 3}
     - target: {fileID: 7703119953179043162, guid: f85867281b11d9544ba45f08f3dc5c10, type: 3}
       propertyPath: spawnPoints.Array.data[5]
       value: 

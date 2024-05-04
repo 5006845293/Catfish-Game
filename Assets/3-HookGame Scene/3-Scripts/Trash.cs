@@ -11,7 +11,6 @@ public enum TypeOptions
 public class Trash : MonoBehaviour
 {
     private SpriteRenderer spriteRenderer;
-	private Texture2D texture;
 	
 	public TypeOptions Selected_Type;
 	public DirectionOptions Selected_Direction;
@@ -20,19 +19,8 @@ public class Trash : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        spriteRenderer = GetComponent<SpriteRenderer>();
 
-        string fileName = "Trash-" + Selected_Type.ToString() + ".png"; // Folder name corresponds to enum option
-        string filePath = "Assets/3-HookGame Scene/3-Textures/Trash/" + fileName;
-		texture = LoadTextureFromFile(filePath);
-		if (texture != null){
-            // Create a sprite from the loaded texture
-            Sprite sprite = Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), Vector2.one * 0.5f);
-
-            // Set the sprite to the Sprite Renderer
-            spriteRenderer.sprite = sprite;
-        }
-		
+		spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -51,19 +39,5 @@ public class Trash : MonoBehaviour
         }
     }
 	
-	
-	private Texture2D LoadTextureFromFile(string path){
-		
-        Texture2D tex = new Texture2D(2, 2);
-        byte[] fileData = System.IO.File.ReadAllBytes(path);
 
-        if (fileData != null){
-            tex.LoadImage(fileData);
-            return tex;
-        }
-        else{
-            Debug.LogError("Failed to read file data at path: " + path);
-            return null;
-        }
-    }
 }

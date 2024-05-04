@@ -5,16 +5,11 @@ using UnityEngine;
 public class GalleryPlayerMovement : MonoBehaviour
 {
 	public float moveSpeed = 5f; // Adjust the movement speed as needed
-    public PopUp popUp;
+
 
     void Start()
     {  
-            if (popUp != null && popUp.popUpMenu != null)
-        {
-            popUp.popUpMenu.SetActive(false);
-        }
-        
-        Time.timeScale = 1f;
+      
     
     }
 
